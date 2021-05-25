@@ -149,13 +149,13 @@ padding: 5px;
          </property>
          <property name="styleSheet">
           <string notr="true"> QPushButton {
-border-image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/password-close.png);
+border-image: url(images/password-close.png);
 width:20px;
 height:20px;
 
   }
 QPushButton:pressed,QPushButton:checked  {
-border-image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/password-open-hover.png);
+border-image: url(images/password-open-hover.png);
 width:20px;
 height:20px;
   }
