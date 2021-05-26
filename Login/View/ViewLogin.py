@@ -20,9 +20,9 @@ class ViewLogin(QWidget):
 
     def login(self):
         if self.controller.login(self.Codice.text()):
+            self.vista.label_error.setText("")
             vista_home = VistaHome()
             vista_home.show()
             self.vista.close()
         else:
-            # inserire label per stampare errore credenziali
-            pass
+            self.vista.label_error.setText("Credenziali errate!")

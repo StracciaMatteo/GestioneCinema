@@ -6,3 +6,5 @@ class VistaHome(QWidget):
     def __init__(self):
         super(VistaHome, self).__init__()
         self.vista = uic.loadUi("home/view/HOME.ui", self)
+        # comando per mostrare o nascondere box dipendenti
+        # self.vista.box_dipendenti.hide()
