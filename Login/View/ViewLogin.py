@@ -6,8 +6,9 @@ from home.view.VistaHome import VistaHome
 
 
 class ViewLogin(QWidget):
-    def __init__(self):
+    def __init__(self, widget):
         super(ViewLogin, self).__init__()
+        self.widget = widget
         self.vista = uic.loadUi("Login/View/LoginFinal.ui",self)
 
         self.controller = ControlloreLogin()
@@ -22,8 +23,9 @@ class ViewLogin(QWidget):
         if self.controller.login(self.Codice.text()):
             self.vista.label_error.setText("")
             # inserire utente loggato nella chiamata a VistaHome()
-            vista_home = VistaHome()
+            self.widget.setCurrentIndex(self.widget.currentIndex() + 1)
+            '''vista_home = VistaHome()
             vista_home.show()
-            self.vista.setHidden(True)
+            self.vista.setHidden(True)'''
         else:
             self.vista.label_error.setText("Credenziali errate!")

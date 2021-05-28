@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Statistiche_Biglietti_UI2</class>
+ <widget class="QWidget" name="Statistiche_Biglietti_UI2">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>660</width>
+    <height>525</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget{
+background-color: rgb(254, 235, 156);}
+
+</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <widget class="QLabel" name="label_StatBiglietti">
+       <property name="font">
+        <font>
+         <pointsize>16</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(92, 164, 144);</string>
+       </property>
+       <property name="text">
+        <string>Statistiche biglietti</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_FraseStatBigl">
+       <property name="font">
+        <font>
+         <italic>true</italic>
+        </font>
+       </property>
+       <property name="text">
+        <string>In questa schermata si può generare il grafico sulle statistiche rigaradanti i biglietti venduti in giornata</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="PlotWidget" name="graphicsView_StatBigl">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="Line" name="line">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QPushButton" name="btn_GeneraDiagramma">
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+background-color: rgb(55, 92, 108);
+border-radius: 15px;
+padding: 10px;
+color: rgb(255, 255, 255);
+border-style: outset;
+Width:120px;}
+
+QPushButton:hover{
+background-color:rgb(92,154,181);}  
+</string>
+         </property>
+         <property name="text">
+          <string>Genera diagramma </string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>Immagini/Genera.png</normaloff>Immagini/Genera.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_EliminaDiagramma">
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="mouseTracking">
+          <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+background-color: rgb(55, 92, 108);
+border-radius: 15px;
+padding: 10px;
+color: rgb(255, 255, 255);
+border-style: outset;
+Width:120px;}
+
+QPushButton:hover{
+background-color:rgb(92,154,181);}  
+</string>
+         </property>
+         <property name="text">
+          <string>Elimina diagramma</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>Immagini/X.png</normaloff>Immagini/X.png</iconset>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PlotWidget</class>
+   <extends>QGraphicsView</extends>
+   <header>pyqtgraph</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

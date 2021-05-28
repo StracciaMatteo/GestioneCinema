@@ -520,12 +520,6 @@ border-style: outset;
        <property name="title">
         <string>     Gestione dipendenti</string>
        </property>
-       <property name="flat">
-        <bool>false</bool>
-       </property>
-       <property name="checkable">
-        <bool>false</bool>
-       </property>
        <widget class="QLabel" name="label_img_dipendente">
         <property name="geometry">
          <rect>
