@@ -21,8 +21,9 @@ class ViewLogin(QWidget):
     def login(self):
         if self.controller.login(self.Codice.text()):
             self.vista.label_error.setText("")
+            # inserire utente loggato nella chiamata a VistaHome()
             vista_home = VistaHome()
             vista_home.show()
-            self.vista.close()
+            self.vista.setHidden(True)
         else:
             self.vista.label_error.setText("Credenziali errate!")
