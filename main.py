@@ -4,6 +4,10 @@ from PyQt5 import QtGui
 from Login.View.ViewLogin import ViewLogin
 from dipendente.DatiDipendente.view.ViewDipendente import ViewDipendente
 from home.view.VistaHome import VistaHome
+from spesericavi.InserimentoSpeseRicavi.VistaInserimentoSpeseRicavi import VistaInserimentoSpeseRicavi
+from spesericavi.view.VIstaListaMovimenti import VistaListaMovimenti
+from statistiche.view.VistaStatisticheBiglietti import VistaStatisticheBiglietti
+
 if __name__ == '__main__':
     '''app = QApplication(sys.argv)
     HOME = QWidget()
@@ -12,9 +16,9 @@ if __name__ == '__main__':
     HOME.show()
     sys.exit(app.exec())'''
 
-    app=QApplication(sys.argv)
+    '''app=QApplication(sys.argv)'''
 
-    widget = QStackedWidget()
+    '''widget = QStackedWidget()
 
     Vista_login=ViewLogin(widget)
     Vista_home = VistaHome(widget)
@@ -29,9 +33,8 @@ if __name__ == '__main__':
     # Vista_login.show()
     # widget.setCurrentWidget(Vista_home)
     widget.show()
-    sys.exit(app.exec())
-
-    '''app = QApplication(sys.argv)
-    Vista_Dipendente=ViewDipendente()
-    Vista_Dipendente.show()
     sys.exit(app.exec())'''
+    app = QApplication(sys.argv)
+    Vista_Stat=VistaListaMovimenti()
+    Vista_Stat.show()
+    sys.exit(app.exec())
