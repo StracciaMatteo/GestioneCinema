@@ -1,7 +1,7 @@
 from PyQt5.QtWidgets import QLineEdit, QMessageBox, QWidget
 
 
-class ControlloreINserisciMovimento():
+class ControlloreInserisciMovimento():
 
     def __init__(self):
-        super(ControlloreINserisciMovimento, self).__init__()
+        super(ControlloreInserisciMovimento, self).__init__()
