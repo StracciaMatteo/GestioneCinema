@@ -66,7 +66,7 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_4">
      <item>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="btn_torna_IM">
        <property name="styleSheet">
         <string notr="true">QPushButton{
 border-radius: 14px;

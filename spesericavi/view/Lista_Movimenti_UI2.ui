@@ -68,7 +68,7 @@ background-color: rgb(254, 235, 156);}
         <number>0</number>
        </property>
        <item>
-        <widget class="QPushButton" name="pushButton">
+        <widget class="QPushButton" name="btn_torna_LM">
          <property name="styleSheet">
           <string notr="true">QPushButton{
 border-radius: 14px;
