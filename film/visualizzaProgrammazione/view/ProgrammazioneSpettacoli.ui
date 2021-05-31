@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ProgrammazioneSpettacoli</class>
+ <widget class="QWidget" name="ProgrammazioneSpettacoli">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>836</width>
+    <height>802</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Programmazione spettacoli</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget{
+background-color: rgb(254, 235, 156);
+}
+
+QPushButton{
+border-radius:15px;
+padding:9px;
+background-color: rgb(55, 92, 108);
+color: rgb(255, 255, 255);
+border-style: outset;
+Width: 50px;
+}
+
+QPushButton:hover{
+cursor: none;
+background-color: rgb(92, 154, 181);
+}
+
+QPushButton:pressed{
+border-style: inset;
+background-color: rgb(48, 80, 91);
+}
+
+QTableWidget{
+selection-background-color:rgb(123, 220, 193);
+padding: 4px;
+}
+
+QHeaderView::section {
+border-radius:10px;
+background-color: rgb(92, 164, 144);
+padding: 4px;
+border: 1px solid #fffff8;
+color: rgb(255, 255, 255);
+font-size: 9pt;
+}
+
+QHeaderView::section:hover,QHeaderView::section:checked{
+border-radius:10px;
+background-color:rgb(123, 220, 193);
+padding: 4px;
+border: 1px solid #fffff8;
+color: rgb(255, 255, 255);
+font-size: 9pt;
+}
+
+QTableView QTableCornerButton::section {
+border-radius:10px;
+border: 2px solid #fffff8;
+}
+
+QCalendarWidget QAbstractItemView:enabled
+{
+border-radius:15px;
+padding: 5px;
+color: rgb(92, 164, 144);
+background-color:rgb(255, 255, 255);
+selection-background-color: rgb(92, 164, 144);
+selection-color:rgb(255, 255, 255);
+}
+
+QCalendarWidget QToolButton {
+border-radius:14px;
+padding: 5px;
+color: white;
+background-color: rgb(92, 164, 144);
+}
+
+QCalendarWidget QMenu {
+left: 20px;
+color: white;
+background-color: rgb(92, 164, 144);
+}
+
+QCalendarWidget QSpinBox {
+color: white;
+background-color: rgb(92, 164, 144);
+selection-background-color: rgb(55, 92, 108);
+selection-color: rgb(255, 255, 255);
+}
+
+QCalendarWidget QSpinBox::up-button {
+background-color: rgb(255, 255, 255);
+border-radius:5px;
+padding: 5px;
+}
+
+QCalendarWidget QSpinBox::down-button {
+background-color: rgb(255, 255, 255);
+border-radius:5px;
+padding: 5px;
+}
+
+QCalendarWidget QSpinBox::up-arrow {
+image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-up-arrow.png)
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+QCalendarWidget QSpinBox::down-arrow {
+
+
+
+image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-arrow.png)
+}
+
+QCalendarWidget QWidget#qt_calendar_navigationbar
+{
+border-radius:13px;
+padding: 10px;
+background-color:rgb(255, 255, 255);
+}
+
+QCalendarWidget QAbstractItemView:disabled
+{
+color:rgb(52, 93, 81);
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="Titolo">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>500</width>
+       <height>70</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>70</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>16</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(92, 164, 144);</string>
+     </property>
+     <property name="text">
+      <string>Programmazione spettacoli</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="Line" name="line">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_2">
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="locale">
+      <locale language="Italian" country="Italy"/>
+     </property>
+     <property name="text">
+      <string>In questa sezione viene visualizzata tutta la programmazione degli spettacoli del cinema ed eventualmente è possibile modificarla</string>
+     </property>
+     <property name="textFormat">
+      <enum>Qt::AutoText</enum>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignJustify|Qt::AlignVCenter</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacer_3">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Fixed</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QCalendarWidget" name="calendarWidget">
+         <property name="minimumSize">
+          <size>
+           <width>500</width>
+           <height>220</height>
+          </size>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="gridVisible">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <spacer name="verticalSpacer_4">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Fixed</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_6">
+     <property name="font">
+      <font>
+       <pointsize>18</pointsize>
+       <weight>75</weight>
+       <italic>false</italic>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="textInteractionFlags">
+      <set>Qt::NoTextInteraction</set>
+     </property>
+    </widget>
+   </item>
+   <item alignment="Qt::AlignHCenter">
+    <widget class="QTableWidget" name="tableWidget">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>614</width>
+       <height>205</height>
+      </size>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <attribute name="horizontalHeaderDefaultSectionSize">
+      <number>137</number>
+     </attribute>
+     <attribute name="verticalHeaderDefaultSectionSize">
+      <number>33</number>
+     </attribute>
+     <row>
+      <property name="text">
+       <string>SALA 1</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>SALA 2</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>SALA 3</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>SALA 4</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>SALA 5</string>
+      </property>
+     </row>
+     <column>
+      <property name="text">
+       <string>15:00</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>18:00</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>21:00</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>24:00</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

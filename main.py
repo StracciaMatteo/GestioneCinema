@@ -9,16 +9,9 @@ from spesericavi.view.VIstaListaMovimenti import VistaListaMovimenti
 from statistiche.view.VistaStatisticheBiglietti import VistaStatisticheBiglietti
 
 if __name__ == '__main__':
-    '''app = QApplication(sys.argv)
-    HOME = QWidget()
-    vista_home = VistaHome()
-    vista_home.setupUi(HOME)
-    HOME.show()
-    sys.exit(app.exec())'''
+    app=QApplication(sys.argv)
 
-    '''app=QApplication(sys.argv)'''
-
-    '''widget = QStackedWidget()
+    widget = QStackedWidget()
 
     Vista_login=ViewLogin(widget)
     Vista_home = VistaHome(widget)
@@ -33,8 +26,8 @@ if __name__ == '__main__':
     # Vista_login.show()
     # widget.setCurrentWidget(Vista_home)
     widget.show()
-    sys.exit(app.exec())'''
-    app = QApplication(sys.argv)
+    sys.exit(app.exec())
+    '''app = QApplication(sys.argv)
     Vista_Stat=VistaListaMovimenti()
     Vista_Stat.show()
-    sys.exit(app.exec())
+    sys.exit(app.exec())'''
