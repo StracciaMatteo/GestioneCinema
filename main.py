@@ -1,22 +1,21 @@
 import sys
+
+import self as self
 from PyQt5.QtWidgets import QApplication, QStackedWidget
 from PyQt5 import QtGui
 from Login.View.ViewLogin import ViewLogin
 from dipendente.DatiDipendente.view.ViewDipendente import ViewDipendente
 from home.view.VistaHome import VistaHome
-if __name__ == '__main__':
-    '''app = QApplication(sys.argv)
-    HOME = QWidget()
-    vista_home = VistaHome()
-    vista_home.setupUi(HOME)
-    HOME.show()
-    sys.exit(app.exec())'''
+from spesericavi.InserimentoSpeseRicavi.VistaInserimentoSpeseRicavi import VistaInserimentoSpeseRicavi
+from spesericavi.view.VIstaListaMovimenti import VistaListaMovimenti
+from statistiche.view.VistaStatisticheBiglietti import VistaStatisticheBiglietti
 
+if __name__ == '__main__':
     app=QApplication(sys.argv)
 
     widget = QStackedWidget()
 
-    Vista_login=ViewLogin(widget)
+    Vista_login = ViewLogin(widget)
     Vista_home = VistaHome(widget)
 
     widget.addWidget(Vista_login)
@@ -26,12 +25,12 @@ if __name__ == '__main__':
     icon = QtGui.QIcon()
     icon.addPixmap(QtGui.QPixmap("images/biglietto.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
     widget.setWindowIcon(icon)
-    # Vista_login.show()
-    # widget.setCurrentWidget(Vista_home)
+    # Spostamento widget al centro (fissare dimensione login al max per mantenere tutto al centro)
     widget.show()
+    '''centerPoint = QtGui.QScreen.availableGeometry(app.primaryScreen()).center()
+    fg = widget.frameGeometry()
+    fg.moveCenter(centerPoint)
+    widget.move(fg.topLeft())'''
+
     sys.exit(app.exec())
 
-    '''app = QApplication(sys.argv)
-    Vista_Dipendente=ViewDipendente()
-    Vista_Dipendente.show()
-    sys.exit(app.exec())'''
