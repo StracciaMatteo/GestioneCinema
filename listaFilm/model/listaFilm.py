@@ -12,14 +12,16 @@ class listaFilm():
     def aggiungi_film(self, film):
         self.lista_film.append(film)
 
-    def rimuovi_by_name(self, name):
-        pass
+    def rimuovi(self, film):
+        self.lista_film.remove(film)
 
     def get_lista_film(self):
         return self.lista_film
 
     def get_film_by_name(self, name):
-        pass
+        for film in self.lista_film:
+            if name == film.titolo:
+                return film
 
     def save(self):
         with open('listaFilm/data/lista_film.pickle', 'wb') as handle:

@@ -33,7 +33,7 @@ class viewInserimentoFilm(QWidget):
 
     def save(self):
         # aggiungere istruzioni per salvare film e poi chiude il widget
-        self.controller.aggiungi_film(film(self.vista.filmName.text(), 0, 0))
+        self.controller.aggiungi_film(film(self.vista.filmName.text(), self.vista.timeEdit_durata.time(), self.vista.timeEdit_intervallo.time()))
         self.controller.save()
 
         self.widget.setCurrentIndex(self.widget.currentIndex() - 1)

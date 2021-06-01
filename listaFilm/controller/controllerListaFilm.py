@@ -9,8 +9,8 @@ class controllerListaFilm():
     def aggiungi_film(self, film):
         self.model.aggiungi_film(film)
 
-    def rimuovi_by_name(self, name):
-        return self.model.rimuovi_by_name(name)
+    def rimuovi(self, film):
+        return self.model.rimuovi(film)
 
     def get_lista_film(self):
         return self.model.get_lista_film()
