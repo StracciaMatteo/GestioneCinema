@@ -192,7 +192,7 @@ Height:13px;
       </size>
      </property>
      <property name="text">
-      <string>In questa finestra è possibile aggiungere un nuovo film nel sistema se non già presente ed assegnare spettacoli allo stesso.</string>
+      <string>In questa finestra è possibile aggiungere un nuovo film nel sistema se non già presente ed assegnare spettacoli allo stesso. Per procedere occorre riempire i campi di input, selezionare una data e fare doppio clic nella tabella.</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>
@@ -234,7 +234,7 @@ Height:13px;
       </spacer>
      </item>
      <item row="4" column="2" alignment="Qt::AlignLeft">
-      <widget class="QTimeEdit" name="timeEdit_2">
+      <widget class="QTimeEdit" name="timeEdit_intervallo">
        <property name="minimumSize">
         <size>
          <width>0</width>
@@ -358,7 +358,7 @@ Height:13px;
       </widget>
      </item>
      <item row="2" column="2" alignment="Qt::AlignLeft">
-      <widget class="QTimeEdit" name="timeEdit">
+      <widget class="QTimeEdit" name="timeEdit_durata">
        <property name="minimumSize">
         <size>
          <width>0</width>
@@ -378,16 +378,6 @@ Height:13px;
        </property>
        <property name="currentSection">
         <enum>QDateTimeEdit::HourSection</enum>
-       </property>
-       <property name="calendarPopup">
-        <bool>false</bool>
-       </property>
-       <property name="time">
-        <time>
-         <hour>0</hour>
-         <minute>0</minute>
-         <second>0</second>
-        </time>
        </property>
       </widget>
      </item>
@@ -471,6 +461,9 @@ Height:13px;
      </property>
      <property name="frameShape">
       <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
      </property>
      <attribute name="horizontalHeaderDefaultSectionSize">
       <number>137</number>

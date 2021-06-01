@@ -1,18 +1,22 @@
 from PyQt5 import uic
-from PyQt5.QtWidgets import QWidget, QTableWidget, QPushButton, QTableWidgetItem
+from PyQt5.QtWidgets import QWidget, QTableWidgetItem
 
-from film.model.film import film
 from listaFilm.controller.controllerListaFilm import controllerListaFilm
 
 
-class viewInserimentoFilm(QWidget):
+class viewProgrammazione(QWidget):
     def __init__(self, widget):
-        super(viewInserimentoFilm, self).__init__()
+        super(viewProgrammazione, self).__init__()
         self.widget = widget
 
         self.controller = controllerListaFilm()
 
-        self.vista = uic.loadUi("film/inserimentoFilm/view/InserisciFilm.ui", self)
+        self.vista = uic.loadUi("listaFilm/visualizzaProgrammazione/view/ProgrammazioneSpettacoli.ui", self)
+        # funzione che assegna al box_elenco_film i film in memoria in ordine alfabetico
+        for film in self.controller.get_lista_film():
+            self.vista.box_elenco_film.addItem(film.titolo)
+
+        self.btn_torna.clicked.connect(self.go_back)
 
         self.vista.btn_dialog.accepted.connect(self.save)
         self.vista.btn_dialog.rejected.connect(self.go_back)
@@ -26,19 +30,15 @@ class viewInserimentoFilm(QWidget):
         self.vista.table_programmazione.doubleClicked.connect(self.assegna_data)
 
     def assegna_data(self, item):
-        durata = self.vista.timeEdit_durata.time()
-        # controlla che tutti i campi siano inseriti ed assegna lo spettacolo
-        if self.vista.filmName.text() != '' and durata.hour() < 3 and durata.hour() or durata.minute():
-            self.vista.table_programmazione.setItem(item.row(), item.column(), QTableWidgetItem(str(self.vista.filmName.text())))
+        # controlla che sia stato selezionato un film e una data
+        '''if :
+            self.vista.table_programmazione.setItem(item.row(), item.column(), QTableWidgetItem(str(self.vista.filmName.text())))'''
+        pass
 
-    def save(self):
-        # aggiungere istruzioni per salvare film e poi chiude il widget
-        self.controller.aggiungi_film(film(self.vista.filmName.text(), 0, 0))
-        self.controller.save()
-
+    def go_back(self):
         self.widget.setCurrentIndex(self.widget.currentIndex() - 1)
         self.widget.removeWidget(self.vista)
 
-    def go_back(self):
+    def save(self):
         self.widget.setCurrentIndex(self.widget.currentIndex() - 1)
         self.widget.removeWidget(self.vista)
