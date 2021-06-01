@@ -1,6 +1,8 @@
+import self
 from PyQt5 import uic
 from PyQt5.QtWidgets import QWidget
 
+from dipendente.DatiDipendente.view.ViewInserisciDipendente import ViewInserisciDipendente
 from film.inserimentoFilm.view.viewInserimentoFilm import viewInserimentoFilm
 from listaFilm.visualizzaProgrammazione.view.viewProgrammazione import viewProgrammazione
 from spesericavi.InserimentoSpeseRicavi.VistaInserimentoSpeseRicavi import VistaInserimentoSpeseRicavi
@@ -29,6 +31,9 @@ class VistaHome(QWidget):
         self.vista.btn_spesa_ricavo.clicked.connect(self.visualizza_ins_spesa_ricavo)
         self.vista.btn_visualizza_movimenti.clicked.connect(self.visualizza_movimenti)
         self.vista.btn_visualizza_statistiche.clicked.connect(self.visualizza_statistiche)
+        # Area Gestione Dipendente
+        self.vista.btn_inserimento_dipendente.clicked.connect(self.visualizza_inserisci_dipednente)
+
 
     def logout(self):
         self.widget.setCurrentIndex(self.widget.currentIndex() - 1)
@@ -66,4 +71,8 @@ class VistaHome(QWidget):
         vista_statistiche = VistaStatisticheBiglietti(self.widget)
         self.widget.addWidget(vista_statistiche)
         self.widget.setCurrentIndex(self.widget.currentIndex() + 1)
-
+        #Area Gestione Dipendente
+    def visualizza_inserisci_dipednente(self):
+        vista_inseriscidipendente=ViewInserisciDipendente(self.widget)
+        self.widget.addWidget(vista_inseriscidipendente)
+        self.widget.setCurrentIndex(self.widget.currentIndex() + 1)
