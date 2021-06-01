@@ -26,7 +26,7 @@ class VistaInserimentoSpeseRicavi(QWidget):
             print(segno+importo+"€")
         else:
             self.box_dialog()
-
+    #Questa funzione apre un MessageBox di errore per l'inserimento errato dell'importo
     def box_dialog(self):
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Critical)
