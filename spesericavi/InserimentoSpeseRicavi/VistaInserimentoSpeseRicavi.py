@@ -21,11 +21,13 @@ class VistaInserimentoSpeseRicavi(QWidget):
         descrizione=self.vista.lineEdit_DescrizionVoce.text()
         importo= self.vista.lineEdit_Importo.text()
         segno= self.vista.comboBox_Segno.currentText()
-        if importo is int:
+        try:
+         if float(importo):
             print(descrizione)
             print(segno+importo+"€")
-        else:
+        except(Exception):
             self.box_dialog()
+
     #Questa funzione apre un MessageBox di errore per l'inserimento errato dell'importo
     def box_dialog(self):
         msg = QMessageBox()
