@@ -1,6 +1,6 @@
 import sys
 
-import self as self
+#import self as self
 from PyQt5.QtWidgets import QApplication, QStackedWidget
 from PyQt5 import QtGui
 from Login.View.ViewLogin import ViewLogin
@@ -27,7 +27,7 @@ if __name__ == '__main__':
     widget.setWindowIcon(icon)
     # Spostamento widget al centro (fissare dimensione login al max per mantenere tutto al centro)
     widget.show()
-    '''centerPoint = QtGui.QScreen.availableGeometry(app.primaryScreen()).center()
+    '''centerPoint = QtGui.QScreen.availableGeometry().center()
     fg = widget.frameGeometry()
     fg.moveCenter(centerPoint)
     widget.move(fg.topLeft())'''

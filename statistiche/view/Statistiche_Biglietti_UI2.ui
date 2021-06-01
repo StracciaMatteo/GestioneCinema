@@ -93,6 +93,10 @@ background-color: rgb(48, 80, 91);
          <property name="text">
           <string/>
          </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../../images/Torna-Indietro-icon.png</normaloff>../../images/Torna-Indietro-icon.png</iconset>
+         </property>
         </widget>
        </item>
        <item>
@@ -142,7 +146,7 @@ background-color:rgb(92,154,181);}
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>Immagini/Genera.png</normaloff>Immagini/Genera.png</iconset>
+           <normaloff>../../images/Genera_Verde.png</normaloff>../../images/Genera_Verde.png</iconset>
          </property>
         </widget>
        </item>
@@ -172,7 +176,7 @@ background-color:rgb(92,154,181);}
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>Immagini/X.png</normaloff>Immagini/X.png</iconset>
+           <normaloff>../../images/X_Rossa.png</normaloff>../../images/X_Rossa.png</iconset>
          </property>
          <property name="checkable">
           <bool>false</bool>
