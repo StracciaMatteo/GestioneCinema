@@ -92,6 +92,10 @@ background-color: rgb(48, 80, 91);
        <property name="text">
         <string/>
        </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../../images/Torna-Indietro-icon.png</normaloff>../../images/Torna-Indietro-icon.png</iconset>
+       </property>
       </widget>
      </item>
      <item>
@@ -290,7 +294,7 @@ background-color:rgb(92,154,181);}  </string>
        </property>
        <property name="icon">
         <iconset>
-         <normaloff>Immagini/plus-304947_1280.png</normaloff>Immagini/plus-304947_1280.png</iconset>
+         <normaloff>../../images/Piu_Verde.png</normaloff>../../images/Piu_Verde.png</iconset>
        </property>
       </widget>
      </item>

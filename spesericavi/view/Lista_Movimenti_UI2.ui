@@ -94,6 +94,10 @@ background-color: rgb(48, 80, 91);
          <property name="text">
           <string/>
          </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../../images/Torna-Indietro-icon.png</normaloff>../../images/Torna-Indietro-icon.png</iconset>
+         </property>
         </widget>
        </item>
        <item>
@@ -405,7 +409,7 @@ background-color:rgb(92,154,181);}
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>Immagini/plus-304947_1280.png</normaloff>Immagini/plus-304947_1280.png</iconset>
+           <normaloff>../../images/Piu_Verde.png</normaloff>../../images/Piu_Verde.png</iconset>
          </property>
         </widget>
        </item>
@@ -431,7 +435,7 @@ background-color:rgb(92,154,181);}  </string>
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>Immagini/image_icon_minus_7_pic_512x512 (1).png</normaloff>Immagini/image_icon_minus_7_pic_512x512 (1).png</iconset>
+           <normaloff>../../images/Meno_Rosso.png</normaloff>../../images/Meno_Rosso.png</iconset>
          </property>
          <property name="flat">
           <bool>false</bool>

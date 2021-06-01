@@ -8,7 +8,7 @@ class VistaStatisticheBiglietti(QWidget):
         self.widget = widget
         self.vista = uic.loadUi("statistiche/view/Statistiche_Biglietti_UI2.ui", self)
 
-        self.btn_torna_SB.clicked.connect(self.go_back)
+        self.btn_tornaIndietroSB.clicked.connect(self.go_back)
 
     def go_back(self):
         self.widget.setCurrentIndex(self.widget.currentIndex() - 1)
