@@ -252,9 +252,6 @@ Height:13px;
        <property name="currentSection">
         <enum>QDateTimeEdit::HourSection</enum>
        </property>
-       <property name="timeSpec">
-        <enum>Qt::TimeZone</enum>
-       </property>
       </widget>
      </item>
      <item row="3" column="0">
@@ -354,9 +351,6 @@ Height:13px;
        <property name="currentSection">
         <enum>QDateTimeEdit::HourSection</enum>
        </property>
-       <property name="timeSpec">
-        <enum>Qt::TimeZone</enum>
-       </property>
       </widget>
      </item>
      <item row="6" column="2">
@@ -451,7 +445,7 @@ Height:13px;
      </property>
     </widget>
    </item>
-   <item>
+   <item alignment="Qt::AlignHCenter">
     <widget class="QTableWidget" name="table_programmazione">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
