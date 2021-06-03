@@ -20,11 +20,13 @@ class viewInserimentoFilm(QWidget):
         # Interazione con calendario
         self.vista.calendar.clicked.connect(self.get_data)
 
+    # assegna la data dal calendario
     def get_data(self):
         data = self.vista.calendar.selectedDate()
         self.vista.label_data.setText(data.toString('dddd, d MMMM yyyy'))
         self.vista.table_programmazione.doubleClicked.connect(self.assegna_data)
 
+    # assegna spettacolo da tabella
     def assegna_data(self, item):
         durata = self.vista.timeEdit_durata.time()
         # controlla che tutti i campi siano inseriti ed assegna lo spettacolo
