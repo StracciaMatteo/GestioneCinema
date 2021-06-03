@@ -1,5 +1,6 @@
 from PyQt5 import uic
 from PyQt5.QtWidgets import QWidget, QMessageBox
+from messaggeError.Error import Error
 
 
 class viewFilm(QWidget):
@@ -16,14 +17,8 @@ class viewFilm(QWidget):
         self.vista.btn_elimina_film.clicked.connect(self.box_dialog)
 
     def box_dialog(self):
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Warning)
-        msg.setText("Eliminare definitivamente ?")
-        msg.setInformativeText("L'operazione è irreversibile")
-        msg.setWindowTitle("Elimina film")
-        msg.setStandardButtons(QMessageBox.Yes | QMessageBox.Cancel)
-        result = msg.exec()
-        if result == QMessageBox.Yes:
+        error = Error("Elimina film", "Eliminare definitivamente ?", "L'operazione è irreversibile")
+        if error.confirm_messagge() == QMessageBox.Yes:
             self.controller.rimuovi(self.film)
             self.controller.save()
             self.callback()
