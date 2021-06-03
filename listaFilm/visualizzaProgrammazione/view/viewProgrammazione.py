@@ -1,5 +1,5 @@
 from PyQt5 import uic
-from PyQt5.QtWidgets import QWidget, QTableWidgetItem
+from PyQt5.QtWidgets import QWidget, QTableWidgetItem, QMessageBox
 
 from listaFilm.controller.controllerListaFilm import controllerListaFilm
 from listaFilm.visualizzaProgrammazione.view.viewFilm import viewFilm
@@ -36,9 +36,19 @@ class viewProgrammazione(QWidget):
     def assegna_data(self, item):
         self.vista.table_programmazione.setItem(item.row(), item.column(), QTableWidgetItem(str(self.vista.box_elenco_film.currentText())))
 
+    # funzione che apre la vista dettagli di un film sela lista_film non è vuota
     def show_film(self):
-        vista_dettagli = viewFilm(self.controller.get_film_by_name(self.vista.box_elenco_film.currentText()), self.controller, self.rimuovi_film_dal_box)
-        vista_dettagli.show()
+        if self.vista.box_elenco_film.currentText() == '':
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Critical)
+            msg.setText("Nessun film in memoria")
+            msg.setInformativeText("Inserire un film nell'apposita sezione")
+            msg.setWindowTitle("Memoria film vuota")
+            msg.setStandardButtons(QMessageBox.Ok)
+            msg.exec()
+        else:
+            vista_dettagli = viewFilm(self.controller.get_film_by_name(self.vista.box_elenco_film.currentText()), self.controller, self.rimuovi_film_dal_box)
+            vista_dettagli.show()
 
     def go_back(self):
         self.widget.setCurrentIndex(self.widget.currentIndex() - 1)

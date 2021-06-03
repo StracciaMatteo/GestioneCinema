@@ -23,10 +23,10 @@ if __name__ == '__main__':
     widget.setWindowIcon(icon)
     # Spostamento widget al centro (fissare dimensione login al max per mantenere tutto al centro)
     widget.show()
-    '''centerPoint = QtGui.QScreen.availableGeometry(QtWidgets.QApplication.primaryScreen()).center()
+    centerPoint = QtGui.QScreen.availableGeometry(app.primaryScreen()).center()
     fg = widget.frameGeometry()
     fg.moveCenter(centerPoint)
-    widget.move(fg.topLeft())'''
+    widget.move(fg.topLeft())
 
     sys.exit(app.exec())
 

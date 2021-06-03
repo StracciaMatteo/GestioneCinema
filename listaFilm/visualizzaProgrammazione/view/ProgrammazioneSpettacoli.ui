@@ -201,49 +201,69 @@ background-color: rgb(48, 80, 91);
     </widget>
    </item>
    <item>
-    <widget class="QLabel" name="label_2">
-     <property name="layoutDirection">
-      <enum>Qt::LeftToRight</enum>
+    <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <property name="topMargin">
+      <number>0</number>
      </property>
-     <property name="locale">
-      <locale language="Italian" country="Italy"/>
-     </property>
-     <property name="text">
-      <string>In questa sezione viene visualizzata tutta la programmazione degli spettacoli del cinema ed eventualmente è possibile modificarla. Per la modifica selezionare una data e  un film nel menù e fare doppio click per inserirlo</string>
-     </property>
-     <property name="textFormat">
-      <enum>Qt::AutoText</enum>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignJustify|Qt::AlignVCenter</set>
-     </property>
-     <property name="wordWrap">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QPushButton" name="btn_torna">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="styleSheet">
-      <string notr="true"/>
-     </property>
-     <property name="icon">
-      <iconset>
-       <normaloff>../../../images/Torna-Indietro-icon.png</normaloff>../../../images/Torna-Indietro-icon.png</iconset>
-     </property>
-     <property name="iconSize">
-      <size>
-       <width>20</width>
-       <height>20</height>
-      </size>
-     </property>
-    </widget>
+     <item>
+      <widget class="QPushButton" name="btn_torna">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>28</width>
+         <height>28</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+ border-radius: 14px;
+background-color: rgb(55, 92, 108);
+color: rgb(255, 255, 255);
+border-style: outset;
+
+
+}</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../../../images/Torna-Indietro-icon.png</normaloff>../../../images/Torna-Indietro-icon.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_2">
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="locale">
+        <locale language="Italian" country="Italy"/>
+       </property>
+       <property name="text">
+        <string>In questa sezione viene visualizzata tutta la programmazione degli spettacoli del cinema ed eventualmente è possibile modificarla. Per la modifica selezionare una data e  un film nel menù e fare doppio click per inserirlo</string>
+       </property>
+       <property name="textFormat">
+        <enum>Qt::AutoText</enum>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignJustify|Qt::AlignVCenter</set>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
    <item>
     <widget class="QScrollArea" name="scrollArea">
@@ -256,7 +276,7 @@ background-color: rgb(48, 80, 91);
         <x>0</x>
         <y>0</y>
         <width>810</width>
-        <height>626</height>
+        <height>666</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_3">
