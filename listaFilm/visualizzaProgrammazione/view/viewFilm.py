@@ -3,9 +3,10 @@ from PyQt5.QtWidgets import QWidget, QMessageBox
 
 
 class viewFilm(QWidget):
-    def __init__(self, film, controller):
+    def __init__(self, film, controller, callback):
         super(viewFilm, self).__init__()
         self.film = film
+        self.callback = callback
         self.controller = controller
         self.vista = uic.loadUi("listaFilm/visualizzaProgrammazione/view/DettagliFilm.ui", self)
         self.vista.Titolo.setText(self.film.titolo)
@@ -25,4 +26,5 @@ class viewFilm(QWidget):
         if result == QMessageBox.Yes:
             self.controller.rimuovi(self.film)
             self.controller.save()
-        self.vista.close()
+            self.callback()
+            self.vista.close()
