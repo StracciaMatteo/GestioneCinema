@@ -14,6 +14,7 @@ class viewInserimentoFilm(QWidget):
 
         self.vista = uic.loadUi("film/inserimentoFilm/view/InserisciFilm.ui", self)
 
+        # bottoni fondo pagina
         self.vista.btn_dialog.accepted.connect(self.save)
         self.vista.btn_dialog.rejected.connect(self.go_back)
 
@@ -24,18 +25,26 @@ class viewInserimentoFilm(QWidget):
     def get_data(self):
         data = self.vista.calendar.selectedDate()
         self.vista.label_data.setText(data.toString('dddd, d MMMM yyyy'))
+        # NEW legge la programmazione del json della data attuale
+        self.controller.leggi(data.toString('d MMMM yyyy'), self.vista)
         self.vista.table_programmazione.doubleClicked.connect(self.assegna_data)
 
     # assegna spettacolo da tabella
     def assegna_data(self, item):
+        data = self.vista.calendar.selectedDate()
         durata = self.vista.timeEdit_durata.time()
         # controlla che tutti i campi siano inseriti ed assegna lo spettacolo
         if self.vista.filmName.text() != '' and durata.hour() < 3 and durata.hour() or durata.minute():
-            self.vista.table_programmazione.setItem(item.row(), item.column(), QTableWidgetItem(str(self.vista.filmName.text())))
+            self.vista.table_programmazione.setItem(item.row(), item.column(),
+                                                    QTableWidgetItem(str(self.vista.filmName.text())))
+            # NEW sostituisce il film selezionato nella variabile ma non nel json
+            self.controller.aggiorna_programmazione(data.toString('d MMMM yyyy'),
+                                                    str(self.vista.filmName.text()), item)
 
     def save(self):
         # aggiungere istruzioni per salvare film e poi chiude il widget
-        self.controller.aggiungi_film(film(self.vista.filmName.text(), self.vista.timeEdit_durata.time(), self.vista.timeEdit_intervallo.time()))
+        self.controller.aggiungi_film(film(self.vista.filmName.text(), self.vista.timeEdit_durata.time(),
+                                           self.vista.timeEdit_intervallo.time()))
         self.controller.save()
 
         self.widget.setCurrentIndex(self.widget.currentIndex() - 1)

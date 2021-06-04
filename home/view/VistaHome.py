@@ -40,11 +40,6 @@ class VistaHome(QWidget):
 
     # Funzioni per accedere a schermate
 
-    '''def prova(self):
-        vista_prova = ViewDipendente(self.widget)
-        self.widget.addWidget(vista_prova)
-        self.widget.setCurrentIndex(self.widget.currentIndex() + 1)'''
-
     # Area Gestione Attività
     def visualizza_inserimento_film(self):
         vista_inserimento_film = viewInserimentoFilm(self.widget)
@@ -71,8 +66,9 @@ class VistaHome(QWidget):
         vista_statistiche = VistaStatisticheBiglietti(self.widget)
         self.widget.addWidget(vista_statistiche)
         self.widget.setCurrentIndex(self.widget.currentIndex() + 1)
-        #Area Gestione Dipendente
+
+    # Area Gestione Dipendente
     def visualizza_inserisci_dipednente(self):
-        vista_inseriscidipendente=ViewInserisciDipendente(self.widget)
+        vista_inseriscidipendente = ViewInserisciDipendente(self.widget)
         self.widget.addWidget(vista_inseriscidipendente)
         self.widget.setCurrentIndex(self.widget.currentIndex() + 1)
