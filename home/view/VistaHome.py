@@ -1,4 +1,4 @@
-import self
+#import self
 from PyQt5 import uic
 from PyQt5.QtWidgets import QWidget
 
@@ -6,7 +6,7 @@ from dipendente.DatiDipendente.view.ViewInserisciDipendente import ViewInserisci
 from film.inserimentoFilm.view.viewInserimentoFilm import viewInserimentoFilm
 from listaFilm.visualizzaProgrammazione.view.viewProgrammazione import viewProgrammazione
 from spesericavi.InserimentoSpeseRicavi.VistaInserimentoSpeseRicavi import VistaInserimentoSpeseRicavi
-from spesericavi.view.VIstaListaMovimenti import VistaListaMovimenti
+from spesericavi.view.VistaListaMovimenti import VistaListaMovimenti
 from statistiche.view.VistaStatisticheBiglietti import VistaStatisticheBiglietti
 
 
