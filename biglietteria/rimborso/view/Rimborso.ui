@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>550</width>
-    <height>299</height>
+    <width>598</width>
+    <height>534</height>
    </rect>
   </property>
   <property name="font">
@@ -21,100 +21,379 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(254, 235, 156);</string>
+   <string notr="true">QWidget{
+background-color: rgb(254, 235, 156);
+}
+
+QPushButton{
+border-radius:15px;
+padding:9px;
+background-color: rgb(55, 92, 108);
+color: rgb(255, 255, 255);
+border-style: outset;
+Width: 50px;
+}
+
+QPushButton:hover{
+cursor: none;
+background-color: rgb(92, 154, 181);
+}
+
+QPushButton:pressed{
+border-style: inset;
+background-color: rgb(48, 80, 91);
+}
+
+QTableWidget{
+selection-background-color:rgb(123, 220, 193);
+padding: 4px;
+}
+
+QHeaderView::section {
+border-radius:10px;
+background-color: rgb(92, 164, 144);
+padding: 4px;
+border: 1px solid #fffff8;
+color: rgb(255, 255, 255);
+font-size: 9pt;
+}
+
+QHeaderView::section:hover,QHeaderView::section:checked{
+border-radius:10px;
+background-color:rgb(123, 220, 193);
+padding: 4px;
+border: 1px solid #fffff8;
+color: rgb(255, 255, 255);
+font-size: 9pt;
+}
+
+QTableView QTableCornerButton::section {
+border-radius:10px;
+border: 2px solid #fffff8;
+}
+
+QCalendarWidget QAbstractItemView:enabled
+{
+border-radius:15px;
+padding: 5px;
+color: rgb(92, 164, 144);
+background-color:rgb(255, 255, 255);
+selection-background-color: rgb(92, 164, 144);
+selection-color:rgb(255, 255, 255);
+}
+
+QCalendarWidget QToolButton {
+border-radius:14px;
+padding: 5px;
+color: white;
+background-color: rgb(92, 164, 144);
+}
+
+QCalendarWidget QMenu {
+left: 20px;
+color: white;
+background-color: rgb(92, 164, 144);
+}
+
+QCalendarWidget QSpinBox {
+color: white;
+background-color: rgb(92, 164, 144);
+selection-background-color: rgb(55, 92, 108);
+selection-color: rgb(255, 255, 255);
+}
+
+QCalendarWidget QSpinBox::up-button {
+background-color: rgb(255, 255, 255);
+border-radius:5px;
+padding: 5px;
+}
+
+QCalendarWidget QSpinBox::down-button {
+background-color: rgb(255, 255, 255);
+border-radius:5px;
+padding: 5px;
+}
+
+QCalendarWidget QSpinBox::up-arrow {
+image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-up-arrow.png)
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+QCalendarWidget QSpinBox::down-arrow {
+
+
+
+image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-arrow.png)
+}
+
+QCalendarWidget QWidget#qt_calendar_navigationbar
+{
+border-radius:13px;
+padding: 10px;
+background-color:rgb(255, 255, 255);
+}
+
+QCalendarWidget QAbstractItemView:disabled
+{
+color:rgb(52, 93, 81);
+}
+
+/*SCROLLBAR*/
+QScrollBar{
+background-color: rgb(55, 92, 108);
+}
+
+QScrollBar::handle:hover{
+background-color: rgb(92, 154, 181);
+}
+
+QScrollBar::handle:pressed{
+background-color: rgb(48, 80, 91);
+}</string>
   </property>
-  <widget class="QWidget" name="gridLayoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>19</x>
-     <y>10</y>
-     <width>522</width>
-     <height>281</height>
-    </rect>
-   </property>
-   <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0">
-     <layout class="QVBoxLayout" name="verticalLayout">
-      <property name="bottomMargin">
-       <number>11</number>
-      </property>
-      <item>
-       <widget class="QLabel" name="label">
-        <property name="font">
-         <font>
-          <pointsize>14</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string>Rimborso Biglietti</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="label_2">
-        <property name="autoFillBackground">
-         <bool>false</bool>
-        </property>
-        <property name="text">
-         <string>Da questa schermata è possibile effettuare il rimborso di un biglietto mediante inserimento di codice univoco.</string>
-        </property>
-        <property name="scaledContents">
-         <bool>true</bool>
-        </property>
-        <property name="wordWrap">
-         <bool>false</bool>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <spacer name="horizontalSpacer">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item alignment="Qt::AlignHCenter|Qt::AlignBottom">
-       <widget class="QLineEdit" name="lineEdit"/>
-      </item>
-      <item alignment="Qt::AlignHCenter">
-       <widget class="QPushButton" name="btn_inserisci">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(55, 92, 108);
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="label">
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Rimborso Biglietti</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_2">
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="text">
+      <string>Da questa schermata è possibile effettuare il rimborso di un biglietto mediante inserimento di codice univoco.</string>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+     <property name="wordWrap">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <property name="bottomMargin">
+      <number>0</number>
+     </property>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <spacer name="verticalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_3">
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>320</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap>../../PycharmProjects/GestioneCinema/images/biglietto.png</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_4">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <property name="bottomMargin">
+      <number>0</number>
+     </property>
+     <item>
+      <spacer name="horizontalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="lineEdit">
+       <property name="styleSheet">
+        <string notr="true">QLineEdit{
+background-color: rgb(255, 255, 255);
+ border-radius: 10px;
+padding: 5px;
+}</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_4">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item alignment="Qt::AlignHCenter">
+    <widget class="QPushButton" name="btn_inserisci">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(55, 92, 108);
 color: rgb(255, 255, 255);</string>
-        </property>
-        <property name="text">
-         <string>Procedi</string>
-        </property>
-        <property name="icon">
-         <iconset>
-          <normaloff>../../.designer/backup/Salva_icon.ico</normaloff>../../.designer/backup/Salva_icon.ico</iconset>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>16</width>
-          <height>16</height>
-         </size>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-   </layout>
-  </widget>
+     </property>
+     <property name="text">
+      <string>Procedi</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../../.designer/backup/Salva_icon.ico</normaloff>../../.designer/backup/Salva_icon.ico</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacer_5">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Fixed</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <spacer name="verticalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>

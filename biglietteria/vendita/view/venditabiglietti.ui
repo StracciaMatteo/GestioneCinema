@@ -14,7 +14,148 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(254, 235, 156);</string>
+   <string notr="true">QWidget{
+background-color: rgb(254, 235, 156);
+}
+
+QPushButton{
+border-radius:15px;
+padding:9px;
+background-color: rgb(55, 92, 108);
+color: rgb(255, 255, 255);
+border-style: outset;
+Width: 50px;
+}
+
+QPushButton:hover{
+cursor: none;
+background-color: rgb(92, 154, 181);
+}
+
+QPushButton:pressed{
+border-style: inset;
+background-color: rgb(48, 80, 91);
+}
+
+QTableWidget{
+selection-background-color:rgb(123, 220, 193);
+padding: 4px;
+}
+
+QHeaderView::section {
+border-radius:10px;
+background-color: rgb(92, 164, 144);
+padding: 4px;
+border: 1px solid #fffff8;
+color: rgb(255, 255, 255);
+font-size: 9pt;
+}
+
+QHeaderView::section:hover,QHeaderView::section:checked{
+border-radius:10px;
+background-color:rgb(123, 220, 193);
+padding: 4px;
+border: 1px solid #fffff8;
+color: rgb(255, 255, 255);
+font-size: 9pt;
+}
+
+QTableView QTableCornerButton::section {
+border-radius:10px;
+border: 2px solid #fffff8;
+}
+
+QCalendarWidget QAbstractItemView:enabled
+{
+border-radius:15px;
+padding: 5px;
+color: rgb(92, 164, 144);
+background-color:rgb(255, 255, 255);
+selection-background-color: rgb(92, 164, 144);
+selection-color:rgb(255, 255, 255);
+}
+
+QCalendarWidget QToolButton {
+border-radius:14px;
+padding: 5px;
+color: white;
+background-color: rgb(92, 164, 144);
+}
+
+QCalendarWidget QMenu {
+left: 20px;
+color: white;
+background-color: rgb(92, 164, 144);
+}
+
+QCalendarWidget QSpinBox {
+color: white;
+background-color: rgb(92, 164, 144);
+selection-background-color: rgb(55, 92, 108);
+selection-color: rgb(255, 255, 255);
+}
+
+QCalendarWidget QSpinBox::up-button {
+background-color: rgb(255, 255, 255);
+border-radius:5px;
+padding: 5px;
+}
+
+QCalendarWidget QSpinBox::down-button {
+background-color: rgb(255, 255, 255);
+border-radius:5px;
+padding: 5px;
+}
+
+QCalendarWidget QSpinBox::up-arrow {
+image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-up-arrow.png)
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+QCalendarWidget QSpinBox::down-arrow {
+
+
+
+image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-arrow.png)
+}
+
+QCalendarWidget QWidget#qt_calendar_navigationbar
+{
+border-radius:13px;
+padding: 10px;
+background-color:rgb(255, 255, 255);
+}
+
+QCalendarWidget QAbstractItemView:disabled
+{
+color:rgb(52, 93, 81);
+}
+
+/*SCROLLBAR*/
+QScrollBar{
+background-color: rgb(55, 92, 108);
+}
+
+QScrollBar::handle:hover{
+background-color: rgb(92, 154, 181);
+}
+
+QScrollBar::handle:pressed{
+background-color: rgb(48, 80, 91);
+}</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -258,7 +399,7 @@
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>../../Documents/elettrromagnetismo/43241.png</pixmap>
+        <pixmap>../../../images/43241.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
