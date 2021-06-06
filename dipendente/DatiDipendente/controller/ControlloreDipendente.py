@@ -6,3 +6,4 @@ class ControlloreDipendente():
 
     def __init__(self):
         super(ControlloreDipendente, self).__init__()
+
