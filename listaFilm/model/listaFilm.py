@@ -9,7 +9,6 @@ class listaFilm():
     def __init__(self):
         super(listaFilm, self).__init__()
         self.lista_film = []
-        # self.spettacoli = dict
 
         # carica lista dei film
         if os.path.isfile('listaFilm/data/lista_film.pickle'):
@@ -27,6 +26,7 @@ class listaFilm():
 
     def rimuovi(self, film):
         self.lista_film.remove(film)
+        self.elimina_film_da_programmazione(film)
 
     def get_lista_film(self):
         return self.lista_film
@@ -68,6 +68,16 @@ class listaFilm():
             orario = "00:00"
 
         self.spettacoli[data][item.row()][orario] = testo
+
+    # prende in input il film da rimuovere e lo rimuove dalla lista della programmazione
+    def elimina_film_da_programmazione(self, film):
+        for data in self.spettacoli:
+            for sala in range(5):
+                for orario in {"15:00", "18:00", "21:00", "00:00"}:
+                    if self.spettacoli[data][sala][orario] == film.titolo:
+                        self.spettacoli[data][sala][orario] = ''
+        # Ricaricare la view programmazione per visualizzare le modifiche in seguito all'eliminazione
+
 
     # salvataggio
     def save(self):

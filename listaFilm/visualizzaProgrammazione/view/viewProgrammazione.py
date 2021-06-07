@@ -75,3 +75,5 @@ class viewProgrammazione(QWidget):
 
     def rimuovi_film_dal_box(self):
         self.vista.box_elenco_film.removeItem(self.vista.box_elenco_film.findText(self.vista.box_elenco_film.currentText()))
+        # se un film è stato rimosso chiamo il refresh della tabella
+        self.get_data()

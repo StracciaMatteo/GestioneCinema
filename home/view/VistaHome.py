@@ -2,7 +2,9 @@
 from PyQt5 import uic
 from PyQt5.QtWidgets import QWidget
 
-from dipendente.ListaDipendente.view.ViewInserisciDipendente import ViewInserisciDipendente
+# from dipendente.DatiDipendente.view.ViewInserisciDipendente import ViewInserisciDipendente
+
+from biglietteria.vendita.view.viewVendita import viewVendita
 from film.inserimentoFilm.view.viewInserimentoFilm import viewInserimentoFilm
 from listaFilm.visualizzaProgrammazione.view.viewProgrammazione import viewProgrammazione
 from spesericavi.InserimentoSpeseRicavi.VistaInserimentoSpeseRicavi import VistaInserimentoSpeseRicavi
@@ -21,7 +23,6 @@ class VistaHome(QWidget):
         # self.vista.box_dipendenti.setDisabled(True)
 
         self.vista.btn_torna.clicked.connect(self.logout)
-        # self.btn_inserimento_film.clicked.connect(self.prova)
 
         # Area Gestione Attività
         self.vista.btn_inserimento_film.clicked.connect(self.visualizza_inserimento_film)
@@ -70,8 +71,8 @@ class VistaHome(QWidget):
 
     # Area Gestione Dipendente
     def visualizza_inserisci_dipendente(self):
-        vista_inseriscidipendente = ViewInserisciDipendente(self.widget)
-        self.widget.addWidget(vista_inseriscidipendente)
+        # vista_inseriscidipendente = ViewInserisciDipendente(self.widget)
+        # self.widget.addWidget(vista_inseriscidipendente)
         self.widget.setCurrentIndex(self.widget.currentIndex() + 1)
 
 

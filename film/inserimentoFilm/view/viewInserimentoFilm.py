@@ -3,6 +3,7 @@ from PyQt5.QtWidgets import QWidget, QTableWidget, QPushButton, QTableWidgetItem
 
 from film.model.film import film
 from listaFilm.controller.controllerListaFilm import controllerListaFilm
+from messaggeError.Error import Error
 
 
 class viewInserimentoFilm(QWidget):
@@ -42,13 +43,18 @@ class viewInserimentoFilm(QWidget):
                                                     str(self.vista.filmName.text()), item)
 
     def save(self):
-        # aggiungere istruzioni per salvare film e poi chiude il widget
-        self.controller.aggiungi_film(film(self.vista.filmName.text(), self.vista.timeEdit_durata.time(),
-                                           self.vista.timeEdit_intervallo.time()))
-        self.controller.save()
+        durata = self.vista.timeEdit_durata.time()
+        if self.vista.filmName.text() != '' and durata.hour() < 3 and durata.hour() or durata.minute():
+            self.controller.aggiungi_film(film(self.vista.filmName.text(), self.vista.timeEdit_durata.time(),
+                                               self.vista.timeEdit_intervallo.time()))
+            self.controller.save()
 
-        self.widget.setCurrentIndex(self.widget.currentIndex() - 1)
-        self.widget.removeWidget(self.vista)
+            self.widget.setCurrentIndex(self.widget.currentIndex() - 1)
+            self.widget.removeWidget(self.vista)
+        else:
+            error = Error("Dati errati", "Assicurati di aver inserito un titolo e dati corretti",
+                          "La durata deve essere compresa fra 1 minuto e 2 ore e 59 minuti")
+            error.error_messagge()
 
     def go_back(self):
         self.widget.setCurrentIndex(self.widget.currentIndex() - 1)
