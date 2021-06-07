@@ -1,6 +1,7 @@
 import json
 import os
 import pickle
+from operator import attrgetter
 
 from PyQt5.QtWidgets import QTableWidgetItem
 
@@ -9,6 +10,7 @@ class listaFilm():
     def __init__(self):
         super(listaFilm, self).__init__()
         self.lista_film = []
+        self.spettacoli = ''
 
         # carica lista dei film
         if os.path.isfile('listaFilm/data/lista_film.pickle'):
@@ -20,9 +22,15 @@ class listaFilm():
             with open('listaFilm/data/programmazione.json', 'r') as p:
                 self.spettacoli = json.load(p)
 
+        # rimuove programmazione più vecchia di 3 giorni
+        '''for data in self.spettacoli:
+            oggi = '''
+
     # funzioni riguardanti i film
     def aggiungi_film(self, film):
         self.lista_film.append(film)
+        # ordina film alfabeticamente
+        self.lista_film.sort(key=attrgetter('titolo'), reverse=False)
 
     def rimuovi(self, film):
         self.lista_film.remove(film)
@@ -38,7 +46,7 @@ class listaFilm():
 
     # funzioni riguardanti gli spettacoli
     def leggi(self, data, vista):
-        index = 0
+
         if not data in self.spettacoli:
             self.spettacoli.update({data: [{"nome": "sala1", "15:00": '', "18:00": '', "21:00": '', "00:00": ''},
                                            {"nome": "sala2", "15:00": '', "18:00": '', "21:00": '', "00:00": ''},
@@ -46,6 +54,7 @@ class listaFilm():
                                            {"nome": "sala4", "15:00": '', "18:00": '', "21:00": '', "00:00": ''},
                                            {"nome": "sala5", "15:00": '', "18:00": '', "21:00": '', "00:00": ''}]})
 
+        index = 0
         for item in self.spettacoli[data]:
             vista.table_programmazione.setItem(index, 0, QTableWidgetItem(
                 self.spettacoli[data][index]["15:00"]))

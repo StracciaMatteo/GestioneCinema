@@ -30,12 +30,14 @@ class viewProgrammazione(QWidget):
         # Interazione con calendario
         self.vista.calendar.clicked.connect(self.get_data)
 
-    # assegna la data dal calendario
+    # assegna la data dal calendario e legge programmazione desiderata
     def get_data(self):
         data = self.vista.calendar.selectedDate()
         self.vista.label_data.setText(data.toString('dddd, d MMMM yyyy'))
+
         # NEW legge la programmazione del json della data attuale
         self.controller.leggi(data.toString('d MMMM yyyy'), self.vista)
+
         self.vista.table_programmazione.doubleClicked.connect(self.assegna_data)
 
     # assegna spettacolo da tabella
