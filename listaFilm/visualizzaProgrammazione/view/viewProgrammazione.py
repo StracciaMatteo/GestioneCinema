@@ -1,5 +1,6 @@
 from PyQt5 import uic
-from PyQt5.QtWidgets import QWidget, QTableWidgetItem, QMessageBox
+from PyQt5.QtCore import QDate
+from PyQt5.QtWidgets import QWidget, QTableWidgetItem
 
 from listaFilm.controller.controllerListaFilm import controllerListaFilm
 from listaFilm.visualizzaProgrammazione.view.viewFilm import viewFilm
@@ -14,6 +15,10 @@ class viewProgrammazione(QWidget):
         self.controller = controllerListaFilm()
 
         self.vista = uic.loadUi("listaFilm/visualizzaProgrammazione/view/ProgrammazioneSpettacoli.ui", self)
+
+        # impostazione parametri calendarWidget per evitare selezioni di date lontane
+        today = QDate.currentDate()
+        self.vista.calendar.setDateRange(today.addDays(-7), today.addMonths(1))
 
         # funzione che assegna al box_elenco_film i film in memoria in ordine alfabetico
         self.popola_box_film()
@@ -43,11 +48,17 @@ class viewProgrammazione(QWidget):
     # assegna spettacolo da tabella
     def assegna_data(self, item):
         data = self.vista.calendar.selectedDate()
-        self.vista.table_programmazione.setItem(item.row(), item.column(),
-                                                QTableWidgetItem(str(self.vista.box_elenco_film.currentText())))
-        # NEW sostituisce il film selezionato nella variabile ma non nel json
-        self.controller.aggiorna_programmazione(data.toString('d MMMM yyyy'),
-                                                str(self.vista.box_elenco_film.currentText()), item)
+        # controlla se l'utente vuole aggiungere o rimuovere un film
+        if self.vista.radioButton_aggiungi.isChecked():
+            self.vista.table_programmazione.setItem(item.row(), item.column(),
+                                                    QTableWidgetItem(str(self.vista.box_elenco_film.currentText())))
+            # NEW sostituisce il film selezionato nella variabile ma non nel json
+            self.controller.aggiorna_programmazione(data.toString('d MMMM yyyy'),
+                                                    str(self.vista.box_elenco_film.currentText()), item)
+        else:
+            self.vista.table_programmazione.setItem(item.row(), item.column(), QTableWidgetItem(''))
+            # NEW sostituisce il film selezionato nella variabile ma non nel json
+            self.controller.aggiorna_programmazione(data.toString('d MMMM yyyy'), '', item)
 
     # funzione che apre la vista dettagli di un film sela lista_film non è vuota
     def show_film(self):

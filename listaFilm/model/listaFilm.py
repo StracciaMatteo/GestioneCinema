@@ -3,6 +3,7 @@ import os
 import pickle
 from operator import attrgetter
 
+from PyQt5.QtCore import QDate
 from PyQt5.QtWidgets import QTableWidgetItem
 
 
@@ -22,9 +23,15 @@ class listaFilm():
             with open('listaFilm/data/programmazione.json', 'r') as p:
                 self.spettacoli = json.load(p)
 
-        # rimuove programmazione più vecchia di 3 giorni
-        '''for data in self.spettacoli:
-            oggi = '''
+        # rimuove programmazione più vecchia di 7 giorni
+        today = QDate.currentDate()
+        toRemove = {}
+        for data in self.spettacoli:
+            data_spettacolo = QDate.fromString(data, 'd MMMM yyyy')
+            if today.addDays(-7) > data_spettacolo:
+                toRemove.update({data: self.spettacoli[data]})
+        for item in toRemove:
+            del self.spettacoli[item]
 
     # funzioni riguardanti i film
     def aggiungi_film(self, film):
@@ -85,14 +92,28 @@ class listaFilm():
                 for orario in {"15:00", "18:00", "21:00", "00:00"}:
                     if self.spettacoli[data][sala][orario] == film.titolo:
                         self.spettacoli[data][sala][orario] = ''
-        # Ricaricare la view programmazione per visualizzare le modifiche in seguito all'eliminazione
-
 
     # salvataggio
     def save(self):
         # salvataggio lista film
         with open('listaFilm/data/lista_film.pickle', 'wb') as handle:
             pickle.dump(self.lista_film, handle, pickle.HIGHEST_PROTOCOL)
+
+        # funzione che pulisce self.spettacoli dalle date senza nessun film
+        toRemove = {}
+        for data in self.spettacoli:
+            flag = True
+            for sala in range(5):
+                for orario in {"15:00", "18:00", "21:00", "00:00"}:
+                    if not self.spettacoli[data][sala][orario] == '':
+                        flag = False
+            if flag:
+                # carica le date vuote in un dictionary
+                toRemove.update({data: self.spettacoli[data]})
+        #legge il dictionary ed elimina le date vuote
+        for item in toRemove:
+            del self.spettacoli[item]
+
         # salvataggio programmazione
         with open("listaFilm/data/programmazione.json", "w") as outfile:
             json.dump(self.spettacoli, outfile, indent=4)

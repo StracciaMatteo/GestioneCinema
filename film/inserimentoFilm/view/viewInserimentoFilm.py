@@ -1,4 +1,5 @@
 from PyQt5 import uic
+from PyQt5.QtCore import QDate
 from PyQt5.QtWidgets import QWidget, QTableWidget, QPushButton, QTableWidgetItem
 
 from film.model.film import film
@@ -14,6 +15,10 @@ class viewInserimentoFilm(QWidget):
         self.controller = controllerListaFilm()
 
         self.vista = uic.loadUi("film/inserimentoFilm/view/InserisciFilm.ui", self)
+
+        # impostazione parametri calendarWidget per evitare selezioni di date lontane
+        today = QDate.currentDate()
+        self.vista.calendar.setDateRange(today.addDays(-7), today.addMonths(1))
 
         # bottoni fondo pagina
         self.vista.btn_dialog.accepted.connect(self.save)
