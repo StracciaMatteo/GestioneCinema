@@ -3,7 +3,7 @@ from PyQt5 import uic
 from PyQt5.QtWidgets import QWidget
 
 # from dipendente.DatiDipendente.view.ViewInserisciDipendente import ViewInserisciDipendente
-
+from biglietteria.rimborso.view.viewRimborso import viewRimborso
 from biglietteria.vendita.view.viewVendita import viewVendita
 from film.inserimentoFilm.view.viewInserimentoFilm import viewInserimentoFilm
 from listaFilm.visualizzaProgrammazione.view.viewProgrammazione import viewProgrammazione
@@ -36,6 +36,7 @@ class VistaHome(QWidget):
         self.vista.btn_inserimento_dipendente.clicked.connect(self.visualizza_inserisci_dipendente)
         # Area Biglietteria
         self.vista.btn_vendita_biglietti.clicked.connect(self.vendita_biglietti)
+        self.vista.btn_rimborso_biglietti.clicked.connect(self.rimborso_biglietti)
 
     def logout(self):
         self.widget.setCurrentIndex(self.widget.currentIndex() - 1)
@@ -81,4 +82,9 @@ class VistaHome(QWidget):
     def vendita_biglietti(self):
         vista_Vendita = viewVendita(self.widget)
         self.widget.addWidget(vista_Vendita)
+        self.widget.setCurrentIndex(self.widget.currentIndex() + 1)
+
+    def rimborso_biglietti(self):
+        vista_Rimborso = viewRimborso(self.widget)
+        self.widget.addWidget(vista_Rimborso)
         self.widget.setCurrentIndex(self.widget.currentIndex() + 1)
