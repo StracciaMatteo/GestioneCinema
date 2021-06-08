@@ -1,7 +1,9 @@
 from PyQt5 import uic
-from PyQt5.QtWidgets import QWidget
+from PyQt5.QtCore import QDate
+from PyQt5.QtWidgets import QWidget, QTableWidgetItem
 
 from biglietteria.controller.controllerTicket import controllerTicket
+from listaFilm.controller.controllerListaFilm import controllerListaFilm
 
 
 class viewVendita(QWidget):
@@ -9,10 +11,33 @@ class viewVendita(QWidget):
         super(viewVendita, self).__init__()
         self.widget = widget
         #self.controller = controllerTicket()
+        self.programmazione = controllerListaFilm()
         self.vista = uic.loadUi("biglietteria/vendita/view/venditabiglietti.ui",self)
+
+        # impostazione parametri calendarWidget per evitare selezioni di date lontane
+        today = QDate.currentDate()
+        self.vista.calendar.setDateRange(today.addDays(-7), today.addMonths(1))
 
         # bottone indietro
         self.vista.btn_torna.clicked.connect(self.go_back)
+
+        # Interazione con calendario
+        self.vista.calendar.clicked.connect(self.get_data)
+
+    # assegna la data dal calendario e legge programmazione desiderata
+    def get_data(self):
+        data = self.vista.calendar.selectedDate()
+        self.vista.label_data.setText(data.toString('dddd, d MMMM yyyy'))
+
+        # NEW legge la programmazione del json della data attuale
+        self.programmazione.leggi(data.toString('d MMMM yyyy'), self.vista)
+
+        self.vista.table_programmazione.clicked.connect(self.assegna_data)
+
+    # seleziona una proiezione specifica e ne permette la vendita
+    def assegna_data(self, item):
+        print("cliccata cella in posizione: riga {}, colonna {}".format(item.row(), item.column()))
+        pass
 
     def go_back(self):
         self.widget.setCurrentIndex(self.widget.currentIndex() - 1)

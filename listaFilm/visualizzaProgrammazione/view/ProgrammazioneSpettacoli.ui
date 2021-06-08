@@ -336,20 +336,6 @@ border-style: outset;
              <property name="styleSheet">
               <string notr="true"/>
              </property>
-             <property name="minimumDate">
-              <date>
-               <year>2021</year>
-               <month>5</month>
-               <day>27</day>
-              </date>
-             </property>
-             <property name="maximumDate">
-              <date>
-               <year>2021</year>
-               <month>7</month>
-               <day>3</day>
-              </date>
-             </property>
              <property name="gridVisible">
               <bool>true</bool>
              </property>
