@@ -10,3 +10,11 @@ class viewRimborso(QWidget):
         self.widget = widget
         # self.controller = controllerTicket()
         self.vista = uic.loadUi("biglietteria/rimborso/view/Rimborso.ui", self)
+
+        #bottone indietro
+        self.vista.btn_torna.clicked.connect(self.go_back)
+
+
+    def go_back(self):
+        self.widget.setCurrentIndex(self.widget.currentIndex() - 1)
+        self.widget.removeWidget(self.vista)
