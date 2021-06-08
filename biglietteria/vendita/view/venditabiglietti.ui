@@ -424,7 +424,7 @@ background-color: rgb(48, 80, 91);
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>../../Documents/elettrromagnetismo/43840.png</pixmap>
+        <pixmap>../../../images/3289573-guy-individual-man-people-peron_107088.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -449,7 +449,7 @@ background-color: rgb(48, 80, 91);
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>../../Downloads/3289573-guy-individual-man-people-peron_107088.png</pixmap>
+        <pixmap>../../../images/43840.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
