@@ -1,7 +1,7 @@
+import os
+import pickle
 from PyQt5 import uic
-from PyQt5.QtWidgets import QWidget, QMessageBox, QTableWidget
-
-from spesericavi.view.VistaListaMovimenti import VistaListaMovimenti
+from PyQt5.QtWidgets import QWidget, QMessageBox
 
 
 class VistaInserimentoSpeseRicavi(QWidget):
@@ -10,7 +10,7 @@ class VistaInserimentoSpeseRicavi(QWidget):
         self.widget = widget
         self.vista= uic.loadUi("spesericavi/InserimentoSpeseRicavi/Inserisci_Movimento_UI.ui",self)
 
-
+        self.listaSR=[]
         self.btn_torna_IM.clicked.connect(self.go_back)
         self.vista.btn_InserisciMov.clicked.connect(self.inserisci_movimento)
 
@@ -18,25 +18,24 @@ class VistaInserimentoSpeseRicavi(QWidget):
     def go_back(self):
         self.widget.setCurrentIndex(self.widget.currentIndex() - 1)
         self.widget.removeWidget(self.vista)
-    #
+    #questa funzione prende dall'interfaccia i dati e salva la voce nella lista delle voci di spese e ricavi
     def inserisci_movimento(self):
         descrizione=self.vista.lineEdit_DescrizionVoce.text()
         importo= self.vista.lineEdit_Importo.text()
         segno= self.vista.comboBox_Segno.currentText()
         try:
-            if float(importo):
+            if (float(importo) != "" and descrizione != "" ):
                 print(descrizione)
                 print(segno+importo+"€")
         except(Exception):
             self.box_dialog()
 
-        tabella = VistaListaMovimenti.vista.table_ListaMov
-        lastrow = tabella.rowCount()
-        tabella.insertRow(lastrow)
-        item = QTableWidget(str(self.segno)+str(self.importo))
-        item2=QTableWidget(str(self.descrizione))
-        self.tabella.setItem(lastrow,0,item2)
-        self.tabella.setItem(lastrow,1,item)
+
+
+
+
+
+
 
 
 
