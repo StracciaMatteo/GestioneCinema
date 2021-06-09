@@ -7,9 +7,10 @@ from biglietteria.rimborso.view.viewRimborso import viewRimborso
 from biglietteria.vendita.view.viewVendita import viewVendita
 from film.inserimentoFilm.view.viewInserimentoFilm import viewInserimentoFilm
 from listaFilm.visualizzaProgrammazione.view.viewProgrammazione import viewProgrammazione
-from spesericavi.InserimentoSpeseRicavi.VistaInserimentoSpeseRicavi import VistaInserimentoSpeseRicavi
+from InserimentoSpeseRicavi.view.VistaInserimentoSpeseRicavi import VistaInserimentoSpeseRicavi
 from spesericavi.view.VistaListaMovimenti import VistaListaMovimenti
 from statistiche.view.VistaStatisticheBiglietti import VistaStatisticheBiglietti
+
 
 
 class VistaHome(QWidget):

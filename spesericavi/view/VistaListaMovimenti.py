@@ -1,7 +1,7 @@
 from PyQt5 import uic
 from PyQt5.QtWidgets import QWidget
 
-from spesericavi.InserimentoSpeseRicavi.VistaInserimentoSpeseRicavi import VistaInserimentoSpeseRicavi
+from InserimentoSpeseRicavi.view.VistaInserimentoSpeseRicavi import VistaInserimentoSpeseRicavi
 
 
 class VistaListaMovimenti(QWidget):
