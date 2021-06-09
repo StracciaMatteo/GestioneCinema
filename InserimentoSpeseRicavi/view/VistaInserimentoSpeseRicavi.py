@@ -13,7 +13,7 @@ class VistaInserimentoSpeseRicavi(QWidget):
         self.controller = controller
 
         self.btn_torna_IM.clicked.connect(self.go_back)
-        self.vista.btn_InserisciMov.clicked.connect(self.get_dati)
+        self.vista.btn_InserisciMov.clicked.connect(self.add_voce)
 
 
     #Funzione che torna alla pagina precedente
@@ -21,7 +21,7 @@ class VistaInserimentoSpeseRicavi(QWidget):
         self.widget.setCurrentIndex(self.widget.currentIndex() - 1)
         self.widget.removeWidget(self.vista)
     #questa funzione prende dall'interfaccia i dati e salva la voce nella lista delle voci di spese e ricavi
-    def get_dati(self):
+    def add_voce(self):
         descrizione=self.vista.lineEdit_DescrizionVoce.text()
         importo= self.vista.lineEdit_Importo.text()
         segno= self.vista.comboBox_Segno.currentText()
@@ -32,6 +32,7 @@ class VistaInserimentoSpeseRicavi(QWidget):
         except(Exception):
             self.box_dialog()
         self.controller.aggiungi_voce(Voce(descrizione,importo,segno))
+
 
 
 
