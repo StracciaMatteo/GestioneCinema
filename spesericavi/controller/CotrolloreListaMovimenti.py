@@ -1,8 +1,11 @@
-class ControlloreInserisciMovimento():
+from spesericavi.model import modelloListaMovimenti
+
+
+class ControlloreListaMovimenti():
 
     def __init__(self):
-        super(ControlloreInserisciMovimento, self).__init__()
-
+        super(ControlloreListaMovimenti, self).__init__()
+        self.model = modelloListaMovimenti
     #
     def InserisciVoce(self):
         pass

@@ -4,3 +4,4 @@ class Voce():
         self.segno = segno
         self.importo = importo
         self.descrizione = descrizione
+
