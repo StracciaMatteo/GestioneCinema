@@ -1,21 +1,14 @@
-import os.path
-import pickle
-
-from spesericavi.model.modelloListaMovimenti import ListaMovimenti
+from InserimentoSpeseRicavi.model.Voce import Voce
 
 
-class ControlloreListaSpeseRicavi():
+class ControlloreInserimentoSR():
     def __init__(self):
-        super(ControlloreListaSpeseRicavi,self).__init__()
-        self.model= ListaMovimenti()
-        if os.path.isfile("spesericavi/InsermentoSpeseRicavi/datilistaSR/lista_movimenti.pickle"):
-            print("Esiste")
-            with open("spesericavi/InsermentoSpeseRicavi/datilistaSR/lista_movimenti.pickle","rb")as f:
-                lista_movimenti= pickle.load()
-            self.model= lista_movimenti
+        super(ControlloreInserimentoSR,self).__init__()
+        self.model= Voce()
 
-    def aggiungi_voce(self,descrizione,segno,importo):
-        self.model.aggiungi_voce(descrizione,importo,segno)
-        with open("spesericavi/InsermentoSpeseRicavi/datilistaSR/lista_movimenti.pickle","wb") as handle:
-            pickle.dump(self.model,handle,pickle.HIGHEST_PROTOCOL)
+    def aggiungi_voce(self,model):
+        self.model.aggiungi_voce(model)
+
+    def save(self):
+        self.model.save()
 

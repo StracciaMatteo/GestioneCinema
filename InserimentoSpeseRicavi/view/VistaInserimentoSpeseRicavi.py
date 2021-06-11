@@ -2,21 +2,21 @@
 from PyQt5 import uic
 from PyQt5.QtWidgets import QWidget, QMessageBox
 
-from InserimentoSpeseRicavi.model.Voce import Voce
+from InserimentoSpeseRicavi.controller.ControlloreInserimentoSR import ControlloreInserimentoSR
+from InserimentoSpeseRicavi.model.ModelVoce import ModelVoce
 
 
 class VistaInserimentoSpeseRicavi(QWidget):
-    def __init__(self, widget,controller):
+    def __init__(self, widget):
         super(VistaInserimentoSpeseRicavi,self).__init__()
         self.widget = widget
-        self.vista= uic.loadUi("spesericavi/InserimentoSpeseRicavi/Inserisci_Movimento_UI.ui",self)
-        self.controller = controller
-
+        self.controllerInserimentoSR= ControlloreInserimentoSR()
+        self.vista= uic.loadUi("InserimentoSpeseRicavi/view/Inserisci_Movimento_UI.ui",self)
         self.btn_torna_IM.clicked.connect(self.go_back)
-        self.vista.btn_InserisciMov.clicked.connect(self.add_voce)
+        self.vista.btn_InserisciMov.clicked.connect(self.save)
 
 
-    #Funzione che torna alla pagina precedente
+    #Funzione che fa "scorrere" il widget all'indice precedente
     def go_back(self):
         self.widget.setCurrentIndex(self.widget.currentIndex() - 1)
         self.widget.removeWidget(self.vista)
@@ -31,7 +31,13 @@ class VistaInserimentoSpeseRicavi(QWidget):
                 print(segno+importo+"€")
         except(Exception):
             self.box_dialog()
-        self.controller.aggiungi_voce(Voce(descrizione,importo,segno))
+        model= ModelVoce(segno,importo,descrizione)
+        return model
+    #questa funzione implementa il salvataggio dei dati della voce
+    def save(self):
+        self.controllerInserimentoSR.aggiungi_voce(self.add_voce())
+        self.controllerInserimentoSR.save()
+
 
 
 

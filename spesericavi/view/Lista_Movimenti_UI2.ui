@@ -358,6 +358,9 @@ padding: 3px;</string>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
          </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
          <property name="placeholderText">
           <string>00.00 €</string>
          </property>

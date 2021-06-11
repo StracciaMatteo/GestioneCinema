@@ -1,9 +1,9 @@
 import pickle
 import os.path
 
-class modellaListaMovimenti():
+class modelloListaMovimenti():
     def __init__(self):
-        super(modellaListaMovimenti,self).__init__()
+        super(modelloListaMovimenti,self).__init__()
         self.lista_movimenti = []
         if os.path.isfile('spesericavi/datalistaSR/lista_movimenti.pickle'):
             with open('spesericavi/datalistaSR/lista_movimenti.pickle', 'rb') as f:
@@ -11,8 +11,8 @@ class modellaListaMovimenti():
 
 
 
-    def aggiungi_voce(self,segno,importo,descrizione):
-        self.lista_movimenti.append(descrizione,segno,importo)
+    def aggiungi_voce(self,Voce):
+        self.lista_movimenti.append(Voce)
 
     def get_lista_movimenti(self,index):
         return self.lista_movimenti[index]
