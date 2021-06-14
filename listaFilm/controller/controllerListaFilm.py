@@ -26,6 +26,14 @@ class controllerListaFilm():
     def aggiorna_programmazione(self, data, testo, item):
         self.model.aggiorna_programmazione(data, testo, item)
 
+    # funzioni per vendita e rimborso biglietti
+
+    def vendi_biglietto(self, data, item, quantità):
+        return self.model.vendi_biglietto(data, item, quantità)
+
+    def rimborsa_biglietto(self, codice_univoco):
+        self.model.rimborsa_biglietto(codice_univoco)
+
     # salvataggio
     def save(self):
         self.model.save()

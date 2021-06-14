@@ -18,3 +18,10 @@ class viewRimborso(QWidget):
     def go_back(self):
         self.widget.setCurrentIndex(self.widget.currentIndex() - 1)
         self.widget.removeWidget(self.vista)
+
+    '''
+    per rimborsare, dopo la pressione del bottone 'procedi' passare alla funzione rimborso_biglietto del controller 
+    listaFilm il codice univoco letto dalla LineEdit e il rimborso verrà fatto automaticamente se lo spettacolo esiste 
+    e il codice è corretto. Chiamare la funzione save del controller per salvare la nuova situazione di disponibilità
+    dei posti
+    '''

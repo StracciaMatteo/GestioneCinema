@@ -9,7 +9,7 @@ class ViewLogin(QWidget):
     def __init__(self, widget):
         super(ViewLogin, self).__init__()
         self.widget = widget
-        self.vista = uic.loadUi("Login/View/LoginFinal.ui",self)
+        self.vista = uic.loadUi("Login/View/LoginFinal.ui", self)
 
         self.controller = ControlloreLogin()
 

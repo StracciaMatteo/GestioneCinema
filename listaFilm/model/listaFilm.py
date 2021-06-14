@@ -6,6 +6,8 @@ from operator import attrgetter
 from PyQt5.QtCore import QDate
 from PyQt5.QtWidgets import QTableWidgetItem
 
+from messaggeError.Error import Error
+
 
 class listaFilm():
     def __init__(self):
@@ -34,6 +36,7 @@ class listaFilm():
             del self.spettacoli[item]
 
     # funzioni riguardanti i film
+
     def aggiungi_film(self, film):
         self.lista_film.append(film)
         # ordina film alfabeticamente
@@ -52,25 +55,41 @@ class listaFilm():
                 return film
 
     # funzioni riguardanti gli spettacoli
+
     def leggi(self, data, vista):
 
         if not data in self.spettacoli:
-            self.spettacoli.update({data: [{"nome": "sala1", "15:00": '', "18:00": '', "21:00": '', "00:00": ''},
-                                           {"nome": "sala2", "15:00": '', "18:00": '', "21:00": '', "00:00": ''},
-                                           {"nome": "sala3", "15:00": '', "18:00": '', "21:00": '', "00:00": ''},
-                                           {"nome": "sala4", "15:00": '', "18:00": '', "21:00": '', "00:00": ''},
-                                           {"nome": "sala5", "15:00": '', "18:00": '', "21:00": '', "00:00": ''}]})
+            self.spettacoli.update({data: [{"nome": "sala1", "15:00": {"titolo": '', "posti": 0},
+                                            "18:00": {"titolo": '', "posti": 0},
+                                            "21:00": {"titolo": '', "posti": 0},
+                                            "00:00": {"titolo": '', "posti": 0}},
+                                           {"nome": "sala2", "15:00": {"titolo": '', "posti": 0},
+                                            "18:00": {"titolo": '', "posti": 0},
+                                            "21:00": {"titolo": '', "posti": 0},
+                                            "00:00": {"titolo": '', "posti": 0}},
+                                           {"nome": "sala3", "15:00": {"titolo": '', "posti": 0},
+                                            "18:00": {"titolo": '', "posti": 0},
+                                            "21:00": {"titolo": '', "posti": 0},
+                                            "00:00": {"titolo": '', "posti": 0}},
+                                           {"nome": "sala4", "15:00": {"titolo": '', "posti": 0},
+                                            "18:00": {"titolo": '', "posti": 0},
+                                            "21:00": {"titolo": '', "posti": 0},
+                                            "00:00": {"titolo": '', "posti": 0}},
+                                           {"nome": "sala5", "15:00": {"titolo": '', "posti": 0},
+                                            "18:00": {"titolo": '', "posti": 0},
+                                            "21:00": {"titolo": '', "posti": 0},
+                                            "00:00": {"titolo": '', "posti": 0}}]})
 
         index = 0
         for item in self.spettacoli[data]:
             vista.table_programmazione.setItem(index, 0, QTableWidgetItem(
-                self.spettacoli[data][index]["15:00"]))
+                self.spettacoli[data][index]["15:00"]["titolo"]))
             vista.table_programmazione.setItem(index, 1, QTableWidgetItem(
-                self.spettacoli[data][index]["18:00"]))
+                self.spettacoli[data][index]["18:00"]["titolo"]))
             vista.table_programmazione.setItem(index, 2, QTableWidgetItem(
-                self.spettacoli[data][index]["21:00"]))
+                self.spettacoli[data][index]["21:00"]["titolo"]))
             vista.table_programmazione.setItem(index, 3, QTableWidgetItem(
-                self.spettacoli[data][index]["00:00"]))
+                self.spettacoli[data][index]["00:00"]["titolo"]))
             index += 1
 
     def aggiorna_programmazione(self, data, testo, item):
@@ -83,17 +102,56 @@ class listaFilm():
         else:
             orario = "00:00"
 
-        self.spettacoli[data][item.row()][orario] = testo
+        self.spettacoli[data][item.row()][orario] = {"titolo": testo, "posti": 0}
 
     # prende in input il film da rimuovere e lo rimuove dalla lista della programmazione
     def elimina_film_da_programmazione(self, film):
         for data in self.spettacoli:
             for sala in range(5):
                 for orario in {"15:00", "18:00", "21:00", "00:00"}:
-                    if self.spettacoli[data][sala][orario] == film.titolo:
-                        self.spettacoli[data][sala][orario] = ''
+                    if self.spettacoli[data][sala][orario]["titolo"] == film.titolo:
+                        self.spettacoli[data][sala][orario] = {"titolo": '', "posti": 0}
 
-    # salvataggio
+    # funzioni per vendita e rimborso biglietti
+
+    def vendi_biglietto(self, data, item, quantità):
+        if item.column() == 0:
+            orario = "15:00"
+        elif item.column() == 1:
+            orario = "18:00"
+        elif item.column() == 2:
+            orario = "21:00"
+        else:
+            orario = "00:00"
+
+        self.spettacoli[data][item.row()][orario]["posti"] += quantità
+
+        codice_univoco = data.toString('ddMMyyyy') + str(item.row()) + str(item.column())
+        return codice_univoco
+
+    def rimborsa_biglietto(self, codice_univoco):
+        indices = [0, 8, 9]
+        parts = [codice_univoco[i:j] for i, j in zip(indices, indices[1:] + [None])]
+        qdate = QDate.fromString(parts[0], 'ddMMyyyy')
+        data = qdate.toString('d MMMM yyyy')
+        sala = int(parts[1])
+
+        if int(parts[2]) == 0:
+            orario = "15:00"
+        elif int(parts[2]) == 1:
+            orario = "18:00"
+        elif int(parts[2]) == 2:
+            orario = "21:00"
+        else:
+            orario = "00:00"
+        try:
+            #rimborsa il biglietto se lo spettacolo è presente nel sistema
+            self.spettacoli[data][sala][orario]["posti"] -= 1
+        except(Exception):
+            error = Error("Errore", "Codice errato o spettacolo non più presente nel sistema", "procedere manualmente")
+            error.error_messagge()
+
+    # SALVATAGGIO
     def save(self):
         # salvataggio lista film
         with open('listaFilm/data/lista_film.pickle', 'wb') as handle:
@@ -105,7 +163,7 @@ class listaFilm():
             flag = True
             for sala in range(5):
                 for orario in {"15:00", "18:00", "21:00", "00:00"}:
-                    if not self.spettacoli[data][sala][orario] == '':
+                    if not self.spettacoli[data][sala][orario]["titolo"] == '':
                         flag = False
             if flag:
                 # carica le date vuote in un dictionary
