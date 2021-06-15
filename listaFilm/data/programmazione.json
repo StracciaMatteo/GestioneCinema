@@ -3,7 +3,7 @@
         {
             "nome": "sala1",
             "15:00": {
-                "titolo": "prova",
+                "titolo": "cc",
                 "posti": 0
             },
             "18:00": {
@@ -15,7 +15,7 @@
                 "posti": 0
             },
             "00:00": {
-                "titolo": "prova",
+                "titolo": "",
                 "posti": 0
             }
         },
@@ -60,7 +60,7 @@
         {
             "nome": "sala4",
             "15:00": {
-                "titolo": "prova",
+                "titolo": "",
                 "posti": 0
             },
             "18:00": {

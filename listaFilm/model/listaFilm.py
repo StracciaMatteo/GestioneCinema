@@ -103,6 +103,7 @@ class listaFilm():
             orario = "00:00"
 
         self.spettacoli[data][item.row()][orario] = {"titolo": testo, "posti": 0}
+        self.vendi_biglietto(data, item, 144)
 
     # prende in input il film da rimuovere e lo rimuove dalla lista della programmazione
     def elimina_film_da_programmazione(self, film):
@@ -123,11 +124,15 @@ class listaFilm():
             orario = "21:00"
         else:
             orario = "00:00"
+        if self.spettacoli[data.toString('d MMMM yyyy')][item.row()][orario]["posti"] <= (144 - quantità):
+            self.spettacoli[data.toString('d MMMM yyyy')][item.row()][orario]["posti"] += quantità
 
-        self.spettacoli[data][item.row()][orario]["posti"] += quantità
-
-        codice_univoco = data.toString('ddMMyyyy') + str(item.row()) + str(item.column())
-        return codice_univoco
+            codice_univoco = data.toString('ddMMyyyy') + str(item.row()) + str(item.column())
+            return codice_univoco
+        else:
+            error = Error("Errore", "Numero di posti disponibili non sufficiente a soddisfare la richiesta",
+                          "selezionare un altro spettacolo")
+            error.error_messagge()
 
     def rimborsa_biglietto(self, codice_univoco):
         indices = [0, 8, 9]
