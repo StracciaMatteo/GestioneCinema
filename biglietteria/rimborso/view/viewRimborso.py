@@ -1,5 +1,7 @@
 from PyQt5 import uic
 from PyQt5.QtWidgets import QWidget
+from listaFilm.controller.controllerListaFilm import controllerListaFilm
+
 
 from biglietteria.controller.controllerTicket import controllerTicket
 
@@ -13,6 +15,10 @@ class viewRimborso(QWidget):
 
         #bottone indietro
         self.vista.btn_torna.clicked.connect(self.go_back)
+
+        self.vista.btn_procedi.clicked.connect(self.rimborsa_biglietto(self, codice_univoco))
+
+
 
 
     def go_back(self):

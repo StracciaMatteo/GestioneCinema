@@ -36,6 +36,9 @@ class viewVendita(QWidget):
 
     # seleziona una proiezione specifica e ne permette la vendita
     def assegna_data(self, item):
+        self.vista.btn_genera.clicked.connect(self.vendi_biglietto(self.vista.calendar.selectedDate(), item, quantità))
+
+
         '''
         inserire il comando che collega il bottone genera alla funzione vendi_biglietto del controller
         la funzione vendi_biglietto richiede come parametri self.vista.calendar.selectedDate(), item e la quantità da
@@ -48,3 +51,5 @@ class viewVendita(QWidget):
     def go_back(self):
         self.widget.setCurrentIndex(self.widget.currentIndex() - 1)
         self.widget.removeWidget(self.vista)
+        self.controller.save()
+
