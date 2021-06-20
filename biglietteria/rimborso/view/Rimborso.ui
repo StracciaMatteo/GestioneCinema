@@ -358,7 +358,7 @@ border-style: outset;
       </spacer>
      </item>
      <item>
-      <widget class="QLineEdit" name="lineEdit">
+      <widget class="QLineEdit" name="codice">
        <property name="styleSheet">
         <string notr="true">QLineEdit{
 background-color: rgb(255, 255, 255);
@@ -384,7 +384,7 @@ padding: 5px;
     </layout>
    </item>
    <item alignment="Qt::AlignHCenter">
-    <widget class="QPushButton" name="btn_inserisci">
+    <widget class="QPushButton" name="procedi">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
        <horstretch>0</horstretch>

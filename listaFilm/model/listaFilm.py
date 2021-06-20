@@ -115,7 +115,7 @@ class listaFilm():
 
     # funzioni per vendita e rimborso biglietti
 
-    def vendi_biglietto(self, data, item, quantità):
+    def vendi_biglietto(self, data, item, quantita):
         if item.column() == 0:
             orario = "15:00"
         elif item.column() == 1:
@@ -124,8 +124,8 @@ class listaFilm():
             orario = "21:00"
         else:
             orario = "00:00"
-        if self.spettacoli[data.toString('d MMMM yyyy')][item.row()][orario]["posti"] <= (144 - quantità):
-            self.spettacoli[data.toString('d MMMM yyyy')][item.row()][orario]["posti"] += quantità
+        if self.spettacoli[data.toString('d MMMM yyyy')][item.row()][orario]["posti"] <= (144 - quantita):
+            self.spettacoli[data.toString('d MMMM yyyy')][item.row()][orario]["posti"] += quantita
 
             codice_univoco = data.toString('ddMMyyyy') + str(item.row()) + str(item.column())
             return codice_univoco

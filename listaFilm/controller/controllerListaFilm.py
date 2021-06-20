@@ -28,8 +28,8 @@ class controllerListaFilm():
 
     # funzioni per vendita e rimborso biglietti
 
-    def vendi_biglietto(self, data, item, quantità):
-        return self.model.vendi_biglietto(data, item, quantità)
+    def vendi_biglietto(self, data, item, quantita):
+        return self.model.vendi_biglietto(data, item, quantita)
 
     def rimborsa_biglietto(self, codice_univoco):
         self.model.rimborsa_biglietto(codice_univoco)
