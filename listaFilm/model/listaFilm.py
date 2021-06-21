@@ -58,7 +58,7 @@ class listaFilm():
 
     def leggi(self, data, vista):
 
-        if not data in self.spettacoli:
+        if data not in self.spettacoli:
             self.spettacoli.update({data: [{"nome": "sala1", "15:00": {"titolo": '', "posti": 0},
                                             "18:00": {"titolo": '', "posti": 0},
                                             "21:00": {"titolo": '', "posti": 0},
@@ -103,7 +103,6 @@ class listaFilm():
             orario = "00:00"
 
         self.spettacoli[data][item.row()][orario] = {"titolo": testo, "posti": 0}
-        self.vendi_biglietto(data, item, 144)
 
     # prende in input il film da rimuovere e lo rimuove dalla lista della programmazione
     def elimina_film_da_programmazione(self, film):
@@ -135,26 +134,36 @@ class listaFilm():
             error.error_messagge()
 
     def rimborsa_biglietto(self, codice_univoco):
-        indices = [0, 8, 9]
-        parts = [codice_univoco[i:j] for i, j in zip(indices, indices[1:] + [None])]
-        qdate = QDate.fromString(parts[0], 'ddMMyyyy')
-        data = qdate.toString('d MMMM yyyy')
-        sala = int(parts[1])
-
-        if int(parts[2]) == 0:
-            orario = "15:00"
-        elif int(parts[2]) == 1:
-            orario = "18:00"
-        elif int(parts[2]) == 2:
-            orario = "21:00"
-        else:
-            orario = "00:00"
-        try:
-            #rimborsa il biglietto se lo spettacolo è presente nel sistema
-            self.spettacoli[data][sala][orario]["posti"] -= 1
-        except(Exception):
-            error = Error("Errore", "Codice errato o spettacolo non più presente nel sistema", "procedere manualmente")
+        if len(codice_univoco) != 10:
+            error = Error("Errore", "Formato codice errato", "riprova")
             error.error_messagge()
+        else:
+            indices = [0, 8, 9]
+            parts = [codice_univoco[i:j] for i, j in zip(indices, indices[1:] + [None])]
+            qdate = QDate.fromString(parts[0], 'ddMMyyyy')
+            data = qdate.toString('d MMMM yyyy')
+            sala = int(parts[1])
+
+            if int(parts[2]) == 0:
+                orario = "15:00"
+            elif int(parts[2]) == 1:
+                orario = "18:00"
+            elif int(parts[2]) == 2:
+                orario = "21:00"
+            else:
+                orario = "00:00"
+            try:
+                # rimborsa il biglietto se lo spettacolo è presente nel sistema e il biglietto è stato venduto
+                if self.spettacoli[data][sala][orario]["posti"] == 0:
+                    error = Error("Errore", "Nessun biglietto venduto per questo spettacolo",
+                                  "impossibile rimborsare")
+                    error.error_messagge()
+                else:
+                    self.spettacoli[data][sala][orario]["posti"] -= 1
+            except Exception:
+                error = Error("Errore", "Codice errato o spettacolo non più presente nel sistema",
+                              "procedere manualmente")
+                error.error_messagge()
 
     # SALVATAGGIO
     def save(self):
@@ -173,7 +182,7 @@ class listaFilm():
             if flag:
                 # carica le date vuote in un dictionary
                 toRemove.update({data: self.spettacoli[data]})
-        #legge il dictionary ed elimina le date vuote
+        # legge il dictionary ed elimina le date vuote
         for item in toRemove:
             del self.spettacoli[item]
 
