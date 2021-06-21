@@ -1,9 +1,9 @@
 class DipendenteModel():
 
-    def __init__(self,nome,congnome,sesso,data_nascita,luogo_nascita,mansione,cf,stipendio,id,turno_lavoro,girono_lavoro,ferie_dal,ferie_al,commento):
+    def __init__(self,nome,cognome,sesso,data_nascita,luogo_nascita,mansione,cf,stipendio,id,turno_lavoro,girono_lavoro,ferie_dal,ferie_al,commento):
         super(DipendenteModel, self).__init__()
         self.nome=nome
-        self.congnome=congnome
+        self.cognome=cognome
         self.sesso=sesso
         self.data_nascita=data_nascita
         self.luogo_nascita=luogo_nascita

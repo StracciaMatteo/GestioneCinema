@@ -10,5 +10,8 @@ class ControllerListaDipendenti():
     def aggiungi_dipendente(self, modello):
         self.modeldip.aggiungi_dipendente(modello)
 
+    def get_dipendente_by_name(self,name):
+        return self.modeldip.get_dipendente_by_name(name)
+
     def save(self):
         self.modeldip.save()

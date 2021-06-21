@@ -3,7 +3,6 @@ from PyQt5.QtWidgets import QWidget
 
 from dipendente.DatiDipendente.model.DipendenteModel import DipendenteModel
 from dipendente.ListaDipendente.controller.ControllerListaDipendenti import ControllerListaDipendenti
-from dipendente.ListaDipendente.model.ListaDipendenti import ListaDipendenti
 
 
 class ViewInserisciDipendente(QWidget):
@@ -29,11 +28,11 @@ class ViewInserisciDipendente(QWidget):
         cf=self.vista_inserisci_dipendente.Codice_fiscale.text()
         stipendiodip=self.vista_inserisci_dipendente.Stipendio.text()
         commentodip=self.vista_inserisci_dipendente.Commento.toPlainText()
-        sesso=self.vista_inserisci_dipendente.Sesso.currentIndex()
-        mansione=self.vista_inserisci_dipendente.Mansione.currentIndex()
-        data=2020
-        #qdata=self.vista_inserisci_dipendente.Data_di_nascita.date()
-        #data=qdata.toString("dd,MM,yyyy")
+        sesso=self.vista_inserisci_dipendente.Sesso.currentText()
+        mansione=self.vista_inserisci_dipendente.Mansione.currentText()
+        #data=2020
+        qdata=self.vista_inserisci_dipendente.Data_di_nascita.date()
+        data=qdata.toString("dd/MM/yyyy")
         modello=DipendenteModel(nomedip,cognomedip,sesso,data,luogo,mansione,cf,stipendiodip,"null","null","null","null","null",commentodip)
         return modello
 

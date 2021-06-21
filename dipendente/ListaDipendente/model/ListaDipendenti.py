@@ -10,10 +10,15 @@ class ListaDipendenti():
         if os.path.isfile('dipendente/ListaDipendente/datidip/lista_dipendenti.pickle'):
             with open('dipendente/ListaDipendente/datidip/lista_dipendenti.pickle', 'rb') as f:
                 self.listdipendent = pickle.load(f)
+
+
     def aggiungi_dipendente(self, modello):
         self.listdipendent.append(modello)
 
-
+    def get_dipendente_by_name(self, name):
+        for dipendente in self.listdipendent:
+            if name == dipendente.cognome.split()[0]:
+                return dipendente
 
     def save(self):
         # salvataggio lista dipendente
