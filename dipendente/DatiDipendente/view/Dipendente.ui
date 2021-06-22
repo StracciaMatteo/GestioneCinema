@@ -114,7 +114,7 @@ background-color: rgb(48, 80, 91);
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="btn_home">
+      <widget class="QPushButton" name="btn_Home">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
@@ -639,7 +639,7 @@ background-color: rgb(48, 80, 91);
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="stipednio">
+      <widget class="QLabel" name="stipendio">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>

@@ -38,23 +38,6 @@ class VistaInserimentoSpeseRicavi(QWidget):
         self.controllerInserimentoSR.aggiungi_voce(self.add_voce())
         self.controllerInserimentoSR.save()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     #Questa funzione apre un MessageBox di errore per l'inserimento errato dell'importo
     def box_dialog(self):
         msg = QMessageBox()
