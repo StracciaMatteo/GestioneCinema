@@ -177,6 +177,25 @@ background-color: rgb(48, 80, 91);
     </layout>
    </item>
    <item>
+    <widget class="QLabel" name="error">
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:rgb(230, 58, 58)
+
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item>
     <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0,0,0,0">
      <property name="spacing">
       <number>5</number>
@@ -244,7 +263,7 @@ background-color: rgb(48, 80, 91);
        </property>
        <property name="icon">
         <iconset>
-         <normaloff>Serach-Icon.PNG</normaloff>Serach-Icon.PNG</iconset>
+         <normaloff>../../../images/Serach-Icon.PNG</normaloff>../../../images/Serach-Icon.PNG</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -297,7 +316,7 @@ background-color: rgb(48, 80, 91);
        </property>
        <property name="icon">
         <iconset>
-         <normaloff>Inserisci-Dipendente-icon.png</normaloff>Inserisci-Dipendente-icon.png</iconset>
+         <normaloff>../../../images/Inserisci-Dipendente-icon.png</normaloff>../../../images/Inserisci-Dipendente-icon.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -341,7 +360,7 @@ background-color: rgb(48, 80, 91);
        </property>
        <property name="icon">
         <iconset>
-         <normaloff>Aggiorna-Dipendente-icon.png</normaloff>Aggiorna-Dipendente-icon.png</iconset>
+         <normaloff>../../../images/Aggiorna-Dipendente-icon.png</normaloff>../../../images/Aggiorna-Dipendente-icon.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -385,7 +404,7 @@ background-color: rgb(48, 80, 91);
        </property>
        <property name="icon">
         <iconset>
-         <normaloff>Elimina-Dipendente-icon.png</normaloff>Elimina-Dipendente-icon.png</iconset>
+         <normaloff>../../../images/Elimina-Dipendente-icon.png</normaloff>../../../images/Elimina-Dipendente-icon.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -450,7 +469,7 @@ background-color: qlineargradient(spread:pad, x2:0, y2:0, x2:1, y2:1, stop:0 rgb
         <x>0</x>
         <y>0</y>
         <width>701</width>
-        <height>252</height>
+        <height>230</height>
        </rect>
       </property>
       <property name="styleSheet">

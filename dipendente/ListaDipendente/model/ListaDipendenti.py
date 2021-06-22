@@ -20,6 +20,11 @@ class ListaDipendenti():
             if name == dipendente.cognome.split()[0]:
                 return dipendente
 
+    def remove_dipendente_by_name(self,name):
+        for dipendente in self.listdipendent:
+            if name == dipendente.cognome.split()[0]:
+                self.listdipendent.remove(dipendente)
+
     def save(self):
         # salvataggio lista dipendente
         with open('dipendente/ListaDipendente/datidip/lista_dipendenti.pickle','wb') as handel:

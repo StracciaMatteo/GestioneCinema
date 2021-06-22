@@ -167,6 +167,35 @@ background-color: rgb(48, 80, 91);
     </layout>
    </item>
    <item>
+    <widget class="QLabel" name="error">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>10</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(229, 51, 51);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <property name="spacing">
       <number>3</number>
@@ -782,7 +811,7 @@ background-color: rgb(48, 80, 91);
        </property>
        <property name="icon">
         <iconset>
-         <normaloff>Inserisci-Dipendente-icon.png</normaloff>Inserisci-Dipendente-icon.png</iconset>
+         <normaloff>../../../images/Inserisci-Dipendente-icon.png</normaloff>../../../images/Inserisci-Dipendente-icon.png</iconset>
        </property>
        <property name="iconSize">
         <size>

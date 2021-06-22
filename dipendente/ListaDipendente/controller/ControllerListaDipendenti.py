@@ -13,5 +13,9 @@ class ControllerListaDipendenti():
     def get_dipendente_by_name(self,name):
         return self.modeldip.get_dipendente_by_name(name)
 
+    def remove_dipendente_by_name(self, name):
+        self.modeldip.remove_dipendente_by_name(name)
+
+
     def save(self):
         self.modeldip.save()
