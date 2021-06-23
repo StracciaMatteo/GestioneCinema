@@ -6,9 +6,10 @@ from dipendente.ListaDipendente.controller.ControllerListaDipendenti import Cont
 
 
 class ViewInserisciDipendente(QWidget):
-    def __init__(self, widget):
+    def __init__(self, widget,callback):
         super(ViewInserisciDipendente, self).__init__()
         self.widget = widget
+        self.callback=callback
         self.controllerdip = ControllerListaDipendenti()
         self.vista_inserisci_dipendente = uic.loadUi("dipendente/ListaDipendente/view/InserisciDipendente.ui",self)
         self.btn_torna.clicked.connect(self.go_back)
@@ -30,7 +31,6 @@ class ViewInserisciDipendente(QWidget):
         commentodip = self.vista_inserisci_dipendente.Commento.toPlainText()
         sesso = self.vista_inserisci_dipendente.Sesso.currentText()
         mansione = self.vista_inserisci_dipendente.Mansione.currentText()
-        # data=2020
         qdata = self.vista_inserisci_dipendente.Data_di_nascita.date()
         data = qdata.toString("dd/MM/yyyy")
         modello = DipendenteModel(nomedip, cognomedip, sesso, data, luogo, mansione, cf, stipendiodip, "null", "null",
@@ -39,8 +39,8 @@ class ViewInserisciDipendente(QWidget):
 
 
     def save_new_dipendente(self):
-        self.controllerdip.aggiungi_dipendente(self.get_dati_dipendente())
-        self.controllerdip.save()
+        modello=self.get_dati_dipendente()
+        self.callback(modello)
         self.widget.setCurrentIndex(self.widget.currentIndex() - 1)
         self.widget.removeWidget(self.vista_inserisci_dipendente)
 

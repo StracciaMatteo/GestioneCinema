@@ -10,7 +10,7 @@ from messaggeError.Error import Error
 
 
 class ViewListaDipendente(QWidget):
-    def __init__(self, widget, ):
+    def __init__(self, widget):
         super(ViewListaDipendente, self).__init__()
         self.widget = widget
         self.controllerdip = ControllerListaDipendenti()
@@ -37,12 +37,15 @@ class ViewListaDipendente(QWidget):
         vista.btn_Home.clicked.connect(self.go_home)
 
     def go_inserisci_dipendente(self):
-        vista_inseriscidipendente = ViewInserisciDipendente(self.widget)
+        vista_inseriscidipendente = ViewInserisciDipendente(self.widget,self.add_dipendente)
         self.go_to(vista_inseriscidipendente)
 
     def popola_lista_dipententi(self):
-        self.vista_lista_dipendente.list_dipendenti.setSortingEnabled(True)
         cont=0
+        for dipendente in self.controllerdip.modeldip.listdipendent:
+            item = self.vista_lista_dipendente.list_dipendenti.takeItem(cont)
+            cont+=1
+        self.vista_lista_dipendente.list_dipendenti.setSortingEnabled(True)
         for dipendente in self.controllerdip.modeldip.listdipendent:
             self.vista_lista_dipendente.list_dipendenti.addItem(dipendente.cognome+" "+dipendente.nome)
         self.add_icon()
@@ -103,3 +106,12 @@ class ViewListaDipendente(QWidget):
             cognome = item.text()
             self.controllerdip.remove_dipendente_by_name(cognome.split()[0])
             self.controllerdip.save()
+    def add_dipendente(self,modello):
+        self.controllerdip.aggiungi_dipendente(modello)
+        self.controllerdip.save()
+        self.vista_lista_dipendente.list_dipendenti.addItem(modello.cognome+" "+modello.nome)
+        items = self.vista_lista_dipendente.list_dipendenti.findItems(modello.cognome,Qt.MatchContains)
+        for item in items:
+            icon = QIcon()
+            icon.addFile("images/Dipendente-Icon.png", QSize(), QIcon.Normal, QIcon.Off)
+            item.setIcon(icon)
