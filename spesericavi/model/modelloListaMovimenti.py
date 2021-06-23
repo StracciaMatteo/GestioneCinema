@@ -1,26 +1,22 @@
 import os.path
 import pickle
 
-import spesericavi.view.VistaListaMovimenti
-
-
-class modelloListaMoviemnti():
+class modelloListaMovimenti():
     def __init__(self):
-        super(modelloListaMoviemnti,self).__init__()
-        self.modelloListaMovimenti = []
-        self.tabella= spesericavi.view.VistaListaMovimenti.table_ListaMov
+        super(modelloListaMovimenti,self).__init__()
+        self.listamovimenti = []
+
+        if os.path.isfile ('spesericavi/datilistaSR/lista_movimenti.pickle'):
+            with open ('spesericavi/datilistaSR/lista_movimenti.pickle', 'rb') as f:
+                self.listamovimenti = pickle.load(f)
+    def rimuovi_voce(self,descrizione):
+        for voce in self.listamovimenti:
+            if descrizione == voce.importo.split()[0]:
+                self.listamovimenti.remove(voce)
 
 
-        if os.path.isfile('spesericavi/datilistaSR/lista_movimenti.pickle'):
-            with open('spesericavi/datilistaSR/lista_movimenti.pickle', 'rb')as f:
-                self.lista_movimenti = pickle.load(f)
-
-    def get_voce (self,segno,importo,descrizione):
-        row = 0
-        for voce in self.lista_movimenti:
-            self.tabella.setItem(row,1,segno)
-            self.tabella.setItem(row,1,importo)
-            self.tabella.setItem(row,2,descrizione)
-            row = row+1
+    def save(self):
+        with open('spesericavi/datilistaSR/lista_movimenti.pickle',"wb") as handle:
+            pickle.dump(self.listamovimenti, handle,pickle.HIGHEST_PROTOCOL)
 
 

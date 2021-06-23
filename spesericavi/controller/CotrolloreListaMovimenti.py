@@ -1,12 +1,13 @@
-from spesericavi.model.modelloListaMovimenti import modelloListaMoviemnti
+from spesericavi.model.modelloListaMovimenti import modelloListaMovimenti
 
 
-class ControllerListaMovimento():
+class ControlloreListaMovimenti():
     def __init__(self):
-        super(ControllerListaMovimento,self).__init__()
-        self.modelloLista = modelloListaMoviemnti()
+        super(ControlloreListaMovimenti,self).__init__()
+        self.modellist = modelloListaMovimenti()
 
-    def get_voce(self,modello):
-        self.modelloLista.get_voce(modello)
+    def rimuovi_voce(self,descrizione):
+        self.modellist.rimuovi_voce(descrizione)
 
-
+    def save(self):
+        self.modellist.save()

@@ -131,50 +131,15 @@ background-color: rgb(48, 80, 91);
     </layout>
    </item>
    <item>
-    <widget class="QTableView" name="tableView">
+    <widget class="QListWidget" name="lista_voci">
      <property name="styleSheet">
-      <string notr="true">QWidget {
+      <string notr="true">QListWidget{
+color: rgb(51, 86, 101);
+ border-radius: 15px;
 background-color: rgb(255, 255, 255);
-border-radius:10px;
-}
+padding: 5px;
 
 
-
-
-
-QTableWidget{
-selection-background-color:rgb(123, 220, 193);
-padding: 4px;}
-
-
-
-QHeaderView::section {
-border-radius:10px;
-background-color: rgb(92, 164, 144);
-padding: 4px;
-border: 1px solid #fffff8;
-color: rgb(255, 255, 255);
-font-size: 9pt;
-
-}
-
-
-
-QHeaderView::section:hover,QHeaderView::section:checked{
-border-radius:10px;
-background-color:rgb(123, 220, 193);
-padding: 4px;
-border: 1px solid #fffff8;
-color: rgb(255, 255, 255);
-font-size: 9pt;
-
-}
-
-
-
-QTableView QTableCornerButton::section {
-border-radius:10px;
-border: 2px solid #fffff8;
 }</string>
      </property>
     </widget>
