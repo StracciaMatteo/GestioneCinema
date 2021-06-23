@@ -123,13 +123,27 @@ class listaFilm():
             orario = "21:00"
         else:
             orario = "00:00"
-        if self.spettacoli[data.toString('d MMMM yyyy')][item.row()][orario]["posti"] <= (144 - quantita):
-            self.spettacoli[data.toString('d MMMM yyyy')][item.row()][orario]["posti"] += quantita
 
-            codice_univoco = data.toString('ddMMyyyy') + str(item.row()) + str(item.column())
-            return codice_univoco
+        # controlla se la quantità è diversa da 0
+        if quantita == 0:
+            error = Error("Errore", "Selezionare numero positivo di biglietti",
+                          "riprovare...")
+            error.error_messagge()
+        # controlla se il titolo dello spettacolo è vuoto e in tal caso stampa errore
+        elif self.spettacoli[data.toString('d MMMM yyyy')][item.row()][orario]["titolo"] != "":
+            # controlla che ci siano posti liberi sufficienti
+            if self.spettacoli[data.toString('d MMMM yyyy')][item.row()][orario]["posti"] <= (144 - quantita):
+                self.spettacoli[data.toString('d MMMM yyyy')][item.row()][orario]["posti"] += quantita
+
+                codice_univoco = data.toString('ddMMyyyy') + str(item.row()) + str(item.column())
+                mostra_codice = Error("Operazione effettuata", "Codice biglietto/i:     ", codice_univoco)
+                mostra_codice.information_message()
+            else:
+                error = Error("Errore", "Numero di posti disponibili non sufficiente a soddisfare la richiesta",
+                              "selezionare un altro spettacolo")
+                error.error_messagge()
         else:
-            error = Error("Errore", "Numero di posti disponibili non sufficiente a soddisfare la richiesta",
+            error = Error("Errore", "Spettacolo selezionato non valido per la vendita dei biglietti",
                           "selezionare un altro spettacolo")
             error.error_messagge()
 
@@ -160,6 +174,8 @@ class listaFilm():
                     error.error_messagge()
                 else:
                     self.spettacoli[data][sala][orario]["posti"] -= 1
+                    info = Error("Rimborso eseguito", f"Biglietto con codice {codice_univoco} rimborsato", "")
+                    info.information_message()
             except Exception:
                 error = Error("Errore", "Codice errato o spettacolo non più presente nel sistema",
                               "procedere manualmente")
