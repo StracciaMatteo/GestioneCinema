@@ -14,7 +14,7 @@ class modelloListaMovimenti():
             if descrizione == voce.importo.split()[0]:
                 self.listamovimenti.remove(voce)
 
-
+    # salva il file
     def save(self):
         with open('spesericavi/datilistaSR/lista_movimenti.pickle',"wb") as handle:
             pickle.dump(self.listamovimenti, handle,pickle.HIGHEST_PROTOCOL)

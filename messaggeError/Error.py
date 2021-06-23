@@ -24,3 +24,8 @@ class Error():
         self.msg.setStandardButtons(QMessageBox.Ok)
         return self.msg.exec()
 
+    def information_message(self):
+        self.msg.setIcon(QMessageBox.Information)
+        self.msg.setStandardButtons(QMessageBox.Ok)
+        return self.msg.exec()
+

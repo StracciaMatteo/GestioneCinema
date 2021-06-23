@@ -4,6 +4,7 @@ from PyQt5.QtWidgets import QWidget, QTableWidgetItem
 
 from biglietteria.controller.controllerTicket import controllerTicket
 from listaFilm.controller.controllerListaFilm import controllerListaFilm
+from messaggeError.Error import Error
 
 
 class viewVendita(QWidget):
@@ -32,28 +33,15 @@ class viewVendita(QWidget):
         # NEW legge la programmazione del json della data attuale
         self.controller.leggi(data.toString('d MMMM yyyy'), self.vista)
 
-        self.vista.table_programmazione.clicked.connect(self.assegna_data)
+        self.vista.btn_inserisci.clicked.connect(self.vendi)
 
-    # seleziona una proiezione specifica e ne permette la vendita
-    def assegna_data(self, item):
-
-        self.vista.btn_inserisci.clicked.connect(self.vendi(item))
-
-
-
-        '''
-        inserire il comando che collega il bottone genera alla funzione vendi_biglietto del controller
-        la funzione vendi_biglietto richiede come parametri self.vista.calendar.selectedDate(), item e la quantità da
-        vendere fare in modo che alla pressione del bottone genera vengano letti i contatori per passare alla funzione
-        vendi_biglietti le quantità e i parametri, la funzione restituisce una stringa con il codice univoco dello
-        spettacolo. Chiamare la funzione save del controller all'interno di go_back per salvare la nuova situazione di
-        disponibilità dei posti
-        '''
-
-    def vendi(self, item):
+    def vendi(self):
+        row = self.vista.table_programmazione.currentRow()
+        column = self.vista.table_programmazione.currentColumn()
+        item = self.vista.table_programmazione.item(row, column)
         quantita = self.vista.Ridotto.value() + self.vista.Adulto.value() + self.vista.Over60.value()
         self.controller.vendi_biglietto(self.vista.calendar.selectedDate(), item, quantita)
-
+        self.controller.save()
 
     def go_back(self):
         self.widget.setCurrentIndex(self.widget.currentIndex() - 1)
