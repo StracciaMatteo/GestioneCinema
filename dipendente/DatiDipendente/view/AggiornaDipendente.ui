@@ -1,0 +1,1322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>724</width>
+    <height>437</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Aggiornamento Dipendente</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(254, 235, 156);</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="Aggiornamento_dipendente">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>16</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(92, 164, 144);</string>
+     </property>
+     <property name="text">
+      <string>Aggiornamento Dipendente</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="Line" name="line">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QPushButton" name="btn_torna">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+ border-radius: 14px;
+Width:28px;
+Height:28px;
+background-color: rgb(55, 92, 108);
+color: rgb(255, 255, 255);
+border-style: outset;
+
+
+}
+
+QPushButton:hover{
+
+background-color: rgb(92, 154, 181);
+}
+QPushButton:pressed{
+border-style: inset;
+background-color: rgb(48, 80, 91);
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../../../images/Torna-Indietro-icon.png</normaloff>../../../images/Torna-Indietro-icon.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_Home">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+ border-radius: 14px;
+Width:28px;
+Height:28px;
+background-color: rgb(55, 92, 108);
+color: rgb(255, 255, 255);
+border-style: outset;
+
+
+}
+
+QPushButton:hover{
+
+background-color: rgb(92, 154, 181);
+}
+QPushButton:pressed{
+border-style: inset;
+background-color: rgb(48, 80, 91);
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../../../images/Home-icon.png</normaloff>../../../images/Home-icon.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>17</width>
+         <height>17</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <property name="spacing">
+      <number>3</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(92, 164, 144);</string>
+       </property>
+       <property name="text">
+        <string>Nome:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="Nome">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit{
+	background-color: rgb(255, 255, 255);
+	border-radius: 10px;
+	padding: 5px;
+	Height:13px;
+}</string>
+       </property>
+       <property name="text">
+        <string>Dipendente</string>
+       </property>
+       <property name="readOnly">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_2">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(92, 164, 144);</string>
+       </property>
+       <property name="text">
+        <string>Cognome:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="Cognome">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit{
+	background-color: rgb(255, 255, 255);
+	border-radius: 10px;
+	padding: 5px;
+	Height:13px;
+}</string>
+       </property>
+       <property name="text">
+        <string>Dipendente-1</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_9">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(92, 164, 144);</string>
+       </property>
+       <property name="text">
+        <string>Sesso:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="Sesso">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QComboBox{
+	background: white;
+	border-radius:10px;
+	padding: 5px;
+}
+
+
+QComboBox QAbstractItemView {
+	selection-background-color:rgb(55, 92, 108);
+	background-color: rgb(255, 255, 255);
+	border-radius:5px;
+	padding: 5px;
+
+}
+
+
+QComboBox::down-arrow {
+	 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-arrow.png) ;
+}
+
+QComboBox::drop-down{
+	border-radius:10px;
+	padding: 5px;
+}
+
+QComboBox::drop-down:hover{
+	
+	background-color: rgb(92, 176, 150);
+	border-radius:5px;
+	padding: 5px;
+}
+
+QComboBox::down-arrow:on {
+    top: 1px;
+}
+
+</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>M</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>F</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <property name="spacing">
+      <number>3</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="label_3">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(92, 164, 144);</string>
+       </property>
+       <property name="text">
+        <string>Data di nascita:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="Line" name="line_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QDateEdit" name="Data_di_nascita">
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QDateEdit{
+	background-color: rgb(255, 255, 255);
+	border-radius:10px;
+	padding: 5px;
+}
+
+QDateEdit::down-arrow {
+	 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-arrow.png) ;
+}
+
+
+
+
+QDateEdit::up-arrow{
+		 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-up-arrow.png)
+}
+
+
+QDateEdit::up-arrow:on {
+	bottom: 1px;
+}
+
+
+QDateEdit::down-button{
+	border-radius:10px;
+	padding: 5px;
+
+}
+
+QDateEdit::down-button:hover{
+	background-color: rgb(92, 164, 144);
+	border-radius:6px;
+	padding: 6px;
+}
+
+QDateEdit::down-button:pressed{
+	
+	background-color: rgb(255, 255, 255);
+	
+}
+
+QDateEdit::up-button{
+	border-radius:10px;
+	padding: 5px;
+
+}
+
+QDateEdit::up-button:hover{
+	background-color: rgb(92, 164, 144);
+	border-radius:6px;
+	padding: 6px;
+}
+
+QDateEdit::up-button:pressed{
+	
+	background-color: rgb(255, 255, 255);
+	
+}
+
+
+
+
+</string>
+       </property>
+       <property name="date">
+        <date>
+         <year>1998</year>
+         <month>1</month>
+         <day>1</day>
+        </date>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_4">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(92, 164, 144);</string>
+       </property>
+       <property name="text">
+        <string>Luogo di nascita:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="Luogo_di_nascita">
+       <property name="styleSheet">
+        <string notr="true">QLineEdit{
+	background-color: rgb(255, 255, 255);
+	border-radius: 10px;
+	padding: 5px;
+	Height:13px;
+}</string>
+       </property>
+       <property name="text">
+        <string>Ancona</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_16">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(92, 164, 144);</string>
+       </property>
+       <property name="text">
+        <string>Mansione</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="Mansione">
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QComboBox{
+	background: white;
+	border-radius:10px;
+	padding: 5px;
+}
+
+
+QComboBox QAbstractItemView {
+	selection-background-color:rgb(55, 92, 108);
+	background-color: rgb(255, 255, 255);
+	border-radius:5px;
+	padding: 5px;
+
+}
+
+
+QComboBox::down-arrow {
+	 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-arrow.png) ;
+}
+
+QComboBox::drop-down{
+	border-radius:10px;
+	padding: 5px;
+}
+
+QComboBox::drop-down:hover{
+	
+	background-color: rgb(92, 176, 150);
+	border-radius:5px;
+	padding: 5px;
+}
+
+QComboBox::down-arrow:on {
+    top: 1px;
+}
+
+</string>
+       </property>
+       <property name="editable">
+        <bool>false</bool>
+       </property>
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <item>
+        <property name="text">
+         <string>Addetto Bar</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Addetto Biglietteria</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Addetto Controllo</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Addetto Pulizia</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="Line" name="line_2">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_5">
+     <property name="spacing">
+      <number>3</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="label_5">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(92, 164, 144);</string>
+       </property>
+       <property name="text">
+        <string>Codice fiscale:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="Codice_fiscale">
+       <property name="styleSheet">
+        <string notr="true">QLineEdit{
+	background-color: rgb(255, 255, 255);
+	border-radius: 10px;
+	padding: 5px;
+	Height:13px;
+}</string>
+       </property>
+       <property name="text">
+        <string>RFSDD46546546SAD</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_11">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(92, 164, 144);</string>
+       </property>
+       <property name="text">
+        <string>Stipendio:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="Stipendio">
+       <property name="styleSheet">
+        <string notr="true">QLineEdit{
+	background-color: rgb(255, 255, 255);
+	border-radius: 10px;
+	padding: 5px;
+	Height:13px;
+}</string>
+       </property>
+       <property name="text">
+        <string>1200</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_6">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(92, 164, 144);</string>
+       </property>
+       <property name="text">
+        <string>ID:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="ID">
+       <property name="styleSheet">
+        <string notr="true">QLineEdit{
+	background-color: rgb(255, 255, 255);
+	border-radius: 10px;
+	padding: 5px;
+	Height:13px;
+}</string>
+       </property>
+       <property name="text">
+        <string>CIN1234567</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="Line" name="line_4">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_6">
+     <property name="spacing">
+      <number>3</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="label_7">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(92, 164, 144);</string>
+       </property>
+       <property name="text">
+        <string>Turno di lavoro:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="Turno_di_lavoro">
+       <property name="styleSheet">
+        <string notr="true">QComboBox{
+	background: white;
+	border-radius:10px;
+	padding: 5px;
+}
+
+
+QComboBox QAbstractItemView {
+	selection-background-color:rgb(55, 92, 108);
+	background-color: rgb(255, 255, 255);
+	border-radius:5px;
+	padding: 5px;
+
+}
+
+
+QComboBox::down-arrow {
+	 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-arrow.png) ;
+}
+
+QComboBox::drop-down{
+	border-radius:10px;
+	padding: 5px;
+}
+
+QComboBox::drop-down:hover{
+	
+	background-color: rgb(92, 176, 150);
+	border-radius:5px;
+	padding: 5px;
+}
+
+QComboBox::down-arrow:on {
+    top: 1px;
+}
+
+</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>primo turno</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>secondo turno</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_8">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(92, 164, 144);</string>
+       </property>
+       <property name="text">
+        <string>Giorni liberi:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="Giorno_libero">
+       <property name="styleSheet">
+        <string notr="true">QComboBox{
+	background: white;
+	border-radius:10px;
+	padding: 5px;
+}
+
+
+QComboBox QAbstractItemView {
+	selection-background-color:rgb(55, 92, 108);
+	background-color: rgb(255, 255, 255);
+	border-radius:5px;
+	padding: 5px;
+
+}
+
+
+QComboBox::down-arrow {
+	 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-arrow.png) ;
+}
+
+QComboBox::drop-down{
+	border-radius:10px;
+	padding: 5px;
+}
+
+QComboBox::drop-down:hover{
+	
+	background-color: rgb(92, 176, 150);
+	border-radius:5px;
+	padding: 5px;
+}
+
+QComboBox::down-arrow:on {
+    top: 1px;
+}
+
+</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>Lun</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Mar</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Mer</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Gio</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Ven</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Sab</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Dom</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="Giorno_libero_2">
+       <property name="styleSheet">
+        <string notr="true">QComboBox{
+	background: white;
+	border-radius:10px;
+	padding: 5px;
+}
+
+
+QComboBox QAbstractItemView {
+	selection-background-color:rgb(55, 92, 108);
+	background-color: rgb(255, 255, 255);
+	border-radius:5px;
+	padding: 5px;
+
+}
+
+
+QComboBox::down-arrow {
+	 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-arrow.png) ;
+}
+
+QComboBox::drop-down{
+	border-radius:10px;
+	padding: 5px;
+}
+
+QComboBox::drop-down:hover{
+	
+	background-color: rgb(92, 176, 150);
+	border-radius:5px;
+	padding: 5px;
+}
+
+QComboBox::down-arrow:on {
+    top: 1px;
+}
+
+</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>Lun</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Mar</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Mer</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Gio</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Ven</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Sab</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Dom</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="checkBox">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(92, 164, 144);</string>
+       </property>
+       <property name="text">
+        <string>Ferie: dal</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QDateEdit" name="Ferie_dal">
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QDateEdit{
+	background-color: rgb(255, 255, 255);
+	border-radius:10px;
+	padding: 5px;
+}
+
+QDateEdit::down-arrow {
+	 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-arrow.png) ;
+}
+
+
+
+
+QDateEdit::up-arrow{
+		 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-up-arrow.png)
+}
+
+
+QDateEdit::up-arrow:on {
+	bottom: 1px;
+}
+
+
+QDateEdit::down-button{
+	border-radius:10px;
+	padding: 5px;
+
+}
+
+QDateEdit::down-button:hover{
+	background-color: rgb(92, 164, 144);
+	border-radius:6px;
+	padding: 6px;
+}
+
+QDateEdit::down-button:pressed{
+	
+	background-color: rgb(255, 255, 255);
+	
+}
+
+QDateEdit::up-button{
+	border-radius:10px;
+	padding: 5px;
+
+}
+
+QDateEdit::up-button:hover{
+	background-color: rgb(92, 164, 144);
+	border-radius:6px;
+	padding: 6px;
+}
+
+QDateEdit::up-button:pressed{
+	
+	background-color: rgb(255, 255, 255);
+	
+}
+
+
+
+
+</string>
+       </property>
+       <property name="date">
+        <date>
+         <year>2020</year>
+         <month>1</month>
+         <day>1</day>
+        </date>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="Ferie_al">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(92, 164, 144);</string>
+       </property>
+       <property name="text">
+        <string>al</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QDateEdit" name="Ferie_al_2">
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QDateEdit{
+	background-color: rgb(255, 255, 255);
+	border-radius:10px;
+	padding: 5px;
+}
+
+QDateEdit::down-arrow {
+	 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-arrow.png) ;
+}
+
+
+
+
+QDateEdit::up-arrow{
+		 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-up-arrow.png)
+}
+
+
+QDateEdit::up-arrow:on {
+	bottom: 1px;
+}
+
+
+QDateEdit::down-button{
+	border-radius:10px;
+	padding: 5px;
+
+}
+
+QDateEdit::down-button:hover{
+	background-color: rgb(92, 164, 144);
+	border-radius:6px;
+	padding: 6px;
+}
+
+QDateEdit::down-button:pressed{
+	
+	background-color: rgb(255, 255, 255);
+	
+}
+
+QDateEdit::up-button{
+	border-radius:10px;
+	padding: 5px;
+
+}
+
+QDateEdit::up-button:hover{
+	background-color: rgb(92, 164, 144);
+	border-radius:6px;
+	padding: 6px;
+}
+
+QDateEdit::up-button:pressed{
+	
+	background-color: rgb(255, 255, 255);
+	
+}
+
+
+
+
+</string>
+       </property>
+       <property name="dateTime">
+        <datetime>
+         <hour>0</hour>
+         <minute>0</minute>
+         <second>0</second>
+         <year>2020</year>
+         <month>1</month>
+         <day>2</day>
+        </datetime>
+       </property>
+       <property name="date">
+        <date>
+         <year>2020</year>
+         <month>1</month>
+         <day>2</day>
+        </date>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="Line" name="line_5">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_10">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(92, 164, 144);</string>
+     </property>
+     <property name="text">
+      <string>Commento:</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_7">
+     <property name="spacing">
+      <number>6</number>
+     </property>
+     <item>
+      <widget class="QTextEdit" name="Commento">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QTextEdit{
+background-color: rgb(255, 255, 255);
+border-radius: 25px;
+padding: 5px;
+}</string>
+       </property>
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Ferie Malattia&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton">
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+border-radius: 10px;
+padding: 6px;
+background-color: rgb(55, 92, 108);
+color: rgb(255, 255, 255);
+border-style: outset;
+
+
+}
+
+QPushButton:hover{
+
+background-color: rgb(92, 154, 181);
+}
+QPushButton:pressed{
+border-style: inset;
+background-color: rgb(48, 80, 91);
+}</string>
+       </property>
+       <property name="text">
+        <string>Salva modifiche</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../../../images/Salva_icon.ico</normaloff>../../../images/Salva_icon.ico</iconset>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
