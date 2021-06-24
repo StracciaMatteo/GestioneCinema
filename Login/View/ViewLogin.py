@@ -1,5 +1,5 @@
 from PyQt5 import uic
-from PyQt5.QtWidgets import QWidget, QLineEdit
+from PyQt5.QtWidgets import QWidget
 
 from Login.controller.ControlloreLogin import ControlloreLogin
 from home.view.VistaHome import VistaHome
@@ -20,9 +20,12 @@ class ViewLogin(QWidget):
         self.controller.hide_or_show_pw(self.vista)
 
     def login(self):
-        if self.controller.login(self.Codice.text()):
+        utente_loggato = self.controller.login(self.Codice.text())
+        if utente_loggato:
             self.vista.label_error.setText("")
-            # inserire utente loggato nella chiamata a VistaHome()
+            # istanzio vistaHome passando come parametro l'utente che si è loggato
+            Vista_home = VistaHome(self.widget, utente_loggato)
+            self.widget.addWidget(Vista_home)
             self.widget.setCurrentIndex(self.widget.currentIndex() + 1)
         else:
             self.vista.label_error.setText("Credenziali errate!")

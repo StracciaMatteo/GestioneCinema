@@ -3,7 +3,6 @@ from PyQt5.QtWidgets import QApplication, QStackedWidget
 from PyQt5 import QtGui
 
 from Login.View.ViewLogin import ViewLogin
-from home.view.VistaHome import VistaHome
 
 
 if __name__ == '__main__':
@@ -12,10 +11,8 @@ if __name__ == '__main__':
     widget = QStackedWidget()
 
     Vista_login = ViewLogin(widget)
-    Vista_home = VistaHome(widget)
 
     widget.addWidget(Vista_login)
-    widget.addWidget(Vista_home)
     widget.setStyleSheet("background-color: rgb(254, 235, 156)")
     widget.setWindowTitle("Cinema")
     icon = QtGui.QIcon()
