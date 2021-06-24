@@ -26,7 +26,7 @@ class VistaInserimentoSpeseRicavi(QWidget):
         importo= self.vista.lineEdit_Importo.text()
         segno= self.vista.comboBox_Segno.currentText()
         try:
-            if (float(importo) != "" and descrizione != "" ):
+            if (float(importo) != "" or descrizione != "" ):
                 print(descrizione)
                 print(segno+importo+"€")
         except(Exception):

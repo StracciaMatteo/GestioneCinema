@@ -18,6 +18,7 @@ class VistaListaMovimenti(QWidget):
         self.btn_RimuoviMovLM.clicked.connect(self.elimina_voce)
 
 
+
     # Funzione che permette di accedere alla funzione inserimento voce
     def apri_inserisci_voce(self):
         inserisci_voce = VistaInserimentoSpeseRicavi(self.widget)
@@ -36,6 +37,10 @@ class VistaListaMovimenti(QWidget):
         self.vista.lista_voci.setSortingEnabled(False)
         for voci in self.controlloremov.modellist.listamovimenti:
             self.vista.lista_voci.addItem(voci.segno+voci.importo+"  "+voci.descrizione)
+
+
+    def totale(self):
+        self.vista.lineEdit_Totale.setText("2000"+"€")
 
     def box_dialog(self):
         msg = QMessageBox()

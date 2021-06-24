@@ -132,6 +132,11 @@ background-color: rgb(48, 80, 91);
    </item>
    <item>
     <widget class="QListWidget" name="lista_voci">
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
      <property name="styleSheet">
       <string notr="true">QListWidget{
 color: rgb(51, 86, 101);
