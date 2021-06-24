@@ -50,7 +50,7 @@ class VistaListaMovimenti(QWidget):
         msg.setStandardButtons(QMessageBox.Ok)
         result = msg.exec()
 
-    #-----------------------------------------------------------
+    #-----------------------------------------------------------da verificare
     def elimina_voce(self):
         if self.vista.lista_voci.currentRow()==-1:
             self.vista.error.setText("Nessuna voce è stata selezionata")
