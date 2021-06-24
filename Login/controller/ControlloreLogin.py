@@ -1,18 +1,16 @@
 from PyQt5.QtWidgets import QLineEdit, QMessageBox, QWidget
 
+from Login.model.loginModel import loginModel
+
 
 class ControlloreLogin():
 
     def __init__(self):
         super(ControlloreLogin, self).__init__()
+        self.model = loginModel()
 
     def hide_or_show_pw(self, vista):
-        vista.Codice.setEchoMode(QLineEdit.Normal)
-        if not vista.btn_visibilita_password.isChecked():
-            vista.Codice.setEchoMode(QLineEdit.Password)
+        self.model.hide_or_show_pw(vista)
 
     def login(self, pw):
-        if pw == "prova" or pw == "":
-            return True
-        else:
-            return False
+        return self.model.login(pw)
