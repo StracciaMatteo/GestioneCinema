@@ -3,6 +3,7 @@ from PyQt5.QtCore import Qt, QSize
 from PyQt5.QtGui import QColor, QBrush, QIcon
 from PyQt5.QtWidgets import QWidget, QListWidgetItem, QMessageBox
 
+from dipendente.DatiDipendente.view.ViewAggiornaDipendente import ViewAggiornaDipendente
 from dipendente.DatiDipendente.view.ViewDipendente import ViewDipendente
 from dipendente.ListaDipendente.controller.ControllerListaDipendenti import ControllerListaDipendenti
 from dipendente.ListaDipendente.view.ViewInserisciDipendente import ViewInserisciDipendente
@@ -20,6 +21,7 @@ class ViewListaDipendente(QWidget):
         self.btn_inserisci_dip.clicked.connect(self.go_inserisci_dipendente)
         self.btn_ricerca.clicked.connect(self.search_dipendente)
         self.btn_elimina_dip.clicked.connect(self.remove_dipendente)
+        self.btn_aggiorna_dip.clicked.connect(self.go_aggiorna_dipendente)
         self.popola_lista_dipententi()
         self.list_dipendenti.itemDoubleClicked.connect(self.go_view_dipendente)
 
@@ -40,6 +42,15 @@ class ViewListaDipendente(QWidget):
         vista_inseriscidipendente = ViewInserisciDipendente(self.widget,self.add_dipendente)
         self.go_to(vista_inseriscidipendente)
 
+    def go_aggiorna_dipendente(self):
+        if self.vista_lista_dipendente.list_dipendenti.currentRow()==-1:
+            self.vista_lista_dipendente.error.setText("Nessun dipendente e' stato selezionato")
+        else:
+            cognome = self.vista_lista_dipendente.list_dipendenti.currentItem().text()
+            dipendente = self.controllerdip.get_dipendente_by_name(cognome.split()[0])
+            vista_aggiornadipendente=ViewAggiornaDipendente(self.widget,dipendente)
+            self.go_to(vista_aggiornadipendente)
+
     def popola_lista_dipententi(self):
         cont=0
         for dipendente in self.controllerdip.modeldip.listdipendent:
@@ -54,7 +65,7 @@ class ViewListaDipendente(QWidget):
     def go_view_dipendente(self):
         cognome=self.vista_lista_dipendente.list_dipendenti.currentItem().text()
         dipendente=self.controllerdip.get_dipendente_by_name(cognome.split()[0])
-        viewdipendente=ViewDipendente(self.widget,dipendente)
+        viewdipendente=ViewDipendente(self.widget,dipendente,self.remove_dipendente)
         self.go_to(viewdipendente)
 
     def search_dipendente(self):
