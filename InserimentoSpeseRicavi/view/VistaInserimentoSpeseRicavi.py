@@ -1,4 +1,4 @@
-
+import sys
 from PyQt5 import uic
 from PyQt5.QtWidgets import QWidget, QMessageBox
 
@@ -23,16 +23,17 @@ class VistaInserimentoSpeseRicavi(QWidget):
     #Questa funzione prende dall'interfaccia i dati e salva la voce nella lista delle voci di spese e ricavi
     def add_voce(self):
         descrizione=self.vista.lineEdit_DescrizionVoce.text()
-        importo= self.vista.lineEdit_Importo.text()
+        importo=float(self.vista.lineEdit_Importo.text())
         segno= self.vista.comboBox_Segno.currentText()
         try:
             if (float(importo) != "" or descrizione != "" ):
                 print(descrizione)
                 print(segno+importo+"€")
-        except(Exception):
+        except TypeError:
             self.box_dialog()
         model= ModelVoce(segno,importo,descrizione)
         return model
+
     #Questa funzione implementa il salvataggio dei dati della voce
     def save(self):
         self.controllerInserimentoSR.aggiungi_voce(self.add_voce())

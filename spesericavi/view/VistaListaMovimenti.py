@@ -13,7 +13,7 @@ class VistaListaMovimenti(QWidget):
         self.vista= uic.loadUi("spesericavi/view/Lista_Movimenti_UI2.ui", self)
         self.controlloremov = ControlloreListaMovimenti()
         self.voci_nella_lista()
-        #self.totale()
+        self.totale()
         self.btn_torna_LM.clicked.connect(self.go_back)
         self.btn_InserisciMovLM.clicked.connect(self.apri_inserisci_voce)
         self.btn_RimuoviMovLM.clicked.connect(self.elimina_voce)
@@ -41,14 +41,20 @@ class VistaListaMovimenti(QWidget):
             cont +=1
         self.vista.lista_voci.setSortingEnabled(False)
         for voci in self.controlloremov.modellist.listamovimenti:
-            self.vista.lista_voci.addItem(voci.segno+voci.importo+"  "+voci.descrizione)
+            self.vista.lista_voci.addItem(voci.segno+str(voci.importo)+"  "+voci.descrizione)
 
-
-    '''def totale(self):
+    # Funzione che permette di calcolare il totale della lista movimenti
+    def totale(self):
         totale=0
         for voci in self.controlloremov.modellist.listamovimenti:
-            totale = sum(voci.importo)
-            self.vista.lineEdit_Totale.setText(totale)'''
+            if voci.segno == "+":
+                totale += voci.importo
+            else:
+                totale -= voci.importo
+        if totale != 0 :
+            self.vista.lineEdit_Totale.setText(str(totale)+" €")
+
+
 
     # Funzione che crea il message box di errore nel caso di
     def box_dialog(self):
