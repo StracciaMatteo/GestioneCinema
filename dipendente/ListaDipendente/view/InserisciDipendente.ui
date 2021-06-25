@@ -501,6 +501,9 @@ QDateEdit::up-button:pressed{
 
 </string>
        </property>
+       <property name="displayFormat">
+        <string>dd/MM/yyyy</string>
+       </property>
       </widget>
      </item>
      <item>

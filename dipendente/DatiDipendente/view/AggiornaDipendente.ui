@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>724</width>
+    <width>731</width>
     <height>437</height>
    </rect>
   </property>
@@ -449,6 +449,9 @@ QDateEdit::up-button:pressed{
 
 </string>
        </property>
+       <property name="displayFormat">
+        <string>dd/MM/yyyy</string>
+       </property>
        <property name="date">
         <date>
          <year>1998</year>
@@ -839,7 +842,7 @@ QComboBox::down-arrow:on {
       </widget>
      </item>
      <item>
-      <widget class="QComboBox" name="Giorno_libero">
+      <widget class="QComboBox" name="Giorno_libero_1">
        <property name="styleSheet">
         <string notr="true">QComboBox{
 	background: white;
@@ -995,7 +998,7 @@ QComboBox::down-arrow:on {
       </widget>
      </item>
      <item>
-      <widget class="QCheckBox" name="checkBox">
+      <widget class="QCheckBox" name="ferie_on">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
@@ -1029,17 +1032,21 @@ QComboBox::down-arrow:on {
 	padding: 5px;
 }
 
+QDateEdit::down-arrow:disabled { 
+	image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-arrow-disabled.png) ;
+}
+
 QDateEdit::down-arrow {
 	 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-arrow.png) ;
 }
-
-
-
 
 QDateEdit::up-arrow{
 		 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-up-arrow.png)
 }
 
+QDateEdit::up-arrow:disabled{
+		 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-up-arrow-disabled.png)
+}
 
 QDateEdit::up-arrow:on {
 	bottom: 1px;
@@ -1087,6 +1094,9 @@ QDateEdit::up-button:pressed{
 
 </string>
        </property>
+       <property name="displayFormat">
+        <string>dd/MM/yyyy</string>
+       </property>
        <property name="date">
         <date>
          <year>2020</year>
@@ -1120,7 +1130,7 @@ QDateEdit::up-button:pressed{
       </widget>
      </item>
      <item>
-      <widget class="QDateEdit" name="Ferie_al_2">
+      <widget class="QDateEdit" name="Ferie_al_1">
        <property name="autoFillBackground">
         <bool>false</bool>
        </property>
@@ -1136,12 +1146,17 @@ QDateEdit::down-arrow {
 }
 
 
-
+QDateEdit::down-arrow:disabled { 
+	image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-arrow-disabled.png) ;
+}
 
 QDateEdit::up-arrow{
 		 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-up-arrow.png)
 }
 
+QDateEdit::up-arrow:disabled{
+		 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-up-arrow-disabled.png)
+}
 
 QDateEdit::up-arrow:on {
 	bottom: 1px;
@@ -1198,6 +1213,9 @@ QDateEdit::up-button:pressed{
          <month>1</month>
          <day>2</day>
         </datetime>
+       </property>
+       <property name="displayFormat">
+        <string>dd/MM/yyyy</string>
        </property>
        <property name="date">
         <date>
