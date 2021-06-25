@@ -11,7 +11,7 @@ class modelloListaMovimenti():
                 self.listamovimenti = pickle.load(f)
     def rimuovi_voce(self,descrizione):
         for voce in self.listamovimenti:
-            if descrizione == voce.descrizione.split()[0]:
+            if descrizione == voce.descrizione:
                 self.listamovimenti.remove(voce)
 
     # salva il file
