@@ -9,6 +9,7 @@ class modelloListaMovimenti():
         if os.path.isfile ('spesericavi/datilistaSR/lista_movimenti.pickle'):
             with open ('spesericavi/datilistaSR/lista_movimenti.pickle', 'rb') as f:
                 self.listamovimenti = pickle.load(f)
+
     def rimuovi_voce(self,descrizione):
         for voce in self.listamovimenti:
             if descrizione == voce.descrizione:

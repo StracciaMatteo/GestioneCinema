@@ -21,6 +21,7 @@ class VistaListaMovimenti(QWidget):
 
 
 
+
     # Funzione che permette di accedere alla funzione inserimento voce
     def apri_inserisci_voce(self):
         inserisci_voce = VistaInserimentoSpeseRicavi(self.widget)
@@ -58,18 +59,21 @@ class VistaListaMovimenti(QWidget):
         msg.setStandardButtons(QMessageBox.Ok)
         result = msg.exec()
 
-    #-----------------------------------------------------------da verificare
+    # Funzione che chiama l'eliminazione della voce e manda a schermo un Box di Errore
     def elimina_voce(self):
         if self.vista.lista_voci.currentRow()==-1:
-            self.vista.error.setText("Nessuna voce è stata selezionata")
+            error = Error("Attenzione", "Voce non selezionata", "")
+            error.error_messagge()
         else:
-            self.box_dialog2()
+            self.removing_error_box()
 
-    def box_dialog2(self):
+    # Funzione che permette di rimuovere la voce dalla lista
+    def removing_error_box(self):
         error = Error("Attenzione","Vuoi eliminare la voce ?","")
         if error.confirm_messagge() == QMessageBox.Yes:
-            item = self.vista.lista_voci.takeItem(
-                self.vista.lista_voci.currentRow())
-            descrizione = item.text()
+            self.vista.lista_voci.takeItem(self.vista.lista_voci.currentRow())
+            descrizione = self.controlloremov.modellist.listamovimenti[self.vista.lista_voci.currentRow()].descrizione
             self.controlloremov.rimuovi_voce(descrizione)
             self.controlloremov.save()
+
+
