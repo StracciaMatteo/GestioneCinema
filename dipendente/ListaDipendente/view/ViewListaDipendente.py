@@ -39,7 +39,7 @@ class ViewListaDipendente(QWidget):
         vista.btn_Home.clicked.connect(self.go_home)
 
     def go_inserisci_dipendente(self):
-        vista_inseriscidipendente = ViewInserisciDipendente(self.widget,self.add_dipendente)
+        vista_inseriscidipendente = ViewInserisciDipendente(self.widget,self.controllerdip,self.add_dipendente)
         self.go_to(vista_inseriscidipendente)
 
     def go_aggiorna_dipendente(self):
@@ -47,8 +47,9 @@ class ViewListaDipendente(QWidget):
             self.vista_lista_dipendente.error.setText("Nessun dipendente e' stato selezionato")
         else:
             cognome = self.vista_lista_dipendente.list_dipendenti.currentItem().text()
-            dipendente = self.controllerdip.get_dipendente_by_name(cognome.split()[0])
-            vista_aggiornadipendente=ViewAggiornaDipendente(self.widget,dipendente)
+            dipendente = self.controllerdip.get_dipendente_by_name(cognome.split()[-1],cognome.split()[0])
+            item = self.vista_lista_dipendente.list_dipendenti.takeItem(self.vista_lista_dipendente.list_dipendenti.currentRow())
+            vista_aggiornadipendente=ViewAggiornaDipendente(self.widget,dipendente,self.controllerdip,self.add_dipendente)
             self.go_to(vista_aggiornadipendente)
 
     def popola_lista_dipententi(self):
@@ -58,13 +59,12 @@ class ViewListaDipendente(QWidget):
             cont+=1
         self.vista_lista_dipendente.list_dipendenti.setSortingEnabled(True)
         for dipendente in self.controllerdip.modeldip.listdipendent:
-            self.vista_lista_dipendente.list_dipendenti.addItem(dipendente.cognome+" "+dipendente.nome)
+            self.vista_lista_dipendente.list_dipendenti.addItem(dipendente.cognome + " " + dipendente.nome)
         self.add_icon()
-
 
     def go_view_dipendente(self):
         cognome=self.vista_lista_dipendente.list_dipendenti.currentItem().text()
-        dipendente=self.controllerdip.get_dipendente_by_name(cognome.split()[0])
+        dipendente=self.controllerdip.get_dipendente_by_name(cognome.split()[-1],cognome.split()[0])
         viewdipendente=ViewDipendente(self.widget,dipendente,self.remove_dipendente)
         self.go_to(viewdipendente)
 
@@ -115,11 +115,10 @@ class ViewListaDipendente(QWidget):
             item = self.vista_lista_dipendente.list_dipendenti.takeItem(
                 self.vista_lista_dipendente.list_dipendenti.currentRow())
             cognome = item.text()
-            self.controllerdip.remove_dipendente_by_name(cognome.split()[0])
+            self.controllerdip.remove_dipendente_by_name(cognome.split()[-1],cognome.split()[0])
             self.controllerdip.save()
+
     def add_dipendente(self,modello):
-        self.controllerdip.aggiungi_dipendente(modello)
-        self.controllerdip.save()
         self.vista_lista_dipendente.list_dipendenti.addItem(modello.cognome+" "+modello.nome)
         items = self.vista_lista_dipendente.list_dipendenti.findItems(modello.cognome,Qt.MatchContains)
         for item in items:

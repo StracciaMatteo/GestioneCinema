@@ -2,12 +2,16 @@ from PyQt5 import uic,QtCore, QtWidgets
 from PyQt5.QtCore import QDate
 from PyQt5.QtWidgets import QWidget
 
+from dipendente.ListaDipendente.controller.ControllerListaDipendenti import ControllerListaDipendenti
+
 
 class ViewAggiornaDipendente(QWidget):
-    def __init__(self, widget,dipendente):
+    def __init__(self, widget,dipendente,controllerdip,callback):
         super(ViewAggiornaDipendente, self).__init__()
         self.widget = widget
         self.dipendente = dipendente
+        self.callback=callback
+        self.controllerdip= controllerdip
         self.vista_aggiorna_dipendente = uic.loadUi("dipendente/DatiDipendente/view/AggiornaDipendente.ui",self)
         self.btn_torna.clicked.connect(self.go_back)
         self.btn_Home.clicked.connect(self.go_home)
@@ -15,6 +19,7 @@ class ViewAggiornaDipendente(QWidget):
         self.ferie_on.clicked.connect(self.enable_ferie)
         self.vista_aggiorna_dipendente.Ferie_dal.setDisabled(True)
         self.vista_aggiorna_dipendente.Ferie_al_1.setDisabled(True)
+        self.vista_aggiorna_dipendente.salva_modifica.clicked.connect(self.update_dip)
     def go_back(self):
         self.widget.setCurrentIndex(self.widget.currentIndex() - 1)
         self.widget.removeWidget(self.vista_aggiorna_dipendente)
@@ -47,6 +52,7 @@ class ViewAggiornaDipendente(QWidget):
         else:
             self.vista_aggiorna_dipendente.Ferie_dal.setDate(QtCore.QDate.fromString(ferie_dal, "dd/MM/yyyy"))
             self.vista_aggiorna_dipendente.Ferie_al_1.setDate(QtCore.QDate.fromString(ferie_al, "dd/MM/yyyy"))
+
     def enable_ferie(self):
        if self.vista_aggiorna_dipendente.ferie_on.isChecked():
            self.vista_aggiorna_dipendente.Ferie_dal.setDisabled(False)
@@ -54,3 +60,12 @@ class ViewAggiornaDipendente(QWidget):
        else:
            self.vista_aggiorna_dipendente.Ferie_dal.setDisabled(True)
            self.vista_aggiorna_dipendente.Ferie_al_1.setDisabled(True)
+
+    def update_dip(self):
+        self.dipendente.nome= self.vista_aggiorna_dipendente.Nome.text()
+        self.dipendente.cognome= self.vista_aggiorna_dipendente.Cognome.text()
+        self.controllerdip.save()
+        self.callback(self.dipendente)
+
+
+

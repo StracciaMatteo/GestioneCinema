@@ -10,11 +10,11 @@ class ControllerListaDipendenti():
     def aggiungi_dipendente(self, modello):
         self.modeldip.aggiungi_dipendente(modello)
 
-    def get_dipendente_by_name(self,name):
-        return self.modeldip.get_dipendente_by_name(name)
+    def get_dipendente_by_name(self,name,cognome):
+        return self.modeldip.get_dipendente_by_name(name,cognome)
 
-    def remove_dipendente_by_name(self, name):
-        self.modeldip.remove_dipendente_by_name(name)
+    def remove_dipendente_by_name(self, name ,cognome):
+        self.modeldip.remove_dipendente_by_name(name,cognome)
 
 
     def save(self):

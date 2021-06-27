@@ -7,11 +7,11 @@ from dipendente.ListaDipendente.controller.ControllerListaDipendenti import Cont
 import time
 
 class ViewInserisciDipendente(QWidget):
-    def __init__(self, widget,callback):
+    def __init__(self, widget,controllerdip,callback):
         super(ViewInserisciDipendente, self).__init__()
         self.widget = widget
         self.callback=callback
-        self.controllerdip = ControllerListaDipendenti()
+        self.controllerdip = controllerdip
         self.vista_inserisci_dipendente = uic.loadUi("dipendente/ListaDipendente/view/InserisciDipendente.ui",self)
         self.btn_torna.clicked.connect(self.go_back)
         self.btn_Home.clicked.connect(self.go_home)
@@ -44,6 +44,8 @@ class ViewInserisciDipendente(QWidget):
 
     def save_new_dipendente(self):
         modello=self.get_dati_dipendente()
+        self.controllerdip.aggiungi_dipendente(modello)
+        self.controllerdip.save()
         self.callback(modello)
         self.widget.setCurrentIndex(self.widget.currentIndex() - 1)
         self.widget.removeWidget(self.vista_inserisci_dipendente)

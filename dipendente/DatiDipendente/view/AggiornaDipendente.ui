@@ -1301,7 +1301,7 @@ p, li { white-space: pre-wrap; }
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="salva_modifica">
        <property name="styleSheet">
         <string notr="true">QPushButton{
 border-radius: 10px;

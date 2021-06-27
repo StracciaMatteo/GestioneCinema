@@ -86,7 +86,7 @@ class VistaHome(QWidget):
     # Area Gestione Dipendente
     def visualizza_inserisci_dipendente(self):
         vista_listadipendente = ViewListaDipendente(self.widget)
-        vista_inseriscidipendente = ViewInserisciDipendente(self.widget,vista_listadipendente.add_dipendente)
+        vista_inseriscidipendente = ViewInserisciDipendente(self.widget,vista_listadipendente.controllerdip,vista_listadipendente.add_dipendente)
         self.widget.addWidget(vista_inseriscidipendente)
         self.widget.setCurrentIndex(self.widget.currentIndex() + 1)
 

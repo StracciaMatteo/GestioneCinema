@@ -15,14 +15,14 @@ class ListaDipendenti():
     def aggiungi_dipendente(self, modello):
         self.listdipendent.append(modello)
 
-    def get_dipendente_by_name(self, name):
+    def get_dipendente_by_name(self, name,cognome):
         for dipendente in self.listdipendent:
-            if name == dipendente.cognome.split()[0]:
+            if cognome == dipendente.cognome.split()[0] and name== dipendente.nome:
                 return dipendente
 
-    def remove_dipendente_by_name(self,name):
+    def remove_dipendente_by_name(self,name,cognome):
         for dipendente in self.listdipendent:
-            if name == dipendente.cognome.split()[0]:
+            if cognome == dipendente.cognome.split()[0] and name== dipendente.nome:
                 self.listdipendent.remove(dipendente)
 
     def save(self):
