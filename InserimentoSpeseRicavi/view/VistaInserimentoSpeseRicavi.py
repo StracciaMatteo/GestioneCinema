@@ -14,6 +14,7 @@ class VistaInserimentoSpeseRicavi(QWidget):
         self.vista= uic.loadUi("InserimentoSpeseRicavi/view/Inserisci_Movimento_UI.ui",self)
         self.btn_torna_IM.clicked.connect(self.go_back)
         self.vista.btn_InserisciMov.clicked.connect(self.save)
+        self.vista.btn_InserisciMov.setShortcut("Return")
 
 
     # Funzione che fa "scorrere" il widget all'indice precedente
