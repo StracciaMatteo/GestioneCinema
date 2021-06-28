@@ -17,12 +17,12 @@ class ListaDipendenti():
 
     def get_dipendente_by_name(self, name,cognome):
         for dipendente in self.listdipendent:
-            if cognome == dipendente.cognome.split()[0] and name== dipendente.nome:
+            if cognome == dipendente.cognome.split()[0] and name== dipendente.nome.split()[-1]:
                 return dipendente
 
     def remove_dipendente_by_name(self,name,cognome):
         for dipendente in self.listdipendent:
-            if cognome == dipendente.cognome.split()[0] and name== dipendente.nome:
+            if cognome == dipendente.cognome.split()[0] and name== dipendente.nome.split()[-1]:
                 self.listdipendent.remove(dipendente)
 
     def save(self):

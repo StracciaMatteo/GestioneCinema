@@ -3,14 +3,16 @@ from PyQt5.QtCore import QDate
 from PyQt5.QtWidgets import QWidget
 
 from dipendente.ListaDipendente.controller.ControllerListaDipendenti import ControllerListaDipendenti
+from messaggeError.Error import Error
 
 
 class ViewAggiornaDipendente(QWidget):
-    def __init__(self, widget,dipendente,controllerdip,callback):
+    def __init__(self, widget,dipendente,controllerdip,callback,lista):
         super(ViewAggiornaDipendente, self).__init__()
         self.widget = widget
         self.dipendente = dipendente
         self.callback=callback
+        self.lista=lista
         self.controllerdip= controllerdip
         self.vista_aggiorna_dipendente = uic.loadUi("dipendente/DatiDipendente/view/AggiornaDipendente.ui",self)
         self.btn_torna.clicked.connect(self.go_back)
@@ -53,6 +55,14 @@ class ViewAggiornaDipendente(QWidget):
             self.vista_aggiorna_dipendente.Ferie_dal.setDate(QtCore.QDate.fromString(ferie_dal, "dd/MM/yyyy"))
             self.vista_aggiorna_dipendente.Ferie_al_1.setDate(QtCore.QDate.fromString(ferie_al, "dd/MM/yyyy"))
 
+    def scrivi_ferie(self):
+       if self.vista_aggiorna_dipendente.ferie_on.isChecked():
+           dal_data = self.vista_aggiorna_dipendente.Ferie_dal.date()
+           al_data = self.vista_aggiorna_dipendente.Ferie_al_1.date()
+           self.dipendente.ferie_dal = dal_data.toString("dd/MM/yyyy")
+           self.dipendente.ferie_al = al_data.toString("dd/MM/yyyy")
+
+
     def enable_ferie(self):
        if self.vista_aggiorna_dipendente.ferie_on.isChecked():
            self.vista_aggiorna_dipendente.Ferie_dal.setDisabled(False)
@@ -64,8 +74,27 @@ class ViewAggiornaDipendente(QWidget):
     def update_dip(self):
         self.dipendente.nome= self.vista_aggiorna_dipendente.Nome.text()
         self.dipendente.cognome= self.vista_aggiorna_dipendente.Cognome.text()
+        self.dipendente.luogo_nascita= self.vista_aggiorna_dipendente.Luogo_di_nascita.text()
+        self.dipendente.cf = self.vista_aggiorna_dipendente.Codice_fiscale.text()
+        self.dipendente.stipendio= self.vista_aggiorna_dipendente.Stipendio.text()
+        self.dipendente.commento= self.vista_aggiorna_dipendente.Commento.toPlainText()
+        self.dipendente.sesso= self.vista_aggiorna_dipendente.Sesso.currentText()
+        self.dipendente.mansione=self.vista_aggiorna_dipendente.Mansione.currentText()
+        qdata = self.vista_aggiorna_dipendente.Data_di_nascita.date()
+        self.dipendente.data_nascita=qdata.toString("dd/MM/yyyy")
+        self.dipendente.id=self.vista_aggiorna_dipendente.ID.text()
+        self.dipendente.turno_lavoro=self.vista_aggiorna_dipendente.Turno_di_lavoro.currentText()
+        libero_1=self.vista_aggiorna_dipendente.Giorno_libero_1.currentText()
+        libero_2=self.vista_aggiorna_dipendente.Giorno_libero_2.currentText()
+        self.dipendente.giorno_libero=libero_1+" "+libero_2
+        self.scrivi_ferie()
         self.controllerdip.save()
+        self.lista.list_dipendenti.takeItem(self.lista.list_dipendenti.currentRow())
         self.callback(self.dipendente)
-
+        self.box_dialog_upadate()
+        self.go_back()
+    def box_dialog_upadate(self):
+        error = Error("Aggiornamento Dipendente", "Le modifiche sono state salvate correttamente.", "")
+        error.information_message()
 
 

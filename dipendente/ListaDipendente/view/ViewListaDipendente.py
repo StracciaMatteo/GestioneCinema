@@ -48,8 +48,7 @@ class ViewListaDipendente(QWidget):
         else:
             cognome = self.vista_lista_dipendente.list_dipendenti.currentItem().text()
             dipendente = self.controllerdip.get_dipendente_by_name(cognome.split()[-1],cognome.split()[0])
-            item = self.vista_lista_dipendente.list_dipendenti.takeItem(self.vista_lista_dipendente.list_dipendenti.currentRow())
-            vista_aggiornadipendente=ViewAggiornaDipendente(self.widget,dipendente,self.controllerdip,self.add_dipendente)
+            vista_aggiornadipendente=ViewAggiornaDipendente(self.widget,dipendente,self.controllerdip,self.add_dipendente,self.vista_lista_dipendente)
             self.go_to(vista_aggiornadipendente)
 
     def popola_lista_dipententi(self):
