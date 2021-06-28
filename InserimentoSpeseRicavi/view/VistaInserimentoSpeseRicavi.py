@@ -1,4 +1,4 @@
-import sys
+
 from PyQt5 import uic
 from PyQt5.QtWidgets import QWidget, QMessageBox
 
@@ -16,17 +16,17 @@ class VistaInserimentoSpeseRicavi(QWidget):
         self.vista.btn_InserisciMov.clicked.connect(self.save)
 
 
-    #Funzione che fa "scorrere" il widget all'indice precedente
+    # Funzione che fa "scorrere" il widget all'indice precedente
     def go_back(self):
         self.widget.setCurrentIndex(self.widget.currentIndex() - 1)
         self.widget.removeWidget(self.vista)
-    #Questa funzione prende dall'interfaccia i dati e salva la voce nella lista delle voci di spese e ricavi
+    # Questa funzione prende dall'interfaccia i dati e salva la voce nella lista delle voci di spese e ricavi
     def add_voce(self):
         descrizione=self.vista.lineEdit_DescrizionVoce.text()
-        importo=float(self.vista.lineEdit_Importo.text())
+        importo=self.vista.lineEdit_Importo.text()
         segno= self.vista.comboBox_Segno.currentText()
         try:
-            if (float(importo) != "" or descrizione != "" ):
+            if (float(importo) != "" or descrizione != ""):
                 print(descrizione)
                 print(segno+importo+"€")
         except TypeError:
@@ -34,12 +34,12 @@ class VistaInserimentoSpeseRicavi(QWidget):
         model= ModelVoce(segno,importo,descrizione)
         return model
 
-    #Questa funzione implementa il salvataggio dei dati della voce
+    # Questa funzione implementa il salvataggio dei dati della voce
     def save(self):
         self.controllerInserimentoSR.aggiungi_voce(self.add_voce())
         self.controllerInserimentoSR.save()
 
-    #Questa funzione apre un MessageBox di errore per l'inserimento errato dell'importo
+    # Questa funzione apre un MessageBox di errore per l'inserimento errato dell'importo
     def box_dialog(self):
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Critical)

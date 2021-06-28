@@ -48,9 +48,9 @@ class VistaListaMovimenti(QWidget):
         totale=0
         for voci in self.controlloremov.modellist.listamovimenti:
             if voci.segno == "+":
-                totale += voci.importo
+                totale += float(voci.importo)
             else:
-                totale -= voci.importo
+                totale -= float(voci.importo)
         if totale != 0 :
             self.vista.lineEdit_Totale.setText(str(totale)+" €")
 
