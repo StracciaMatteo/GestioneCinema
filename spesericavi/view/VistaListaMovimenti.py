@@ -22,6 +22,7 @@ class VistaListaMovimenti(QWidget):
 
 
 
+
     # Funzione che permette di accedere alla funzione inserimento voce
     def apri_inserisci_voce(self):
         inserisci_voce = VistaInserimentoSpeseRicavi(self.widget)
