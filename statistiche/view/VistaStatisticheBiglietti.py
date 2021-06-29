@@ -26,4 +26,4 @@ class VistaStatisticheBiglietti(QWidget):
         plt.title("STATISTCHE BIGLIETTI VENDUTI")
         plt.xlabel("Orari")
         plt.ylabel("Numero biglietti venduti")
-        plt.show()
+        plt.show() #mostra il plt
