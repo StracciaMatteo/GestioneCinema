@@ -1,7 +1,6 @@
 
 from PyQt5 import uic
 from PyQt5.QtWidgets import QWidget, QMessageBox
-
 from InserimentoSpeseRicavi.controller.ControlloreInserimentoSR import ControlloreInserimentoSR
 from InserimentoSpeseRicavi.model.ModelVoce import ModelVoce
 
@@ -21,6 +20,7 @@ class VistaInserimentoSpeseRicavi(QWidget):
     def go_back(self):
         self.widget.setCurrentIndex(self.widget.currentIndex() - 1)
         self.widget.removeWidget(self.vista)
+
     # Questa funzione prende dall'interfaccia i dati e salva la voce nella lista delle voci di spese e ricavi
     def add_voce(self):
         descrizione=self.vista.lineEdit_DescrizionVoce.text()
