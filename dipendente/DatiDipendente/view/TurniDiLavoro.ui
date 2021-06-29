@@ -1,0 +1,789 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Turni_di_lavoro</class>
+ <widget class="QWidget" name="Turni_di_lavoro">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>719</width>
+    <height>437</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Turni di Lavoro</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget{
+	background-color: rgb(254, 235, 156);
+}
+
+QCalendarWidget QAbstractItemView:enabled 
+{
+	border-radius:15px;
+	padding: 5px;
+	color: rgb(92, 164, 144);  
+	background-color:rgb(255, 255, 255); 
+	selection-background-color: rgb(92, 164, 144); 
+	selection-color:rgb(255, 255, 255); 
+}
+
+QCalendarWidget QToolButton {
+  	border-radius:14px;
+	padding: 5px;
+	color: white;
+	background-color: rgb(92, 164, 144);
+  }
+
+QCalendarWidget QMenu {
+  	left: 20px;
+  	color: white;
+  	background-color: rgb(92, 164, 144);
+  }
+
+QCalendarWidget QSpinBox { 
+  	color: white; 
+  	background-color: rgb(92, 164, 144); 
+  	selection-background-color: rgb(55, 92, 108);
+  	selection-color: rgb(255, 255, 255);
+  }
+
+QCalendarWidget QSpinBox::up-button { 
+	background-color: rgb(255, 255, 255);
+	border-radius:5px;
+	padding: 5px;
+	}
+  QCalendarWidget QSpinBox::down-button {
+	background-color: rgb(255, 255, 255);
+	border-radius:5px;
+	padding: 5px;
+}
+  QCalendarWidget QSpinBox::up-arrow { 
+	image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-up-arrow.png)
+
+
+}
+  QCalendarWidget QSpinBox::down-arrow {
+	image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-arrow.png)
+
+}
+QCalendarWidget QWidget#qt_calendar_navigationbar
+{ 
+	border-radius:13px;
+	padding: 10px;
+  background-color:rgb(255, 255, 255); 
+}
+QCalendarWidget QAbstractItemView:disabled 
+{ 
+color:rgb(52, 93, 81); 
+}
+
+QTableWidget{
+	selection-background-color:rgb(123, 220, 193);
+	padding: 4px;
+}
+
+QHeaderView::section {
+    border-radius:10px;
+	background-color: rgb(92, 164, 144);
+	padding: 4px;
+    border: 1px solid #fffff8;
+	color: rgb(255, 255, 255);
+	font-size: 9pt;
+}
+
+QHeaderView::section:hover,QHeaderView::section:checked{
+    border-radius:10px;
+	background-color:rgb(123, 220, 193);
+	padding: 4px;
+    border: 1px solid #fffff8;
+	color: rgb(255, 255, 255);
+	font-size: 9pt;
+}
+
+QTableView QTableCornerButton::section {
+	 border-radius:10px;
+	 border: 2px solid #fffff8;
+}
+
+
+
+
+
+</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="Turni_di_lavoro_2">
+     <property name="font">
+      <font>
+       <pointsize>16</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(92, 164, 144);</string>
+     </property>
+     <property name="text">
+      <string>Turni di lavoro</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="Line" name="line">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item alignment="Qt::AlignLeft">
+      <widget class="QPushButton" name="btn_torna">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+ border-radius: 14px;
+Width:28px;
+Height:28px;
+background-color: rgb(55, 92, 108);
+color: rgb(255, 255, 255);
+border-style: outset;
+}
+
+QPushButton:hover{
+
+background-color: rgb(92, 154, 181);
+}
+QPushButton:pressed{
+border-style: inset;
+background-color: rgb(48, 80, 91);
+}
+
+
+</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../../../images/Torna-Indietro-icon.png</normaloff>../../../images/Torna-Indietro-icon.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item alignment="Qt::AlignLeft">
+      <widget class="QPushButton" name="btn_Home">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+ border-radius: 14px;
+Width:28px;
+Height:28px;
+background-color: rgb(55, 92, 108);
+color: rgb(255, 255, 255);
+border-style: outset;
+
+}
+
+QPushButton:hover{
+
+background-color: rgb(92, 154, 181);
+}
+QPushButton:pressed{
+border-style: inset;
+background-color: rgb(48, 80, 91);
+}
+
+
+</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../../../images/Home-icon.png</normaloff>../../../images/Home-icon.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>17</width>
+         <height>17</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_modifica">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+ border-radius: 12px;
+padding: 5px;
+background-color: rgb(55, 92, 108);
+color: rgb(255, 255, 255);
+border-style: outset;
+}
+
+QPushButton:hover{
+
+background-color: rgb(92, 154, 181);
+}
+QPushButton:pressed{
+border-style: inset;
+background-color: rgb(48, 80, 91);
+}
+
+</string>
+       </property>
+       <property name="text">
+        <string>Modifica</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>Modifica-icon.png</normaloff>Modifica-icon.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_salva">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+ border-radius: 12px;
+padding: 5px;
+background-color: rgb(55, 92, 108);
+color: rgb(255, 255, 255);
+border-style: outset;
+}
+
+QPushButton:hover{
+
+background-color: rgb(92, 154, 181);
+}
+QPushButton:pressed{
+border-style: inset;
+background-color: rgb(48, 80, 91);
+}
+
+
+</string>
+       </property>
+       <property name="text">
+        <string>Salva</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>Salva_icon.ico</normaloff>Salva_icon.ico</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0">
+     <property name="spacing">
+      <number>6</number>
+     </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QTableWidget" name="tableWidget">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>410</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>410</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;pre style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:130.769%; font-family:'Courier New';&quot;&gt;&lt;br/&gt;&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QWidget {
+    background-color: rgb(255, 255, 255);
+	  border-radius:10px;
+}
+
+
+QTableWidget{
+	selection-background-color:rgb(123, 220, 193);
+	padding: 4px;
+}
+
+QHeaderView::section {
+    border-radius:10px;
+	background-color: rgb(92, 164, 144);
+	padding: 4px;
+    border: 1px solid #fffff8;
+	color: rgb(255, 255, 255);
+	font-size: 9pt;
+}
+
+QHeaderView::section:hover,QHeaderView::section:checked{
+    border-radius:10px;
+	background-color:rgb(123, 220, 193);
+	padding: 4px;
+    border: 1px solid #fffff8;
+	color: rgb(255, 255, 255);
+	font-size: 9pt;
+}
+
+QTableView QTableCornerButton::section {
+	 border-radius:10px;
+	 border: 2px solid #fffff8;
+}
+</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="lineWidth">
+        <number>0</number>
+       </property>
+       <property name="verticalScrollBarPolicy">
+        <enum>Qt::ScrollBarAlwaysOff</enum>
+       </property>
+       <property name="horizontalScrollBarPolicy">
+        <enum>Qt::ScrollBarAlwaysOff</enum>
+       </property>
+       <property name="alternatingRowColors">
+        <bool>true</bool>
+       </property>
+       <property name="selectionMode">
+        <enum>QAbstractItemView::ExtendedSelection</enum>
+       </property>
+       <property name="selectionBehavior">
+        <enum>QAbstractItemView::SelectItems</enum>
+       </property>
+       <property name="showGrid">
+        <bool>true</bool>
+       </property>
+       <property name="gridStyle">
+        <enum>Qt::SolidLine</enum>
+       </property>
+       <property name="sortingEnabled">
+        <bool>false</bool>
+       </property>
+       <property name="cornerButtonEnabled">
+        <bool>true</bool>
+       </property>
+       <property name="rowCount">
+        <number>12</number>
+       </property>
+       <property name="columnCount">
+        <number>3</number>
+       </property>
+       <attribute name="horizontalHeaderCascadingSectionResizes">
+        <bool>false</bool>
+       </attribute>
+       <row>
+        <property name="text">
+         <string>Dipendente_1</string>
+        </property>
+        <property name="background">
+         <color>
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>Dipendede_2</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>Dipendede_3</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>Dipendede_4</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>Dipendede_5</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>Dipendede_6</string>
+        </property>
+       </row>
+       <row/>
+       <row/>
+       <row/>
+       <row/>
+       <row/>
+       <row/>
+       <column>
+        <property name="text">
+         <string>Turno di lavoro</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Assenza</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Recupero</string>
+        </property>
+       </column>
+       <item row="0" column="0">
+        <property name="text">
+         <string>Mattina</string>
+        </property>
+        <property name="whatsThis">
+         <string/>
+        </property>
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <italic>false</italic>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+        <property name="background">
+         <brush brushstyle="NoBrush">
+          <color alpha="255">
+           <red>92</red>
+           <green>164</green>
+           <blue>148</blue>
+          </color>
+         </brush>
+        </property>
+        <property name="foreground">
+         <brush brushstyle="NoBrush">
+          <color alpha="255">
+           <red>92</red>
+           <green>164</green>
+           <blue>144</blue>
+          </color>
+         </brush>
+        </property>
+        <property name="flags">
+         <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled|ItemIsTristate</set>
+        </property>
+       </item>
+       <item row="0" column="1">
+        <property name="text">
+         <string>Assente</string>
+        </property>
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+        <property name="foreground">
+         <brush brushstyle="NoBrush">
+          <color alpha="255">
+           <red>92</red>
+           <green>164</green>
+           <blue>144</blue>
+          </color>
+         </brush>
+        </property>
+        <property name="flags">
+         <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+        </property>
+       </item>
+       <item row="1" column="0">
+        <property name="text">
+         <string>Mattina</string>
+        </property>
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+        <property name="background">
+         <brush brushstyle="NoBrush">
+          <color alpha="255">
+           <red>92</red>
+           <green>164</green>
+           <blue>144</blue>
+          </color>
+         </brush>
+        </property>
+        <property name="foreground">
+         <brush brushstyle="NoBrush">
+          <color alpha="255">
+           <red>92</red>
+           <green>164</green>
+           <blue>144</blue>
+          </color>
+         </brush>
+        </property>
+        <property name="flags">
+         <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+        </property>
+       </item>
+       <item row="1" column="1">
+        <property name="flags">
+         <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+        </property>
+       </item>
+       <item row="2" column="0">
+        <property name="text">
+         <string>Mattina</string>
+        </property>
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+        <property name="foreground">
+         <brush brushstyle="NoBrush">
+          <color alpha="255">
+           <red>92</red>
+           <green>164</green>
+           <blue>144</blue>
+          </color>
+         </brush>
+        </property>
+        <property name="flags">
+         <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+        </property>
+       </item>
+       <item row="2" column="1">
+        <property name="flags">
+         <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+        </property>
+       </item>
+       <item row="3" column="0">
+        <property name="text">
+         <string>Sera</string>
+        </property>
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+        <property name="foreground">
+         <brush brushstyle="NoBrush">
+          <color alpha="255">
+           <red>92</red>
+           <green>164</green>
+           <blue>144</blue>
+          </color>
+         </brush>
+        </property>
+        <property name="flags">
+         <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+        </property>
+       </item>
+       <item row="3" column="1">
+        <property name="text">
+         <string>Assente</string>
+        </property>
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+        <property name="foreground">
+         <brush brushstyle="NoBrush">
+          <color alpha="255">
+           <red>92</red>
+           <green>164</green>
+           <blue>144</blue>
+          </color>
+         </brush>
+        </property>
+        <property name="flags">
+         <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+        </property>
+       </item>
+       <item row="4" column="0">
+        <property name="text">
+         <string>Sera</string>
+        </property>
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+        <property name="foreground">
+         <brush brushstyle="NoBrush">
+          <color alpha="255">
+           <red>92</red>
+           <green>164</green>
+           <blue>144</blue>
+          </color>
+         </brush>
+        </property>
+        <property name="flags">
+         <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+        </property>
+       </item>
+       <item row="4" column="1">
+        <property name="flags">
+         <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+        </property>
+       </item>
+       <item row="5" column="0">
+        <property name="text">
+         <string>Sera</string>
+        </property>
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+        <property name="foreground">
+         <brush brushstyle="NoBrush">
+          <color alpha="255">
+           <red>92</red>
+           <green>164</green>
+           <blue>144</blue>
+          </color>
+         </brush>
+        </property>
+        <property name="flags">
+         <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+        </property>
+       </item>
+       <item row="5" column="1">
+        <property name="flags">
+         <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCalendarWidget" name="calendarWidget">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>270</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>600</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

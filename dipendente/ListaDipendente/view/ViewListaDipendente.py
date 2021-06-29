@@ -36,10 +36,10 @@ class ViewListaDipendente(QWidget):
     def go_to(self, vista):
         self.widget.addWidget(vista)
         self.widget.setCurrentIndex(self.widget.currentIndex() + 1)
-        vista.btn_Home.clicked.connect(self.go_home)
+        #vista.btn_Home.clicked.connect(self.go_home)
 
     def go_inserisci_dipendente(self):
-        vista_inseriscidipendente = ViewInserisciDipendente(self.widget,self.controllerdip,self.add_dipendente)
+        vista_inseriscidipendente = ViewInserisciDipendente(self.widget,self.controllerdip,self.add_dipendente,self.go_home)
         self.go_to(vista_inseriscidipendente)
 
     def go_aggiorna_dipendente(self):
@@ -48,7 +48,7 @@ class ViewListaDipendente(QWidget):
         else:
             cognome = self.vista_lista_dipendente.list_dipendenti.currentItem().text()
             dipendente = self.controllerdip.get_dipendente_by_name(cognome.split()[-1],cognome.split()[0])
-            vista_aggiornadipendente=ViewAggiornaDipendente(self.widget,dipendente,self.controllerdip,self.add_dipendente,self.vista_lista_dipendente)
+            vista_aggiornadipendente=ViewAggiornaDipendente(self.widget,dipendente,self.controllerdip,self.add_dipendente,self.vista_lista_dipendente,self.go_home)
             self.go_to(vista_aggiornadipendente)
 
     def popola_lista_dipententi(self):
@@ -64,7 +64,7 @@ class ViewListaDipendente(QWidget):
     def go_view_dipendente(self):
         cognome=self.vista_lista_dipendente.list_dipendenti.currentItem().text()
         dipendente=self.controllerdip.get_dipendente_by_name(cognome.split()[-1],cognome.split()[0])
-        viewdipendente=ViewDipendente(self.widget,dipendente,self.remove_dipendente)
+        viewdipendente=ViewDipendente(self.widget,dipendente,self.remove_dipendente,self.go_home,self.go_aggiorna_dipendente)
         self.go_to(viewdipendente)
 
     def search_dipendente(self):

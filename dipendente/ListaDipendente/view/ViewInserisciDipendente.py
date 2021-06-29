@@ -7,11 +7,12 @@ from dipendente.ListaDipendente.controller.ControllerListaDipendenti import Cont
 import time
 
 class ViewInserisciDipendente(QWidget):
-    def __init__(self, widget,controllerdip,callback):
+    def __init__(self, widget,controllerdip,callback,casa):
         super(ViewInserisciDipendente, self).__init__()
         self.widget = widget
         self.callback=callback
         self.controllerdip = controllerdip
+        self.casa=casa
         self.vista_inserisci_dipendente = uic.loadUi("dipendente/ListaDipendente/view/InserisciDipendente.ui",self)
         self.btn_torna.clicked.connect(self.go_back)
         self.btn_Home.clicked.connect(self.go_home)
@@ -22,7 +23,7 @@ class ViewInserisciDipendente(QWidget):
     def go_home(self):
         self.widget.setCurrentIndex(1)
         self.widget.removeWidget(self.vista_inserisci_dipendente)
-
+        self.casa()
     def get_dati_dipendente(self):
         nomedip = self.vista_inserisci_dipendente.Nome.text()
         cognomedip = self.vista_inserisci_dipendente.cognome.text()

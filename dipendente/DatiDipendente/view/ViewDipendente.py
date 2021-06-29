@@ -3,16 +3,19 @@ from PyQt5.QtWidgets import QWidget
 
 
 class ViewDipendente(QWidget):
-    def __init__(self, widget,dipendente,callback):
+    def __init__(self, widget, dipendente, callback, casa, aggiorna):
         super(ViewDipendente, self).__init__()
         self.dipendente = dipendente
         self.widget = widget
         self.callback=callback
+        self.casa=casa
+        self.aggiorna=aggiorna
         self.vista_dipendente = uic.loadUi("dipendente/DatiDipendente/view/Dipendente.ui",self)
         self.btn_torna.clicked.connect(self.go_back)
         self.btn_Home.clicked.connect(self.go_home)
         self.visualizza_dipendente(dipendente)
         self.btn_elimina_dip.clicked.connect(self.remove_dipendente)
+        self.btn_aggiorna_dip.clicked.connect(self.go_aggiorna_dipendente)
 
     def go_back(self):
         self.widget.setCurrentIndex(self.widget.currentIndex() - 1)
@@ -21,7 +24,11 @@ class ViewDipendente(QWidget):
     def go_home(self):
         self.widget.setCurrentIndex(1)
         self.widget.removeWidget(self.vista_dipendente)
+        self.casa()
 
+    def go_aggiorna_dipendente(self):
+        self.aggiorna()
+        self.widget.removeWidget(self.vista_dipendente)
     def visualizza_dipendente(self,dipendente):
         self.nome.setText(dipendente.nome)
         self.cognome.setText(dipendente.cognome)
