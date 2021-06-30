@@ -6,7 +6,6 @@ class ControllerListaDipendenti():
         super(ControllerListaDipendenti, self).__init__()
         self.modeldip = ListaDipendenti()
 
-    # funzioni riguardanti i film
     def aggiungi_dipendente(self, modello):
         self.modeldip.aggiungi_dipendente(modello)
 
@@ -15,6 +14,7 @@ class ControllerListaDipendenti():
 
     def remove_dipendente_by_name(self, name ,cognome):
         self.modeldip.remove_dipendente_by_name(name,cognome)
+
 
 
     def save(self):
