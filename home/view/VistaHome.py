@@ -1,7 +1,6 @@
 from PyQt5 import uic
 from PyQt5.QtWidgets import QWidget
 
-
 from biglietteria.rimborso.view.viewRimborso import viewRimborso
 from biglietteria.vendita.view.viewVendita import viewVendita
 from dipendente.DatiDipendente.view.ViewTurniDiLavoro import ViewTurniDiLavoro

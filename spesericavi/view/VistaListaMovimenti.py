@@ -1,9 +1,10 @@
 from PyQt5 import uic
 from PyQt5.QtWidgets import QWidget, QMessageBox
 
+from InserimentoSpeseRicavi.controller.ControlloreInserimentoSR import ControlloreInserimentoSR
 from InserimentoSpeseRicavi.view.VistaInserimentoSpeseRicavi import VistaInserimentoSpeseRicavi
 from messaggeError.Error import Error
-from spesericavi.controller.CotrolloreListaMovimenti import ControlloreListaMovimenti
+#from spesericavi.controller.CotrolloreListaMovimenti import ControlloreListaMovimenti
 
 
 class VistaListaMovimenti(QWidget):
@@ -11,18 +12,13 @@ class VistaListaMovimenti(QWidget):
         super(VistaListaMovimenti, self).__init__()
         self.widget = widget
         self.vista= uic.loadUi("spesericavi/view/Lista_Movimenti_UI2.ui", self)
-        self.controlloremov = ControlloreListaMovimenti()
+        self.controlloremov = ControlloreInserimentoSR()
         self.voci_nella_lista()
         self.totale()
         self.btn_torna_LM.clicked.connect(self.go_back)
         self.btn_InserisciMovLM.clicked.connect(self.apri_inserisci_voce)
         self.btn_RimuoviMovLM.clicked.connect(self.elimina_voce)
         self.btn_RimuoviMovLM.setShortcut("ctrl+r")
-
-
-
-
-
 
     # Funzione che permette di accedere alla funzione inserimento voce
     def apri_inserisci_voce(self):
@@ -37,18 +33,21 @@ class VistaListaMovimenti(QWidget):
 
     # Funzione che carica gli elementi prensenti nel file pickle nel List Widget
     def voci_nella_lista(self):
+        self.vista.lista_voci.clear()
         cont=0
-        for voci in self.controlloremov.modellist.listamovimenti:
+        for voci in self.controlloremov.model.lista_movimenti:
             item= self.vista.lista_voci.takeItem(cont)
             cont +=1
         self.vista.lista_voci.setSortingEnabled(False)
-        for voci in self.controlloremov.modellist.listamovimenti:
+        for voci in self.controlloremov.model.lista_movimenti:
             self.vista.lista_voci.addItem(voci.segno+str(voci.importo)+"  "+voci.descrizione)
+
+
 
     # Funzione che permette di calcolare il totale della lista movimenti
     def totale(self):
         totale=0
-        for voci in self.controlloremov.modellist.listamovimenti:
+        for voci in self.controlloremov.model.lista_movimenti:
             if voci.segno == "+":
                 totale += float(voci.importo)
             else:
@@ -80,7 +79,7 @@ class VistaListaMovimenti(QWidget):
         error = Error("Attenzione","Vuoi eliminare la voce ?","")
         if error.confirm_messagge() == QMessageBox.Yes:
             self.vista.lista_voci.takeItem(self.vista.lista_voci.currentRow())
-            descrizione = self.controlloremov.modellist.listamovimenti[self.vista.lista_voci.currentRow()].descrizione
+            descrizione = self.controlloremov.model.lista_movimenti[self.vista.lista_voci.currentRow()+1].descrizione
             self.controlloremov.rimuovi_voce(descrizione)
             self.controlloremov.save()
 
