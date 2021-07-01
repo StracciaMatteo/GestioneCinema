@@ -92,7 +92,8 @@ class ViewAggiornaDipendente(QWidget):
         self.lista.list_dipendenti.takeItem(self.lista.list_dipendenti.currentRow())
         self.callback(self.dipendente)
         self.box_dialog_upadate()
-        self.go_back()
+        self.widget.setCurrentIndex(self.widget.currentIndex() - 1)
+        self.widget.removeWidget(self.vista_aggiorna_dipendente)
 
     def box_dialog_upadate(self):
         error = Error("Aggiornamento Dipendente", "Le modifiche sono state salvate correttamente.", "")
@@ -114,21 +115,27 @@ class ViewAggiornaDipendente(QWidget):
         if self.vista_aggiorna_dipendente.ID.text()=="" or self.vista_aggiorna_dipendente.Nome.text()=="" or self.vista_aggiorna_dipendente.Cognome.text()=="" or self.vista_aggiorna_dipendente.Luogo_di_nascita.text()=="" or self.vista_aggiorna_dipendente.Codice_fiscale.text()=="" or self.vista_aggiorna_dipendente.Stipendio.text()=="":
             self.vista_aggiorna_dipendente.error_text.setText("i dati sono mancanti")
         else:
-            self.update_dip()
+            if self.vista_aggiorna_dipendente.Ferie_dal.date() > self.vista_aggiorna_dipendente.Ferie_al_1.date():
+                self.vista_aggiorna_dipendente.error_text.setText("La data di inizio ferie supera quella di fine ferie")
+            else:
+                self.update_dip()
 
     def verifica_modifica(self,bool):
         if self.vista_aggiorna_dipendente.ID.text()=="" or self.vista_aggiorna_dipendente.Nome.text()=="" or self.vista_aggiorna_dipendente.Cognome.text()=="" or self.vista_aggiorna_dipendente.Luogo_di_nascita.text()=="" or self.vista_aggiorna_dipendente.Codice_fiscale.text()=="" or self.vista_aggiorna_dipendente.Stipendio.text()=="":
             self.vista_aggiorna_dipendente.error_text.setText("i dati sono mancanti")
         else:
-            libero_1 = self.vista_aggiorna_dipendente.Giorno_libero_1.currentText()
-            libero_2 = self.vista_aggiorna_dipendente.Giorno_libero_2.currentText()
-            if self.dipendente.nome== self.vista_aggiorna_dipendente.Nome.text() and self.dipendente.cognome==self.vista_aggiorna_dipendente.Cognome.text() and self.dipendente.luogo_nascita== self.vista_aggiorna_dipendente.Luogo_di_nascita.text() and self.dipendente.cf == self.vista_aggiorna_dipendente.Codice_fiscale.text() and self.dipendente.stipendio== self.vista_aggiorna_dipendente.Stipendio.text() and self.dipendente.commento== self.vista_aggiorna_dipendente.Commento.toPlainText() and self.dipendente.sesso== self.vista_aggiorna_dipendente.Sesso.currentText() and self.dipendente.mansione==self.vista_aggiorna_dipendente.Mansione.currentText() and self.dipendente.data_nascita==self.vista_aggiorna_dipendente.Data_di_nascita.date().toString("dd/MM/yyyy") and self.dipendente.id==self.vista_aggiorna_dipendente.ID.text() and self.dipendente.turno_lavoro==self.vista_aggiorna_dipendente.Turno_di_lavoro.currentText() and self.dipendente.giorno_libero==libero_1+" "+libero_2  and not self.vista_aggiorna_dipendente.ferie_on.isChecked():
-               if bool:
-                   self.widget.setCurrentIndex(self.widget.currentIndex() - 1)
-                   self.widget.removeWidget(self.vista_aggiorna_dipendente)
-               else:
-                   self.widget.setCurrentIndex(1)
-                   self.widget.removeWidget(self.vista_aggiorna_dipendente)
-                   self.casa()
+            if self.vista_aggiorna_dipendente.Ferie_dal.date() > self.vista_aggiorna_dipendente.Ferie_al_1.date():
+                self.vista_aggiorna_dipendente.error_text.setText("La data di inizio ferie supera quella di fine ferie")
             else:
-                self.box_dialog_modifica(bool)
+                libero_1 = self.vista_aggiorna_dipendente.Giorno_libero_1.currentText()
+                libero_2 = self.vista_aggiorna_dipendente.Giorno_libero_2.currentText()
+                if self.dipendente.nome== self.vista_aggiorna_dipendente.Nome.text() and self.dipendente.cognome==self.vista_aggiorna_dipendente.Cognome.text() and self.dipendente.luogo_nascita== self.vista_aggiorna_dipendente.Luogo_di_nascita.text() and self.dipendente.cf == self.vista_aggiorna_dipendente.Codice_fiscale.text() and self.dipendente.stipendio== self.vista_aggiorna_dipendente.Stipendio.text() and self.dipendente.commento== self.vista_aggiorna_dipendente.Commento.toPlainText() and self.dipendente.sesso== self.vista_aggiorna_dipendente.Sesso.currentText() and self.dipendente.mansione==self.vista_aggiorna_dipendente.Mansione.currentText() and self.dipendente.data_nascita==self.vista_aggiorna_dipendente.Data_di_nascita.date().toString("dd/MM/yyyy") and self.dipendente.id==self.vista_aggiorna_dipendente.ID.text() and self.dipendente.turno_lavoro==self.vista_aggiorna_dipendente.Turno_di_lavoro.currentText() and self.dipendente.giorno_libero==libero_1+" "+libero_2  and not self.vista_aggiorna_dipendente.ferie_on.isChecked():
+                   if bool:
+                       self.widget.setCurrentIndex(self.widget.currentIndex() - 1)
+                       self.widget.removeWidget(self.vista_aggiorna_dipendente)
+                   else:
+                       self.widget.setCurrentIndex(1)
+                       self.widget.removeWidget(self.vista_aggiorna_dipendente)
+                       self.casa()
+                else:
+                    self.box_dialog_modifica(bool)

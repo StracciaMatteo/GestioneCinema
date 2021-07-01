@@ -318,6 +318,49 @@ background-color: rgb(48, 80, 91);
       </widget>
      </item>
      <item>
+      <widget class="QComboBox" name="edit_box">
+       <property name="styleSheet">
+        <string notr="true">QComboBox{
+	background: white;
+	border-radius:10px;
+	padding: 5px;
+}
+
+
+QComboBox QAbstractItemView {
+	selection-background-color:rgb(55, 92, 108);
+	background-color: rgb(255, 255, 255);
+	border-radius:5px;
+	padding: 5px;
+
+}
+
+
+QComboBox::down-arrow {
+	 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-arrow.png) ;
+}
+
+QComboBox::drop-down{
+	border-radius:10px;
+	padding: 5px;
+}
+
+QComboBox::drop-down:hover{
+	
+	background-color: rgb(92, 176, 150);
+	border-radius:5px;
+	padding: 5px;
+}
+
+QComboBox::down-arrow:on {
+    top: 1px;
+}
+
+</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <spacer name="horizontalSpacer">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
