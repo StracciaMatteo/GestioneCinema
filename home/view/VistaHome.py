@@ -69,7 +69,7 @@ class VistaHome(QWidget):
 
     # Area Gestione Economica
     def visualizza_ins_spesa_ricavo(self):
-        vista_ins_spesa_ricavo = VistaInserimentoSpeseRicavi(self.widget)
+        vista_ins_spesa_ricavo = VistaInserimentoSpeseRicavi(self.widget,self.widget.removeWidget(self.widget.widget(2)))
         self.widget.addWidget(vista_ins_spesa_ricavo)
         self.widget.setCurrentIndex(self.widget.currentIndex() + 1)
 

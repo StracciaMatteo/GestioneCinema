@@ -22,7 +22,7 @@ class VistaListaMovimenti(QWidget):
 
     # Funzione che permette di accedere alla funzione inserimento voce
     def apri_inserisci_voce(self):
-        inserisci_voce = VistaInserimentoSpeseRicavi(self.widget)
+        inserisci_voce = VistaInserimentoSpeseRicavi(self.widget,self.voci_nella_lista)
         self.widget.addWidget(inserisci_voce)
         self.widget.setCurrentIndex(self.widget.currentIndex() + 1)
 
@@ -33,7 +33,6 @@ class VistaListaMovimenti(QWidget):
 
     # Funzione che carica gli elementi prensenti nel file pickle nel List Widget
     def voci_nella_lista(self):
-        self.vista.lista_voci.clear()
         cont=0
         for voci in self.controlloremov.model.lista_movimenti:
             item= self.vista.lista_voci.takeItem(cont)

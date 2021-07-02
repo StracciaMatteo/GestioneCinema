@@ -1,4 +1,3 @@
-
 from PyQt5 import uic
 from PyQt5.QtWidgets import QWidget, QMessageBox
 from InserimentoSpeseRicavi.controller.ControlloreInserimentoSR import ControlloreInserimentoSR
@@ -6,24 +5,24 @@ from InserimentoSpeseRicavi.model.ModelVoce import ModelVoce
 
 
 class VistaInserimentoSpeseRicavi(QWidget):
-    def __init__(self, widget):
+    '''def __init__(self, widget):
         super(VistaInserimentoSpeseRicavi,self).__init__()
         self.widget = widget
         self.controllerInserimentoSR= ControlloreInserimentoSR()
         self.vista= uic.loadUi("InserimentoSpeseRicavi/view/Inserisci_Movimento_UI.ui",self)
         self.btn_torna_IM.clicked.connect(self.go_back)
         self.vista.btn_InserisciMov.clicked.connect(self.save)
-        self.vista.btn_InserisciMov.setShortcut("Return")
+        self.vista.btn_InserisciMov.setShortcut("Return")'''
 
-    '''def __init__(self,widget,callback):
+    def __init__(self,widget,callback):
         super(VistaInserimentoSpeseRicavi, self).__init__()
         self.widget = widget
         self.callback = callback
-        self.controllerInserimentoSR = ControlloreInserimentoSR()
+        self.controllerInserimentoSR = ControlloreInserimentoSR
         self.vista = uic.loadUi("InserimentoSpeseRicavi/view/Inserisci_Movimento_UI.ui", self)
         self.btn_torna_IM.clicked.connect(self.go_back)
         self.vista.btn_InserisciMov.clicked.connect(self.save)
-        self.vista.btn_InserisciMov.setShortcut("Return")'''
+        self.vista.btn_InserisciMov.setShortcut("Return")
 
     # Funzione che fa "scorrere" il widget all'indice precedente
     def go_back(self):
@@ -46,9 +45,10 @@ class VistaInserimentoSpeseRicavi(QWidget):
 
     # Questa funzione implementa il salvataggio dei dati della voce
     def save(self):
-        self.controllerInserimentoSR.aggiungi_voce(self.add_voce())
+        model = self.add_voce()
+        self.controllerInserimentoSR.aggiungi_voce(model)
         self.controllerInserimentoSR.save()
-        #self.callback()
+        self.callback()
 
     # Questa funzione apre un MessageBox di errore per l'inserimento errato dell'importo
     def box_dialog(self):
