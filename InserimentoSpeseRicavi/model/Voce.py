@@ -15,6 +15,8 @@ class Voce():
 
     def aggiungi_voce(self, model):
         self.lista_movimenti.append(model)
+        self.save()
+        self.read()
 
     def rimuovi_voce(self, descrizione):
         for voce in self.lista_movimenti:

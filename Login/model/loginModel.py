@@ -8,8 +8,11 @@ class loginModel():
     def __init__(self):
         super(loginModel, self).__init__()
         self.listadipendenti = []
+        self.read()
 
-        # carica la lista dei dipendenti per poter leggere i loro id e permettere il login
+    # carica la lista dei dipendenti per poter leggere i loro id e permettere il login
+    def read(self):
+        self.listadipendenti.clear()
         if os.path.isfile('dipendente/ListaDipendente/datidip/lista_dipendenti.pickle'):
             with open('dipendente/ListaDipendente/datidip/lista_dipendenti.pickle', 'rb') as f:
                 self.listadipendenti = pickle.load(f)
@@ -23,7 +26,7 @@ class loginModel():
         # rimuovere
         if pw == "":
             return "prova"
-
+        self.read()
         for item in self.listadipendenti:
             if pw == item.id:
                 return item.nome + " " + item.cognome

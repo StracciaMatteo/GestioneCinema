@@ -5,20 +5,12 @@ from InserimentoSpeseRicavi.model.ModelVoce import ModelVoce
 
 
 class VistaInserimentoSpeseRicavi(QWidget):
-    '''def __init__(self, widget):
-        super(VistaInserimentoSpeseRicavi,self).__init__()
-        self.widget = widget
-        self.controllerInserimentoSR= ControlloreInserimentoSR()
-        self.vista= uic.loadUi("InserimentoSpeseRicavi/view/Inserisci_Movimento_UI.ui",self)
-        self.btn_torna_IM.clicked.connect(self.go_back)
-        self.vista.btn_InserisciMov.clicked.connect(self.save)
-        self.vista.btn_InserisciMov.setShortcut("Return")'''
 
     def __init__(self,widget,callback):
         super(VistaInserimentoSpeseRicavi, self).__init__()
         self.widget = widget
         self.callback = callback
-        self.controllerInserimentoSR = ControlloreInserimentoSR
+        self.controllerInserimentoSR = ControlloreInserimentoSR()
         self.vista = uic.loadUi("InserimentoSpeseRicavi/view/Inserisci_Movimento_UI.ui", self)
         self.btn_torna_IM.clicked.connect(self.go_back)
         self.vista.btn_InserisciMov.clicked.connect(self.save)
@@ -38,7 +30,7 @@ class VistaInserimentoSpeseRicavi(QWidget):
             if (float(importo) != "" or descrizione != ""):
                 print(descrizione)
                 print(segno+importo+"€")
-        except TypeError:
+        except:
             self.box_dialog()
         model= ModelVoce(segno,importo,descrizione)
         return model
@@ -47,8 +39,10 @@ class VistaInserimentoSpeseRicavi(QWidget):
     def save(self):
         model = self.add_voce()
         self.controllerInserimentoSR.aggiungi_voce(model)
-        self.controllerInserimentoSR.save()
-        self.callback()
+        self.go_back()
+        if not self.callback is None:
+            for voci in self.controllerInserimentoSR.model.lista_movimenti:
+                self.callback.addItem(voci.segno + str(voci.importo) + "  " + voci.descrizione)
 
     # Questa funzione apre un MessageBox di errore per l'inserimento errato dell'importo
     def box_dialog(self):
