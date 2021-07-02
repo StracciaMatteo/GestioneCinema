@@ -6,10 +6,6 @@ from PyQt5.QtCore import QDate
 
 from dipendente.ListaDipendente.controller.ControllerListaDipendenti import ControllerListaDipendenti
 
-
-
-
-
 class ViewTurniDiLavoro(QWidget):
     def __init__(self, widget):
         super(ViewTurniDiLavoro, self).__init__()
@@ -19,10 +15,12 @@ class ViewTurniDiLavoro(QWidget):
         self.btn_torna.clicked.connect(self.go_back)
         self.btn_Home.clicked.connect(self.go_home)
         self.popola_tabella()
+        self.popola_edit_box()
         self.calendarWidget.clicked.connect(self.popola_tabella)
         self.tabella.setEditTriggers(QAbstractItemView.NoEditTriggers)
-        #self.tabella.itemDoubleClicked.connect(self.edit_session)
-        self.tabella.cellClicked.connect(self.edit_session)
+        self.edit_box.setDisabled(True)
+        self.tabella.cellDoubleClicked.connect(self.edit_session_assenza)
+        self.tabella.cellClicked.connect(self.edit_box_enable)
         #self.tabella.itemDoubleClicked(self.tabella.currentItem()).connect(self.prova)
 
     def go_back(self):
@@ -41,9 +39,9 @@ class ViewTurniDiLavoro(QWidget):
             #self.vista_turni_lavoro.tabella.setItem(cont, 1, QTableWidgetItem(" "))
             #self.vista_turni_lavoro.tabella.setItem(cont, 2, QTableWidgetItem(" "))
             self.vista_turni_lavoro.tabella.setVerticalHeaderItem(cont, QTableWidgetItem(str(cont + 1) + "." + dipendente.cognome + " " + dipendente.nome))
-            a = QtCore.QDate.fromString(dipendente.ferie_dal, "dd/MM/yyyy")
-            b = QtCore.QDate.fromString(dipendente.ferie_al, "dd/MM/yyyy")
-            c=QtCore.QDate.fromString(data_scelta.split()[1], "dd/MM/yyyy")
+            a = QtCore.QDate.fromString(dipendente.ferie_dal,"dd/MM/yyyy")
+            b = QtCore.QDate.fromString(dipendente.ferie_al,"dd/MM/yyyy")
+            c=QtCore.QDate.fromString(data_scelta.split()[1],"dd/MM/yyyy")
             if a<=c and c<=b :
                 self.vista_turni_lavoro.tabella.setItem(cont,0,QTableWidgetItem("Ferie dal "+dipendente.ferie_dal+" al "+dipendente.ferie_al))
             else:
@@ -56,15 +54,19 @@ class ViewTurniDiLavoro(QWidget):
 
         self.tool_tip()
 
-    def edit_session(self):
+    def edit_box_enable(self):
         #dip_selec=self.vista_turni_lavoro.tabella.currentItem()
-        print(self.vista_turni_lavoro.tabella.currentColumn())
-        if  self.vista_turni_lavoro.tabella.currentColumn()==1:
-            self.popola_edit_box()
 
+        if  self.vista_turni_lavoro.tabella.currentColumn()==1:
+            self.vista_turni_lavoro.edit_box.setDisabled(False)
+
+    def edit_session_assenza(self):
+        if self.vista_turni_lavoro.tabella.currentColumn() == 1:
+            self.vista_turni_lavoro.tabella.setItem(self.vista_turni_lavoro.tabella.currentRow(),1, QTableWidgetItem(self.vista_turni_lavoro.edit_box.currentText()))
+        self.tool_tip()
     def popola_edit_box(self):
-        self.vista_turni_lavoro.edit_box.addItem("Assente")
-        self.vista_turni_lavoro.edit_box.addItem("Assenza Verificata")
+        self.vista_turni_lavoro.edit_box.insertItem(0,"Assente")
+        self.vista_turni_lavoro.edit_box.insertItem(1,"Assenza Verificata")
 
     '''def prova(self):
         print("ok")'''
