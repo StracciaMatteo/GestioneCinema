@@ -57,6 +57,7 @@ class ViewInserisciDipendente(QWidget):
         else:
             self.save_new_dipendente()
     def turno_di_lavoro(self):
+
         if len(self.controllerdip.modeldip.listdipendent)==0:
             return "primo turno"
         else:
@@ -71,6 +72,7 @@ class ViewInserisciDipendente(QWidget):
                 return "secondo turno"
             else:
                 return "primo turno"
+
     def giorni_liberi(self):
         giorni=["Lun","Mar","Mer","Gio","Ven","Sab","Dom"]
         giorniscelti=[]

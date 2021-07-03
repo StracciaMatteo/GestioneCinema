@@ -332,7 +332,7 @@ QComboBox QAbstractItemView {
 
 
 QComboBox::down-arrow {
-	 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-arrow.png) ;
+	 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/GestioneCinema/images/ComboBox-arrow.png) ;
 }
 
 QComboBox::drop-down{
@@ -415,14 +415,14 @@ QComboBox::down-arrow:on {
 }
 
 QDateEdit::down-arrow {
-	 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-arrow.png) ;
+	 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/GestioneCinema/images/ComboBox-arrow.png) ;
 }
 
 
 
 
 QDateEdit::up-arrow{
-		 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-up-arrow.png)
+		 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/GestioneCinema/images/ComboBox-up-arrow.png)
 }
 
 
@@ -568,7 +568,7 @@ QComboBox QAbstractItemView {
 
 
 QComboBox::down-arrow {
-	 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-arrow.png) ;
+ image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/GestioneCinema/images/ComboBox-arrow.png) ;
 }
 
 QComboBox::drop-down{
@@ -808,7 +808,7 @@ QComboBox QAbstractItemView {
 
 
 QComboBox::down-arrow {
-	 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-arrow.png) ;
+	 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/GestioneCinema/images/ComboBox-arrow.png) ;
 }
 
 QComboBox::drop-down{
@@ -884,7 +884,7 @@ QComboBox QAbstractItemView {
 
 
 QComboBox::down-arrow {
-	 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-arrow.png) ;
+	 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/GestioneCinema/images/ComboBox-arrow.png) ;
 }
 
 QComboBox::drop-down{
@@ -962,7 +962,7 @@ QComboBox QAbstractItemView {
 
 
 QComboBox::down-arrow {
-	 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-arrow.png) ;
+	 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/GestioneCinema/images/ComboBox-arrow.png) ;
 }
 
 QComboBox::drop-down{
@@ -1056,19 +1056,19 @@ QComboBox::down-arrow:on {
 }
 
 QDateEdit::down-arrow:disabled { 
-	image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-arrow-disabled.png) ;
+	 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/GestioneCinema/images/ComboBox-arrow-disabled.png) ;
 }
 
 QDateEdit::down-arrow {
-	 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-arrow.png) ;
+	  image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/GestioneCinema/images/ComboBox-arrow.png) ;
 }
 
 QDateEdit::up-arrow{
-		 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-up-arrow.png)
+		 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/GestioneCinema/images/ComboBox-up-arrow.png)
 }
 
 QDateEdit::up-arrow:disabled{
-		 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-up-arrow-disabled.png)
+		 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/GestioneCinema/images/ComboBox-up-arrow-disabled.png)
 }
 
 QDateEdit::up-arrow:on {
@@ -1165,20 +1165,20 @@ QDateEdit::up-button:pressed{
 }
 
 QDateEdit::down-arrow {
-	 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-arrow.png) ;
+	 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/GestioneCinema/images/ComboBox-arrow.png) ;
 }
 
 
 QDateEdit::down-arrow:disabled { 
-	image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-arrow-disabled.png) ;
+	 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/GestioneCinema/images/ComboBox-arrow-disabled.png) ;
 }
 
 QDateEdit::up-arrow{
-		 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-up-arrow.png)
+		 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/GestioneCinema/images/ComboBox-up-arrow.png)
 }
 
 QDateEdit::up-arrow:disabled{
-		 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-up-arrow-disabled.png)
+		 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/GestioneCinema/images/ComboBox-up-arrow-disabled.png)
 }
 
 QDateEdit::up-arrow:on {

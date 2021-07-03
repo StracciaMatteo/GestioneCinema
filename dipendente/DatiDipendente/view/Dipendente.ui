@@ -1027,54 +1027,6 @@ background-color: rgb(48, 80, 91);
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="btn_turni_lavoro">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>8</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton{
- border-radius: 12px;
-padding: 5px;
-background-color: rgb(55, 92, 108);
-color: rgb(255, 255, 255);
-border-style: outset;
-Width:114px;
-
-}
-
-QPushButton:hover{
-
-background-color: rgb(92, 154, 181);
-}
-QPushButton:pressed{
-border-style: inset;
-background-color: rgb(48, 80, 91);
-}</string>
-       </property>
-       <property name="text">
-        <string>Turni di Lavoro</string>
-       </property>
-       <property name="icon">
-        <iconset>
-         <normaloff>../../../images/Turni di lavoro-icon.PNG</normaloff>../../../images/Turni di lavoro-icon.PNG</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>16</width>
-         <height>16</height>
-        </size>
-       </property>
-      </widget>
-     </item>
-     <item>
       <widget class="QPushButton" name="btn_aggiorna_dip">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">

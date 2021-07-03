@@ -1,5 +1,7 @@
-class DipendenteModel():
+#Classe che modella i dati del dipendente
 
+class DipendenteModel():
+    #Costruttore per l'inizializzazione del dipendente
     def __init__(self,nome,cognome,sesso,data_nascita,luogo_nascita,mansione,cf,stipendio,id,turno_lavoro,girono_lavoro,ferie_dal,ferie_al,commento):
         super(DipendenteModel, self).__init__()
         self.nome=nome

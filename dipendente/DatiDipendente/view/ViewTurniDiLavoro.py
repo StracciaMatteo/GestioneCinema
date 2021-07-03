@@ -3,10 +3,11 @@ from PyQt5 import uic,QtCore
 from PyQt5.QtCore import QDate, Qt
 from PyQt5.QtWidgets import QWidget, QTableWidgetItem, QAbstractItemView
 from PyQt5.QtCore import QDate
-
 from dipendente.ListaDipendente.controller.ControllerListaDipendenti import ControllerListaDipendenti
+#Classe che si occupa della visulaizzazione della vista Turni di lavoro
 
 class ViewTurniDiLavoro(QWidget):
+    #Costruttore
     def __init__(self, widget):
         super(ViewTurniDiLavoro, self).__init__()
         self.widget = widget
@@ -18,13 +19,19 @@ class ViewTurniDiLavoro(QWidget):
         self.calendarWidget.clicked.connect(self.popola_tabella)
         self.tabella.setEditTriggers(QAbstractItemView.NoEditTriggers)
 
+    # metodo per tornare in dietro
+
     def go_back(self):
         self.widget.setCurrentIndex(self.widget.currentIndex() - 1)
         self.widget.removeWidget(self.vista_turni_lavoro)
 
+    # metodo per tornare alla vista Home
+
     def go_home(self):
         self.widget.setCurrentIndex(1)
         self.widget.removeWidget(self.vista_turni_lavoro)
+
+    #metodo per popolare la tabella con i turni di lavoro di ogni dipendente
 
     def popola_tabella(self):
         data_scelta=self.vista_turni_lavoro.calendarWidget.selectedDate().toString("ddd dd/MM/yyyy")
@@ -61,6 +68,8 @@ class ViewTurniDiLavoro(QWidget):
         self.vista_turni_lavoro.edit_box.insertItem(0,"Assente")
         self.vista_turni_lavoro.edit_box.insertItem(1,"Assenza Verificata")'''
 
+    #metodo che retitusce il giorno della settimana in italiano e prende come parametro:
+    #day: il giorno seclto dal'utente nel calendario in inglese
 
     def get_giorno(self,day):
 
@@ -74,6 +83,8 @@ class ViewTurniDiLavoro(QWidget):
              "Sat":"Sab"
             }
         return (switcher.get(day))
+
+    #metodo per tool_tip
 
     def tool_tip(self):
         items=self.vista_turni_lavoro.tabella.findItems(" ", Qt.MatchContains)

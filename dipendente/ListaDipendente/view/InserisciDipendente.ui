@@ -341,7 +341,7 @@ QComboBox QAbstractItemView {
 
 
 QComboBox::down-arrow {
-	 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-arrow.png) ;
+	 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/GestioneCinema/images/ComboBox-arrow.png) ;
 }
 
 QComboBox::drop-down{
@@ -446,12 +446,12 @@ QComboBox::down-arrow:on {
 }
 
 QDateEdit::down-arrow {
-	 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-arrow.png) ;
+ image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/GestioneCinema/images/ComboBox-arrow.png) ;
 }
 
 
 QDateEdit::up-arrow{
-		 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-up-arrow.png)
+		 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/GestioneCinema/images/ComboBox-up-arrow.png);
 }
 
 
@@ -592,7 +592,7 @@ QComboBox QAbstractItemView {
 
 
 QComboBox::down-arrow {
-	 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-arrow.png) ;
+	 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/GestioneCinema/images/ComboBox-arrow.png) ;
 }
 
 QComboBox::drop-down{
