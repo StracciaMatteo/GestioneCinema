@@ -15,13 +15,8 @@ class ViewTurniDiLavoro(QWidget):
         self.btn_torna.clicked.connect(self.go_back)
         self.btn_Home.clicked.connect(self.go_home)
         self.popola_tabella()
-        self.popola_edit_box()
         self.calendarWidget.clicked.connect(self.popola_tabella)
         self.tabella.setEditTriggers(QAbstractItemView.NoEditTriggers)
-        self.edit_box.setDisabled(True)
-        self.tabella.cellDoubleClicked.connect(self.edit_session_assenza)
-        self.tabella.cellClicked.connect(self.edit_box_enable)
-        #self.tabella.itemDoubleClicked(self.tabella.currentItem()).connect(self.prova)
 
     def go_back(self):
         self.widget.setCurrentIndex(self.widget.currentIndex() - 1)
@@ -36,8 +31,6 @@ class ViewTurniDiLavoro(QWidget):
         self.vista_turni_lavoro.tabella.setRowCount(len(self.controllerdip.modeldip.listdipendent))
         cont=0
         for dipendente in self.controllerdip.modeldip.listdipendent:
-            #self.vista_turni_lavoro.tabella.setItem(cont, 1, QTableWidgetItem(" "))
-            #self.vista_turni_lavoro.tabella.setItem(cont, 2, QTableWidgetItem(" "))
             self.vista_turni_lavoro.tabella.setVerticalHeaderItem(cont, QTableWidgetItem(str(cont + 1) + "." + dipendente.cognome + " " + dipendente.nome))
             a = QtCore.QDate.fromString(dipendente.ferie_dal,"dd/MM/yyyy")
             b = QtCore.QDate.fromString(dipendente.ferie_al,"dd/MM/yyyy")
@@ -54,7 +47,7 @@ class ViewTurniDiLavoro(QWidget):
 
         self.tool_tip()
 
-    def edit_box_enable(self):
+    '''def edit_box_enable(self):
         #dip_selec=self.vista_turni_lavoro.tabella.currentItem()
 
         if  self.vista_turni_lavoro.tabella.currentColumn()==1:
@@ -66,10 +59,9 @@ class ViewTurniDiLavoro(QWidget):
         self.tool_tip()
     def popola_edit_box(self):
         self.vista_turni_lavoro.edit_box.insertItem(0,"Assente")
-        self.vista_turni_lavoro.edit_box.insertItem(1,"Assenza Verificata")
+        self.vista_turni_lavoro.edit_box.insertItem(1,"Assenza Verificata")'''
 
-    '''def prova(self):
-        print("ok")'''
+
     def get_giorno(self,day):
 
         switcher={
@@ -87,12 +79,3 @@ class ViewTurniDiLavoro(QWidget):
         items=self.vista_turni_lavoro.tabella.findItems(" ", Qt.MatchContains)
         for item in items:
             item.setToolTip(item.text())
-
-
-
-
-
-
-    '''def printer(self):
-        if "20/07/1999"<"18/6/1998":
-            print ("ok")'''

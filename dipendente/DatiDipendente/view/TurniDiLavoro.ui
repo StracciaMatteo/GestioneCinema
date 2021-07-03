@@ -231,140 +231,6 @@ background-color: rgb(48, 80, 91);
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="btn_modifica">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton{
- border-radius: 12px;
-padding: 5px;
-background-color: rgb(55, 92, 108);
-color: rgb(255, 255, 255);
-border-style: outset;
-}
-
-QPushButton:hover{
-
-background-color: rgb(92, 154, 181);
-}
-QPushButton:pressed{
-border-style: inset;
-background-color: rgb(48, 80, 91);
-}
-
-</string>
-       </property>
-       <property name="text">
-        <string>Modifica</string>
-       </property>
-       <property name="icon">
-        <iconset>
-         <normaloff>Modifica-icon.png</normaloff>Modifica-icon.png</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>20</width>
-         <height>20</height>
-        </size>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="btn_salva">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton{
- border-radius: 12px;
-padding: 5px;
-background-color: rgb(55, 92, 108);
-color: rgb(255, 255, 255);
-border-style: outset;
-}
-
-QPushButton:hover{
-
-background-color: rgb(92, 154, 181);
-}
-QPushButton:pressed{
-border-style: inset;
-background-color: rgb(48, 80, 91);
-}
-
-
-</string>
-       </property>
-       <property name="text">
-        <string>Salva</string>
-       </property>
-       <property name="icon">
-        <iconset>
-         <normaloff>Salva_icon.ico</normaloff>Salva_icon.ico</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>16</width>
-         <height>16</height>
-        </size>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QComboBox" name="edit_box">
-       <property name="styleSheet">
-        <string notr="true">QComboBox{
-	background: white;
-	border-radius:10px;
-	padding: 5px;
-}
-
-
-QComboBox QAbstractItemView {
-	selection-background-color:rgb(55, 92, 108);
-	background-color: rgb(255, 255, 255);
-	border-radius:5px;
-	padding: 5px;
-
-}
-
-
-QComboBox::down-arrow {
-	 image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-arrow.png) ;
-}
-
-QComboBox::down-arrow:disabled { 
-	image: url(G:/Secondo anno automazione/Ingegneria del softwear/Cinema/Inerfaccia grafica/ComboBox-arrow-disabled.png) ;
-}
-
-QComboBox::drop-down{
-	border-radius:10px;
-	padding: 5px;
-}
-
-QComboBox::drop-down:hover{
-	
-	background-color: rgb(92, 176, 150);
-	border-radius:5px;
-	padding: 5px;
-}
-
-QComboBox::down-arrow:on {
-    top: 1px;
-}
-
-</string>
-       </property>
-      </widget>
-     </item>
-     <item>
       <spacer name="horizontalSpacer">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
@@ -378,6 +244,22 @@ QComboBox::down-arrow:on {
       </spacer>
      </item>
     </layout>
+   </item>
+   <item>
+    <spacer name="verticalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Fixed</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
@@ -480,7 +362,7 @@ QTableView QTableCornerButton::section {
         <number>6</number>
        </property>
        <property name="columnCount">
-        <number>3</number>
+        <number>1</number>
        </property>
        <attribute name="horizontalHeaderCascadingSectionResizes">
         <bool>false</bool>
@@ -494,16 +376,6 @@ QTableView QTableCornerButton::section {
        <column>
         <property name="text">
          <string>Turno di lavoro</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Assenza</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Recupero</string>
         </property>
        </column>
       </widget>
@@ -535,41 +407,22 @@ QTableView QTableCornerButton::section {
          </property>
         </widget>
        </item>
-       <item>
-        <widget class="QListWidget" name="listWidget">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>340</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>200</width>
-           <height>300</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QListWidget{
-color: rgb(51, 86, 101);
- border-radius: 15px;
-background-color: rgb(255, 255, 255);
-padding: 5px;
-
-
-}</string>
-         </property>
-        </widget>
-       </item>
       </layout>
      </item>
     </layout>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
    </item>
   </layout>
  </widget>
