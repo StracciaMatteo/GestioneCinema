@@ -1,7 +1,6 @@
 from PyQt5 import uic
-from PyQt5.QtWidgets import QWidget
-
-
+from PyQt5.QtGui import QCloseEvent
+from PyQt5.QtWidgets import QWidget, QMessageBox
 from biglietteria.rimborso.view.viewRimborso import viewRimborso
 from biglietteria.vendita.view.viewVendita import viewVendita
 from dipendente.DatiDipendente.view.ViewTurniDiLavoro import ViewTurniDiLavoro
@@ -10,9 +9,9 @@ from dipendente.ListaDipendente.view.ViewListaDipendente import ViewListaDipende
 from film.inserimentoFilm.view.viewInserimentoFilm import viewInserimentoFilm
 from listaFilm.visualizzaProgrammazione.view.viewProgrammazione import viewProgrammazione
 from InserimentoSpeseRicavi.view.VistaInserimentoSpeseRicavi import VistaInserimentoSpeseRicavi
+from messaggeError.Error import Error
 from spesericavi.view.VistaListaMovimenti import VistaListaMovimenti
 from statistiche.view.VistaStatisticheBiglietti import VistaStatisticheBiglietti
-
 
 
 class VistaHome(QWidget):
@@ -70,7 +69,8 @@ class VistaHome(QWidget):
 
     # Area Gestione Economica
     def visualizza_ins_spesa_ricavo(self):
-        vista_ins_spesa_ricavo = VistaInserimentoSpeseRicavi(self.widget)
+        vista_ins_spesa_ricavo = VistaInserimentoSpeseRicavi(self.widget, None)
+        '''self.widget.removeWidget(self.widget.widget(2))'''
         self.widget.addWidget(vista_ins_spesa_ricavo)
         self.widget.setCurrentIndex(self.widget.currentIndex() + 1)
 
@@ -111,3 +111,16 @@ class VistaHome(QWidget):
         vista_Rimborso = viewRimborso(self.widget)
         self.widget.addWidget(vista_Rimborso)
         self.widget.setCurrentIndex(self.widget.currentIndex() + 1)
+
+    '''def hideEvent(self, event):
+        confirm = Error("Chiusura programma", "Sei sicuro di voler chiudere il programma ?",
+                        "tutte le modifiche non salvate verranno perse")
+        if confirm.confirm_messagge() == QMessageBox.Yes:
+            event.accept()
+        else:
+            event.ignore()
+
+    def event(self, e):
+        # if isinstance(e, QCloseEvent):
+        print(e)
+        return super().event(e)'''

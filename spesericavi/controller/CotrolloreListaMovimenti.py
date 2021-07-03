@@ -1,4 +1,4 @@
-from spesericavi.model.modelloListaMovimenti import modelloListaMovimenti
+'''from spesericavi.model.modelloListaMovimenti import modelloListaMovimenti
 
 
 class ControlloreListaMovimenti():
@@ -10,4 +10,4 @@ class ControlloreListaMovimenti():
         self.modellist.rimuovi_voce(descrizione)
 
     def save(self):
-        self.modellist.save()
+        self.modellist.save()'''

@@ -1,4 +1,4 @@
-import os.path
+'''import os.path
 import pickle
 
 class modelloListaMovimenti():
@@ -10,7 +10,7 @@ class modelloListaMovimenti():
             with open ('spesericavi/datilistaSR/lista_movimenti.pickle', 'rb') as f:
                 self.listamovimenti = pickle.load(f)
 
-    def rimuovi_voce(self,descrizione):
+    def rimuovi_voce(self, descrizione):
         for voce in self.listamovimenti:
             if descrizione == voce.descrizione:
                 self.listamovimenti.remove(voce)
@@ -18,6 +18,6 @@ class modelloListaMovimenti():
     # salva il file
     def save(self):
         with open('spesericavi/datilistaSR/lista_movimenti.pickle',"wb") as handle:
-            pickle.dump(self.listamovimenti, handle,pickle.HIGHEST_PROTOCOL)
+            pickle.dump(self.listamovimenti, handle,pickle.HIGHEST_PROTOCOL)'''
 
 
