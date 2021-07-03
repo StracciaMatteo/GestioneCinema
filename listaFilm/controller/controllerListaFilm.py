@@ -34,6 +34,10 @@ class controllerListaFilm():
     def rimborsa_biglietto(self, codice_univoco):
         self.model.rimborsa_biglietto(codice_univoco)
 
+    # funzione che restituisce array con incassi giornalieri
+    def get_vendite_giornaliere(self):
+        return self.model.get_vendite_giornaliere()
+
     # salvataggio
     def save(self):
         self.model.save()

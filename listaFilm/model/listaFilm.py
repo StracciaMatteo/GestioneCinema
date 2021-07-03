@@ -1,6 +1,7 @@
 import json
 import os
 import pickle
+import time
 from operator import attrgetter
 
 from PyQt5.QtCore import QDate
@@ -180,6 +181,22 @@ class listaFilm():
                 error = Error("Errore", "Codice errato o spettacolo non più presente nel sistema",
                               "procedere manualmente")
                 error.error_messagge()
+
+    # funzione che restituisce array con incassi giornalieri
+    def get_vendite_giornaliere(self):
+        today = QDate.currentDate()
+
+        # visualizzo le vendite del giorno precedente a tarda serata
+        if int(time.strftime('%H', time.localtime())) < 4:
+            today.addDays(-1)
+
+        quantita = [0, 0, 0, 0, 0]
+        index = 0
+        for sala in range(5):
+            for orario in {"15:00", "18:00", "21:00", "00:00"}:
+                quantita[index] += self.spettacoli[today.toString('d MMMM yyyy')][sala][orario]["posti"]
+            index += 1
+        return quantita
 
     # SALVATAGGIO
     def save(self):

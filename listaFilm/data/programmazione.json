@@ -1,1 +1,99 @@
-{}
+{
+    "3 luglio 2021": [
+        {
+            "nome": "sala1",
+            "15:00": {
+                "titolo": "cc",
+                "posti": 5
+            },
+            "18:00": {
+                "titolo": "cc",
+                "posti": 5
+            },
+            "21:00": {
+                "titolo": "cc",
+                "posti": 5
+            },
+            "00:00": {
+                "titolo": "cc",
+                "posti": 5
+            }
+        },
+        {
+            "nome": "sala2",
+            "15:00": {
+                "titolo": "cc",
+                "posti": 5
+            },
+            "18:00": {
+                "titolo": "cc",
+                "posti": 5
+            },
+            "21:00": {
+                "titolo": "cc",
+                "posti": 5
+            },
+            "00:00": {
+                "titolo": "cc",
+                "posti": 5
+            }
+        },
+        {
+            "nome": "sala3",
+            "15:00": {
+                "titolo": "cc",
+                "posti": 5
+            },
+            "18:00": {
+                "titolo": "cc",
+                "posti": 5
+            },
+            "21:00": {
+                "titolo": "cc",
+                "posti": 5
+            },
+            "00:00": {
+                "titolo": "cc",
+                "posti": 5
+            }
+        },
+        {
+            "nome": "sala4",
+            "15:00": {
+                "titolo": "",
+                "posti": 0
+            },
+            "18:00": {
+                "titolo": "cc",
+                "posti": 5
+            },
+            "21:00": {
+                "titolo": "cc",
+                "posti": 5
+            },
+            "00:00": {
+                "titolo": "",
+                "posti": 0
+            }
+        },
+        {
+            "nome": "sala5",
+            "15:00": {
+                "titolo": "cc",
+                "posti": 5
+            },
+            "18:00": {
+                "titolo": "",
+                "posti": 0
+            },
+            "21:00": {
+                "titolo": "",
+                "posti": 0
+            },
+            "00:00": {
+                "titolo": "",
+                "posti": 0
+            }
+        }
+    ]
+}
