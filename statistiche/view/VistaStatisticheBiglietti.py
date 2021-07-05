@@ -19,16 +19,19 @@ class VistaStatisticheBiglietti(QWidget):
         self.btn_tornaIndietroSB.clicked.connect(self.go_back)
         self.btn_GeneraDiagramma.clicked.connect(self.genera_stat)
 
+    # Funizone che permette di tornare indietro con il tasto "<-" all'interno della vista
     def go_back(self):
         self.widget.setCurrentIndex(self.widget.currentIndex() - 1)
         self.widget.removeWidget(self.vista)
 
+    # Questa funzione riceve dal controller della lista fil ìm la somma di biglietti venduti per fascia oraria e ne crea un
+    # istogramma dividendo le quantità dei biglietti venduti per le varie fascie orarie degli spettacoli
     def genera_stat(self):
-        x=[15,16,18,17,17,17,18,19,15,16,16,16,16,16,14,17,18,18,18,22,22,23,24,24,26,25,24,25,25,25,25,25,25,25]
+        x=[16,17,16,16,16,16,18,21,21,21,21,21,22,15,15,15,18,18,19,19,20,21,25,25,25,25,25,25,25,25,25,25]
         #BINS= ovvero larghezza delle "colonne" dell'istogramma
-        number_of_bins=[14,16,18,20,22,24,26]
+        number_of_bins=[15,18,21,24,27]
         plt.figure(1)
-        names= ["     Spet.1","     Spet.2","     Spet.3","     Spet.4","     Spet.5","     Spet.6",""]
+        names= ["         Spet.1","         Spet.2","         Spet.3","         Spet.4",""]
         n, bins, patches = plt.hist(x,bins= number_of_bins, edgecolor= "black",color="y")
         plt.title("STATISTCHE BIGLIETTI VENDUTI")
         ax= plt.subplot(111)
@@ -38,11 +41,10 @@ class VistaStatisticheBiglietti(QWidget):
         patches[1].set_fc("r")
         patches[2].set_fc("m")
         patches[3].set_fc("c")
-        patches[4].set_fc("b")
-        patches[5].set_fc("w")
-
+        #patches[4].set_fc("b")
+        #patches[5].set_fc("w")
         plt.xlabel("Orari")
         plt.ylabel("Numero biglietti venduti")
         plt.legend(patches,names)
         plt.tight_layout()
-        plt.show() #mostra il plt
+        plt.show()

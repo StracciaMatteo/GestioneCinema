@@ -16,12 +16,13 @@ class VistaInserimentoSpeseRicavi(QWidget):
         self.vista.btn_InserisciMov.clicked.connect(self.save)
         self.vista.btn_InserisciMov.setShortcut("Return")
 
-    # Funzione che fa "scorrere" il widget all'indice precedente
+    # Funizone che permette di tornare indietro con il tasto "<-" all'interno della vista
     def go_back(self):
         self.widget.setCurrentIndex(self.widget.currentIndex() - 1)
         self.widget.removeWidget(self.vista)
 
-    # Questa funzione prende dall'interfaccia i dati e salva la voce nella lista delle voci di spese e ricavi
+    # Questa funzione prende dall'interfaccia i dati e ne controlla il corretto inserimento, in caso di inserimento errato
+    # visualizza a schermo un Box dialog di errore
     def add_voce(self):
         descrizione=self.vista.lineEdit_DescrizionVoce.text()
         importo=self.vista.lineEdit_Importo.text()
@@ -35,7 +36,7 @@ class VistaInserimentoSpeseRicavi(QWidget):
         model= ModelVoce(segno,importo,descrizione)
         return model
 
-    # Questa funzione implementa il salvataggio dei dati della voce
+    # Questa funzione permette il salvataggio dei dati della voce all'interno del file pickle
     def save(self):
         model = self.add_voce()
         self.controllerInserimentoSR.aggiungi_voce(model)
@@ -44,7 +45,8 @@ class VistaInserimentoSpeseRicavi(QWidget):
             for voci in self.controllerInserimentoSR.model.lista_movimenti:
                 self.callback.addItem(voci.segno + str(voci.importo) + "  " + voci.descrizione)
 
-    # Questa funzione apre un MessageBox di errore per l'inserimento errato dell'importo
+
+    # Questa funzione crea un MessageBox di errore per l'inserimento errato dell'importo
     def box_dialog(self):
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Critical)
