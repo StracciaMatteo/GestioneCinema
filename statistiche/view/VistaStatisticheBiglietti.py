@@ -1,9 +1,6 @@
 import matplotlib.pyplot as plt
 from PyQt5 import uic
-
 from PyQt5.QtWidgets import QWidget
-from matplotlib import patches
-
 from listaFilm.controller.controllerListaFilm import controllerListaFilm
 
 
@@ -18,6 +15,7 @@ class VistaStatisticheBiglietti(QWidget):
 
         self.btn_tornaIndietroSB.clicked.connect(self.go_back)
         self.btn_GeneraDiagramma.clicked.connect(self.genera_stat)
+
 
     # Funizone che permette di tornare indietro con il tasto "<-" all'interno della vista
     def go_back(self):
@@ -37,14 +35,16 @@ class VistaStatisticheBiglietti(QWidget):
         ax= plt.subplot(111)
         ax.set_xticks(number_of_bins)
         ax.set_xticklabels(names,rotation=0, rotation_mode="anchor", va="top",ha="left")
-        patches[0].set_fc("y")
-        patches[1].set_fc("r")
-        patches[2].set_fc("m")
-        patches[3].set_fc("c")
+        patches[0].set_fc("c")
+        patches[1].set_fc("y")
+        patches[2].set_fc("r")
+        patches[3].set_fc("m")
         #patches[4].set_fc("b")
         #patches[5].set_fc("w")
-        plt.xlabel("Orari")
+        plt.xlabel("Spettacoli")
         plt.ylabel("Numero biglietti venduti")
         plt.legend(patches,names)
         plt.tight_layout()
         plt.show()
+
+

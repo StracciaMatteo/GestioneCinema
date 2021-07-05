@@ -14,7 +14,7 @@ class VistaListaMovimenti(QWidget):
         self.vista= uic.loadUi("spesericavi/view/Lista_Movimenti_UI2.ui", self)
         self.controlloremov = ControlloreInserimentoSR()
         self.voci_nella_lista()
-        self.totale()
+        #self.totale()
         self.btn_torna_LM.clicked.connect(self.go_back)
         self.btn_InserisciMovLM.clicked.connect(self.apri_inserisci_voce)
         self.btn_RimuoviMovLM.clicked.connect(self.elimina_voce)
