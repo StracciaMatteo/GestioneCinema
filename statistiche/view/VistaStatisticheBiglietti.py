@@ -15,6 +15,7 @@ class VistaStatisticheBiglietti(QWidget):
 
         self.btn_tornaIndietroSB.clicked.connect(self.go_back)
         self.btn_GeneraDiagramma.clicked.connect(self.genera_stat)
+        print(self.controller.get_vendite_giornaliere())
 
 
     # Funizone che permette di tornare indietro con il tasto "<-" all'interno della vista
@@ -31,7 +32,7 @@ class VistaStatisticheBiglietti(QWidget):
         plt.figure(1)
         names= ["         Spet.1","         Spet.2","         Spet.3","         Spet.4",""]
         n, bins, patches = plt.hist(x,bins= number_of_bins, edgecolor= "black",color="y")
-        plt.title("STATISTCHE BIGLIETTI VENDUTI")
+        plt.title("STATISTICHE BIGLIETTI VENDUTI")
         ax= plt.subplot(111)
         ax.set_xticks(number_of_bins)
         ax.set_xticklabels(names,rotation=0, rotation_mode="anchor", va="top",ha="left")

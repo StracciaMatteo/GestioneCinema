@@ -109,7 +109,7 @@ class listaFilm():
     def elimina_film_da_programmazione(self, film):
         for data in self.spettacoli:
             for sala in range(5):
-                for orario in {"15:00", "18:00", "21:00", "00:00"}:
+                for orario in ["15:00", "18:00", "21:00", "00:00"]:
                     if self.spettacoli[data][sala][orario]["titolo"] == film.titolo:
                         self.spettacoli[data][sala][orario] = {"titolo": '', "posti": 0}
 
@@ -190,12 +190,12 @@ class listaFilm():
         if int(time.strftime('%H', time.localtime())) < 4:
             today.addDays(-1)
 
-        quantita = [0, 0, 0, 0, 0]
-        index = 0
+        quantita = [0, 0, 0, 0]
         for sala in range(5):
-            for orario in {"15:00", "18:00", "21:00", "00:00"}:
+            index = 0
+            for orario in ["15:00", "18:00", "21:00", "00:00"]:
                 quantita[index] += self.spettacoli[today.toString('d MMMM yyyy')][sala][orario]["posti"]
-            index += 1
+                index += 1
         return quantita
 
     # SALVATAGGIO
@@ -209,7 +209,7 @@ class listaFilm():
         for data in self.spettacoli:
             flag = True
             for sala in range(5):
-                for orario in {"15:00", "18:00", "21:00", "00:00"}:
+                for orario in ["15:00", "18:00", "21:00", "00:00"]:
                     if not self.spettacoli[data][sala][orario]["titolo"] == '':
                         flag = False
             if flag:
