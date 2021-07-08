@@ -15,6 +15,7 @@ class listaFilm():
         super(listaFilm, self).__init__()
         self.lista_film = []
         self.spettacoli = ''
+        self.spettacoli = dict(self.spettacoli)
 
         # carica lista dei film
         if os.path.isfile('listaFilm/data/lista_film.pickle'):
@@ -80,18 +81,21 @@ class listaFilm():
                                             "18:00": {"titolo": '', "posti": 0},
                                             "21:00": {"titolo": '', "posti": 0},
                                             "00:00": {"titolo": '', "posti": 0}}]})
-
-        index = 0
-        for item in self.spettacoli[data]:
-            vista.table_programmazione.setItem(index, 0, QTableWidgetItem(
-                self.spettacoli[data][index]["15:00"]["titolo"]))
-            vista.table_programmazione.setItem(index, 1, QTableWidgetItem(
-                self.spettacoli[data][index]["18:00"]["titolo"]))
-            vista.table_programmazione.setItem(index, 2, QTableWidgetItem(
-                self.spettacoli[data][index]["21:00"]["titolo"]))
-            vista.table_programmazione.setItem(index, 3, QTableWidgetItem(
-                self.spettacoli[data][index]["00:00"]["titolo"]))
-            index += 1
+        try:
+            index = 0
+            for item in self.spettacoli[data]:
+                vista.table_programmazione.setItem(index, 0, QTableWidgetItem(
+                    self.spettacoli[data][index]["15:00"]["titolo"]))
+                vista.table_programmazione.setItem(index, 1, QTableWidgetItem(
+                    self.spettacoli[data][index]["18:00"]["titolo"]))
+                vista.table_programmazione.setItem(index, 2, QTableWidgetItem(
+                    self.spettacoli[data][index]["21:00"]["titolo"]))
+                vista.table_programmazione.setItem(index, 3, QTableWidgetItem(
+                    self.spettacoli[data][index]["00:00"]["titolo"]))
+                index += 1
+        except:
+            # gestisce eccezione interna in fase di testing
+            pass
 
     def aggiorna_programmazione(self, data, testo, item):
         if item.column() == 0:
@@ -191,11 +195,16 @@ class listaFilm():
             today.addDays(-1)
 
         quantita = [0, 0, 0, 0]
-        for sala in range(5):
-            index = 0
-            for orario in ["15:00", "18:00", "21:00", "00:00"]:
-                quantita[index] += self.spettacoli[today.toString('d MMMM yyyy')][sala][orario]["posti"]
-                index += 1
+        try:
+            for sala in range(5):
+                index = 0
+                for orario in ["15:00", "18:00", "21:00", "00:00"]:
+                    quantita[index] += self.spettacoli[today.toString('d MMMM yyyy')][sala][orario]["posti"]
+                    index += 1
+        except:
+            error = Error("Dati mancanti", "Nessun biglietto venduto nella data odierna",
+                          "grafico vuoto")
+            error.warning_messagge()
         return quantita
 
     # SALVATAGGIO
