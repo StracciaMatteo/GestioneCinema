@@ -1,8 +1,8 @@
-import string
 from PyQt5 import uic
 from PyQt5.QtWidgets import QWidget, QMessageBox
 from InserimentoSpeseRicavi.controller.ControlloreInserimentoSR import ControlloreInserimentoSR
 from InserimentoSpeseRicavi.model.ModelVoce import ModelVoce
+
 
 
 class VistaInserimentoSpeseRicavi(QWidget):
@@ -25,21 +25,23 @@ class VistaInserimentoSpeseRicavi(QWidget):
 
     # Questa funzione prende dall'interfaccia
     def add_voce(self):
-        descrizione=self.vista.lineEdit_DescrizionVoce.text()
-        importo=self.vista.lineEdit_Importo.text()
-        segno= self.vista.comboBox_Segno.currentText()
-        model= ModelVoce(segno,importo,descrizione)
-        return model
+            descrizione = self.vista.lineEdit_DescrizionVoce.text()
+            importo = self.vista.lineEdit_Importo.text()
+            segno = self.vista.comboBox_Segno.currentText()
+            #model = ModelVoce(segno, importo, descrizione)
+            model= ModelVoce(segno,importo,descrizione)
+            return model
 
     # Questa funzione permette il salvataggio dei dati della voce all'interno del file pickle,se i dati sono corretti
     def save(self):
         if self.vista.lineEdit_DescrizionVoce.text():
             try:
-                if float(self.vista.lineEdit_Importo.text()) :
+                if float(self.vista.lineEdit_Importo.text()):
                     model = self.add_voce()
                     self.controllerInserimentoSR.aggiungi_voce(model)
                     self.go_back()
                     if not self.callback is None:
+                        self.callback.clear()
                         for voci in self.controllerInserimentoSR.model.lista_movimenti:
                             self.callback.addItem(voci.segno + str(voci.importo) + "  " + voci.descrizione)
             except ValueError:

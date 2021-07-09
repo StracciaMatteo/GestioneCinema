@@ -1,7 +1,8 @@
+import time
 import matplotlib.pyplot as plt
-import numpy
-
 from PyQt5 import uic
+from PyQt5.QtCore import QDate
+from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import QWidget
 from listaFilm.controller.controllerListaFilm import controllerListaFilm
 
@@ -29,11 +30,20 @@ class VistaStatisticheBiglietti(QWidget):
     # istogramma mostrando a schermo gli istogrammi per fascia oraria,che indicano il numero di biglietti venduti
     def genera_stat(self):
         x= self.controller.get_vendite_giornaliere()
-        label=["15:00","18:00","21:00","00:00"]
-        fig = plt.figure(figsize=(8, 5))
-        plt.bar(label, x, color=['maroon', 'red', 'orange', 'yellow'],width=0.5,edgecolor="black")
-        plt.xlabel("Orari degli spettacoli")
-        plt.ylabel("Biglietti venduti")
-        plt.title("Statistiche sui biglietti venduti")
-        plt.show()
-        print(x)
+        if x != [0, 0, 0, 0]:
+            today = QDate.currentDate()
+            if int(time.localtime().tm_hour) < 3:
+                today = today.addDays(-1)
+            today = today.toString("dd_MM_yyyy")
+            label = ["15:00", "18:00", "21:00", "00:00"]
+            fig = plt.figure(figsize=(8, 5))
+            plt.bar(label, x, color=['maroon', 'red', 'orange', 'yellow'], width=0.5, edgecolor="black")
+            plt.xlabel("Orari degli spettacoli ")
+            plt.ylabel("Biglietti venduti")
+            plt.title("Statistiche sui biglietti venduti "+today)
+            plt.tight_layout()
+            plt.savefig("statistiche/Statistiche/SatisticheBigietti"+today)
+            self.vista.label_stat.setPixmap(QPixmap("statistiche/Statistiche/SatisticheBigietti"+today))
+
+
+

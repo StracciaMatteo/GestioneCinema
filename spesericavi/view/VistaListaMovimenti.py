@@ -4,7 +4,7 @@ from PyQt5.QtWidgets import QWidget, QMessageBox
 from InserimentoSpeseRicavi.controller.ControlloreInserimentoSR import ControlloreInserimentoSR
 from InserimentoSpeseRicavi.view.VistaInserimentoSpeseRicavi import VistaInserimentoSpeseRicavi
 from messaggeError.Error import Error
-#from spesericavi.controller.CotrolloreListaMovimenti import ControlloreListaMovimenti
+
 
 
 class VistaListaMovimenti(QWidget):

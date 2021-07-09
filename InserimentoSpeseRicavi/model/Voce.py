@@ -14,6 +14,7 @@ class Voce():
             with open('spesericavi/datilistaSR/lista_movimenti.pickle', 'rb')as f:
                 self.lista_movimenti= pickle.load(f)
 
+
     # Funzione del modello che aggiunge le voci inserite una dopo l'altra,poi chiama il salvataggio e la lettura
     def aggiungi_voce(self, model):
         self.lista_movimenti.append(model)
