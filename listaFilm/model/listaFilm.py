@@ -191,8 +191,8 @@ class listaFilm():
         today = QDate.currentDate()
 
         # visualizzo le vendite del giorno precedente a tarda serata
-        if int(time.strftime('%H', time.localtime())) < 4:
-            today.addDays(-1)
+        if int(time.localtime().tm_hour) < 4:
+            today = today.addDays(-1)
 
         quantita = [0, 0, 0, 0]
         try:

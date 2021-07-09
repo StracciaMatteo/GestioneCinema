@@ -1,3 +1,4 @@
+from PyQt5.QtGui import QIcon, QPixmap
 from PyQt5.QtWidgets import QMessageBox
 
 
@@ -8,6 +9,9 @@ class Error():
         self.msg.setText(messaggio)
         self.msg.setInformativeText(testo_alternativo)
         self.msg.setWindowTitle(titolo)
+        icon = QIcon()
+        icon.addPixmap(QPixmap("images/biglietto.png"), QIcon.Normal, QIcon.Off)
+        self.msg.setWindowIcon(icon)
 
     def error_messagge(self):
         self.msg.setIcon(QMessageBox.Critical)
