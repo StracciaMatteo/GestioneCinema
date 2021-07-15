@@ -6,7 +6,16 @@ from dipendente.DatiDipendente.model.DipendenteModel import DipendenteModel
 from dipendente.ListaDipendente.controller.ControllerListaDipendenti import ControllerListaDipendenti
 import time
 
+#classe che si occupa della vista inserisci dipendente
+
 class ViewInserisciDipendente(QWidget):
+
+    # Costruttore della vista che prende come parametri:
+    # Widget: widget principale
+    # controllerdip: controllore lista dipendente
+    # callback:per aggiungere il dipendente nella lista
+    # casa: per tornare nella vista Home
+
     def __init__(self, widget,controllerdip,callback,casa):
         super(ViewInserisciDipendente, self).__init__()
         self.widget = widget
@@ -17,13 +26,22 @@ class ViewInserisciDipendente(QWidget):
         self.btn_torna.clicked.connect(self.go_back)
         self.btn_Home.clicked.connect(self.go_home)
         self.btn_inserisci_dip.clicked.connect(self.verifica_dati)
+
+    # metodo per tornare in dietro
+
     def go_back(self):
         self.widget.setCurrentIndex(self.widget.currentIndex() - 1)
         self.widget.removeWidget(self.vista_inserisci_dipendente)
+
+    # metodo per tornare alla vista Home
+
     def go_home(self):
         self.widget.setCurrentIndex(1)
         self.widget.removeWidget(self.vista_inserisci_dipendente)
         self.casa()
+
+    #metodo che legge i dati inseriti e restituisce un ogetto di tipo DipendenteModel
+
     def get_dati_dipendente(self):
         nomedip = self.vista_inserisci_dipendente.Nome.text()
         cognomedip = self.vista_inserisci_dipendente.cognome.text()
@@ -36,12 +54,14 @@ class ViewInserisciDipendente(QWidget):
         qdata = self.vista_inserisci_dipendente.Data_di_nascita.date()
         data = qdata.toString("dd/MM/yyyy")
         ts=str(time.time())
+        #assegna un id al dipendente
         id=cognomedip[:2]+nomedip[:2]+data[-2:]+ts[8:10]+cf[-2:]
         gl=self.giorni_liberi()
         modello = DipendenteModel(nomedip, cognomedip, sesso, data, luogo, mansione, cf, stipendiodip, id, self.turno_di_lavoro(),
                                   gl[0]+" "+gl[1], "null", "null", commentodip)
         return modello
 
+    #metodo per slavare i dati inseriti ed aggiungere il dipendente alla lista chiamando il metodo callback
 
     def save_new_dipendente(self):
         modello=self.get_dati_dipendente()
@@ -51,11 +71,16 @@ class ViewInserisciDipendente(QWidget):
         self.widget.setCurrentIndex(self.widget.currentIndex() - 1)
         self.widget.removeWidget(self.vista_inserisci_dipendente)
 
+    #metodo per verificare la correttezza dei dati inseriti
+
     def verifica_dati(self):
         if self.vista_inserisci_dipendente.Nome.text()=="" or self.vista_inserisci_dipendente.cognome.text()=="" or self.vista_inserisci_dipendente.Luogo_di_nascita.text()=="" or self.vista_inserisci_dipendente.Codice_fiscale.text()=="" or self.vista_inserisci_dipendente.Stipendio.text()=="":
             self.vista_inserisci_dipendente.error.setText("i dati sono mancanti")
         else:
             self.save_new_dipendente()
+
+    #metodo per assegnare il turno di lavoro al dipendente
+
     def turno_di_lavoro(self):
 
         if len(self.controllerdip.modeldip.listdipendent)==0:
@@ -72,6 +97,8 @@ class ViewInserisciDipendente(QWidget):
                 return "secondo turno"
             else:
                 return "primo turno"
+
+    #metodo per assegnare i giorni liberi al dipendente
 
     def giorni_liberi(self):
         giorni=["Lun","Mar","Mer","Gio","Ven","Sab","Dom"]
