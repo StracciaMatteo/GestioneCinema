@@ -81,5 +81,6 @@ class VistaListaMovimenti(QWidget):
             self.vista.lista_voci.takeItem(self.vista.lista_voci.currentRow())
             self.controlloremov.rimuovi_voce(descrizione)
             self.controlloremov.save()
+            self.totale()
 
 

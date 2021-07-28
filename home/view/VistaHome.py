@@ -1,6 +1,7 @@
+import time
+
 from PyQt5 import uic
-from PyQt5.QtGui import QCloseEvent
-from PyQt5.QtWidgets import QWidget, QMessageBox
+from PyQt5.QtWidgets import QWidget
 from biglietteria.rimborso.view.viewRimborso import viewRimborso
 from biglietteria.vendita.view.viewVendita import viewVendita
 from dipendente.DatiDipendente.view.ViewTurniDiLavoro import ViewTurniDiLavoro
@@ -28,8 +29,10 @@ class VistaHome(QWidget):
         # comando per mostrare o nascondere box gestione dipendenti
         if utente_loggato != "prova":
             self.vista.box_dipendenti.setDisabled(True)
+            self.vista.box_economica.setDisabled(True)
         else:
             self.vista.box_dipendenti.setDisabled(False)
+            self.vista.box_economica.setDisabled(False)
 
         self.vista.btn_torna.clicked.connect(self.logout)
 
@@ -100,12 +103,16 @@ class VistaHome(QWidget):
         vista_turnilavoro = ViewTurniDiLavoro(self.widget)
         self.widget.addWidget(vista_turnilavoro)
         self.widget.setCurrentIndex(self.widget.currentIndex() + 1)
-    # Area Biglietteria
 
+    # Area Biglietteria
     def vendita_biglietti(self):
-        vista_Vendita = viewVendita(self.widget)
-        self.widget.addWidget(vista_Vendita)
-        self.widget.setCurrentIndex(self.widget.currentIndex() + 1)
+        if int(time.localtime().tm_hour) > 0:
+            vista_Vendita = viewVendita(self.widget)
+            self.widget.addWidget(vista_Vendita)
+            self.widget.setCurrentIndex(self.widget.currentIndex() + 1)
+        else:
+            error = Error("Biglietteria chiusa", "Impossibile vendere un biglietto a quest'ora", "riprova domani")
+            error.error_messagge()
 
     def rimborso_biglietti(self):
         vista_Rimborso = viewRimborso(self.widget)
