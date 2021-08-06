@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>719</width>
-    <height>437</height>
+    <width>718</width>
+    <height>428</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -115,6 +115,18 @@ QTableView QTableCornerButton::section {
   <layout class="QVBoxLayout" name="verticalLayout_3">
    <item>
     <widget class="QLabel" name="Turni_di_lavoro_2">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>50</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>50</height>
+      </size>
+     </property>
      <property name="font">
       <font>
        <pointsize>16</pointsize>
@@ -138,14 +150,20 @@ QTableView QTableCornerButton::section {
     </widget>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_3">
-     <item alignment="Qt::AlignLeft">
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
       <widget class="QPushButton" name="btn_torna">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>28</width>
+         <height>28</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton{
@@ -155,6 +173,8 @@ Height:28px;
 background-color: rgb(55, 92, 108);
 color: rgb(255, 255, 255);
 border-style: outset;
+
+
 }
 
 QPushButton:hover{
@@ -164,10 +184,7 @@ background-color: rgb(92, 154, 181);
 QPushButton:pressed{
 border-style: inset;
 background-color: rgb(48, 80, 91);
-}
-
-
-</string>
+}</string>
        </property>
        <property name="text">
         <string/>
@@ -184,13 +201,19 @@ background-color: rgb(48, 80, 91);
        </property>
       </widget>
      </item>
-     <item alignment="Qt::AlignLeft">
+     <item>
       <widget class="QPushButton" name="btn_Home">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>28</width>
+         <height>28</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton{
@@ -201,6 +224,7 @@ background-color: rgb(55, 92, 108);
 color: rgb(255, 255, 255);
 border-style: outset;
 
+
 }
 
 QPushButton:hover{
@@ -210,10 +234,7 @@ background-color: rgb(92, 154, 181);
 QPushButton:pressed{
 border-style: inset;
 background-color: rgb(48, 80, 91);
-}
-
-
-</string>
+}</string>
        </property>
        <property name="text">
         <string/>
@@ -231,17 +252,26 @@ background-color: rgb(48, 80, 91);
       </widget>
      </item>
      <item>
-      <spacer name="horizontalSpacer">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
+      <widget class="QLabel" name="label_12">
+       <property name="minimumSize">
         <size>
-         <width>40</width>
-         <height>20</height>
+         <width>0</width>
+         <height>50</height>
         </size>
        </property>
-      </spacer>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>In questa finestra è possibile aggiornare i dati di un dipendente già presente nel sistema</string>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
+       </property>
+      </widget>
      </item>
     </layout>
    </item>
@@ -263,10 +293,13 @@ background-color: rgb(48, 80, 91);
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetDefaultConstraint</enum>
+     </property>
      <item>
       <widget class="QTableWidget" name="tabella">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+        <sizepolicy hsizetype="Maximum" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -415,6 +448,9 @@ QTableView QTableCornerButton::section {
     <spacer name="verticalSpacer">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Fixed</enum>
      </property>
      <property name="sizeHint" stdset="0">
       <size>

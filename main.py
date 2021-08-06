@@ -10,6 +10,9 @@ if __name__ == '__main__':
 
     widget = QStackedWidget()
 
+    # impedisce il ridimensionamento
+    widget.setFixedSize(1075, 640)
+
     Vista_login = ViewLogin(widget)
 
     widget.addWidget(Vista_login)

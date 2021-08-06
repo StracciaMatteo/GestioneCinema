@@ -60,13 +60,13 @@ border-color: rgb(55, 92, 108);
      <property name="minimumSize">
       <size>
        <width>1055</width>
-       <height>100</height>
+       <height>50</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
        <width>16777215</width>
-       <height>100</height>
+       <height>50</height>
       </size>
      </property>
      <property name="font">
@@ -98,7 +98,7 @@ border-color: rgb(55, 92, 108);
     </widget>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_11">
+    <layout class="QHBoxLayout" name="horizontalLayout_12">
      <item>
       <widget class="QPushButton" name="btn_torna">
        <property name="sizePolicy">
@@ -113,18 +113,29 @@ border-color: rgb(55, 92, 108);
          <height>28</height>
         </size>
        </property>
-       <property name="cursor">
-        <cursorShape>PointingHandCursor</cursorShape>
-       </property>
        <property name="styleSheet">
         <string notr="true">QPushButton{
  border-radius: 14px;
+Width:28px;
+Height:28px;
 background-color: rgb(55, 92, 108);
 color: rgb(255, 255, 255);
 border-style: outset;
 
 
+}
+
+QPushButton:hover{
+
+background-color: rgb(92, 154, 181);
+}
+QPushButton:pressed{
+border-style: inset;
+background-color: rgb(48, 80, 91);
 }</string>
+       </property>
+       <property name="text">
+        <string/>
        </property>
        <property name="icon">
         <iconset>
@@ -146,6 +157,12 @@ border-style: outset;
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>50</height>
+        </size>
+       </property>
        <property name="font">
         <font>
          <pointsize>16</pointsize>
@@ -157,19 +174,6 @@ border-style: outset;
         <string notr="true">color: rgb(92, 164, 144);</string>
        </property>
       </widget>
-     </item>
-     <item>
-      <spacer name="horizontalSpacer_21">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
      </item>
     </layout>
    </item>
@@ -720,7 +724,7 @@ border-style: outset;
             <locale language="Italian" country="Italy"/>
            </property>
            <property name="text">
-            <string>In questa sezione, riservata solo all'amministratore del cinema, si possono inserire nuovi dipendenti, vedere la lista di quelli attuali per eventualmente modificare i loro dati. Si possono inoltre visualizzare i turni di lavoro</string>
+            <string>In questa sezione, riservata all'amministratore del cinema, si possono inserire nuovi dipendenti, vedere la lista di quelli attuali per eventualmente modificare i loro dati. Si possono inoltre visualizzare i turni di lavoro</string>
            </property>
            <property name="textFormat">
             <enum>Qt::AutoText</enum>
@@ -944,7 +948,7 @@ border-style: outset;
             <locale language="Italian" country="Italy"/>
            </property>
            <property name="text">
-            <string>In questa sezione è possibile inserire le spese e i ricavi per poter tenere traccia dei movimenti contabili dell'attivià. E' inoltre possibile visualizzare statistiche sull'andamento delle vendite e gli incassi per poter ottimizzare i profitti.</string>
+            <string>In questa sezione è possibile inserire le spese e i ricavi per poter tenere traccia dei movimenti contabili dell'attivià. E' inoltre possibile visualizzare statistiche sull'andamento delle vendite e gli incassi per poter ottimizzare i profitti. Solo l'amministratore può accedervi</string>
            </property>
            <property name="textFormat">
             <enum>Qt::AutoText</enum>

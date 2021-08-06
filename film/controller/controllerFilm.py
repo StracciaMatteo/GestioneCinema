@@ -1,6 +1,9 @@
+from film.model.film import film
+
+
 class controllerFilm():
-    def __init__(self, film):
-        self.model = film
+    def __init__(self, titolo, durata, intervallo):
+        self.model = film(titolo, durata, intervallo)
 
     def get_titolo(self):
         return self.model.titolo
