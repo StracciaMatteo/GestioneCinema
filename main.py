@@ -1,7 +1,6 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QStackedWidget
 from PyQt5 import QtGui
-
 from Login.View.ViewLogin import ViewLogin
 
 

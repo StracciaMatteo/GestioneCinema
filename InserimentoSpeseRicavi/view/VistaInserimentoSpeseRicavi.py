@@ -5,13 +5,15 @@ from InserimentoSpeseRicavi.model.ModelVoce import ModelVoce
 
 
 
+
 class VistaInserimentoSpeseRicavi(QWidget):
 
-    def __init__(self,widget,callback):
+    def __init__(self,widget,callback,calcoloTot):
         super(VistaInserimentoSpeseRicavi, self).__init__()
         self.widget = widget
         self.callback = callback
         self.controllerInserimentoSR = ControlloreInserimentoSR()
+        self.calcoloTot = calcoloTot
         self.vista = uic.loadUi("InserimentoSpeseRicavi/view/Inserisci_Movimento_UI.ui", self)
         self.btn_torna_IM.clicked.connect(self.go_back)
         self.vista.btn_InserisciMov.clicked.connect(self.save)
@@ -28,7 +30,6 @@ class VistaInserimentoSpeseRicavi(QWidget):
             descrizione = self.vista.lineEdit_DescrizionVoce.text()
             importo = self.vista.lineEdit_Importo.text()
             segno = self.vista.comboBox_Segno.currentText()
-            #model = ModelVoce(segno, importo, descrizione)
             model= ModelVoce(segno,importo,descrizione)
             return model
 
@@ -44,6 +45,8 @@ class VistaInserimentoSpeseRicavi(QWidget):
                         self.callback.clear()
                         for voci in self.controllerInserimentoSR.model.lista_movimenti:
                             self.callback.addItem(voci.segno + str(voci.importo) + "  " + voci.descrizione)
+                        self.calcoloTot()
+
             except ValueError:
                 self.box_dialog()
         else:

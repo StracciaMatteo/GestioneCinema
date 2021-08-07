@@ -1,6 +1,5 @@
 from PyQt5 import uic
 from PyQt5.QtWidgets import QWidget, QMessageBox
-
 from InserimentoSpeseRicavi.controller.ControlloreInserimentoSR import ControlloreInserimentoSR
 from InserimentoSpeseRicavi.view.VistaInserimentoSpeseRicavi import VistaInserimentoSpeseRicavi
 from messaggeError.Error import Error
@@ -22,9 +21,10 @@ class VistaListaMovimenti(QWidget):
 
     # Funzione che permette di accedere alla vista Inserimento Voce
     def apri_inserisci_voce(self):
-        inserisci_voce = VistaInserimentoSpeseRicavi(self.widget,self.vista.lista_voci)
+        inserisci_voce = VistaInserimentoSpeseRicavi(self.widget,self.vista.lista_voci,self.totale)
         self.widget.addWidget(inserisci_voce)
         self.widget.setCurrentIndex(self.widget.currentIndex() + 1)
+
 
     # Funizone che permette di tornare indietro con il tasto "<-" all'interno della vista
     def go_back(self):
@@ -46,6 +46,7 @@ class VistaListaMovimenti(QWidget):
     # Funzione che calcola il totale della lista movimenti, oppure in caso di mancato totale stampa nella Line edit il place holder
     def totale(self):
         totale=0
+        self.controlloremov.model.read()
         for voci in self.controlloremov.model.lista_movimenti:
             if voci.segno == "+":
                 totale += float(voci.importo)
@@ -53,6 +54,7 @@ class VistaListaMovimenti(QWidget):
                 totale -= float(voci.importo)
         if totale != 0 :
             self.vista.lineEdit_Totale.setText(str(totale)+" €")
+
 
 
 

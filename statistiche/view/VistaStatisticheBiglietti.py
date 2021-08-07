@@ -29,15 +29,15 @@ class VistaStatisticheBiglietti(QWidget):
     # Questa funzione riceve dal controller della lista film la somma di biglietti venduti per fascia oraria e ne crea un
     # istogramma mostrando a schermo gli istogrammi per fascia oraria,che indicano il numero di biglietti venduti
     def genera_stat(self):
-        x= self.controller.get_vendite_giornaliere()
-        if x != [0, 0, 0, 0]:
+        biglietti= self.controller.get_vendite_giornaliere()
+        if biglietti != [0, 0, 0, 0]:
             today = QDate.currentDate()
             if int(time.localtime().tm_hour) < 3:
                 today = today.addDays(-1)
             today = today.toString("dd_MM_yyyy")
             label = ["15:00", "18:00", "21:00", "00:00"]
             fig = plt.figure(figsize=(8, 5))
-            plt.bar(label, x, color=['maroon', 'red', 'orange', 'yellow'], width=0.5, edgecolor="black")
+            plt.bar(label, biglietti, color=['maroon', 'red', 'orange', 'yellow'], width=0.5, edgecolor="black")
             plt.xlabel("Orari degli spettacoli ")
             plt.ylabel("Biglietti venduti")
             plt.title("Statistiche sui biglietti venduti "+today)
