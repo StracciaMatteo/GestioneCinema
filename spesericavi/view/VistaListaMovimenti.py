@@ -54,6 +54,8 @@ class VistaListaMovimenti(QWidget):
                 totale -= float(voci.importo)
         if totale != 0 :
             self.vista.lineEdit_Totale.setText(str(totale)+" €")
+        else:
+            self.vista.lineEdit_Totale.setText("00.00" + " €")
 
 
 
@@ -77,6 +79,7 @@ class VistaListaMovimenti(QWidget):
 
     # Funzione che permette di rimuovere la voce dalla lista se si preme "Si" nel Message Box
     def removing_error_box(self):
+        self.controlloremov.model.read()
         error = Error("Attenzione","Vuoi eliminare la voce ?","")
         if error.confirm_messagge() == QMessageBox.Yes:
             descrizione = self.controlloremov.model.lista_movimenti[self.vista.lista_voci.currentRow()].descrizione
