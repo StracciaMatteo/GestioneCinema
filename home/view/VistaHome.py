@@ -27,12 +27,14 @@ class VistaHome(QWidget):
         self.vista.label_login_session.setText("Login effettuato da: " + utente_loggato)
 
         # comando per mostrare o nascondere box gestione dipendenti
-        if utente_loggato != "prova":
+        if self.utente_loggato != "prova":
             self.vista.box_dipendenti.setDisabled(True)
             self.vista.box_economica.setDisabled(True)
+            self.vista.error.setText("Non si dispone dell'autorizzazione per le operazioni sottostanti")
         else:
             self.vista.box_dipendenti.setDisabled(False)
             self.vista.box_economica.setDisabled(False)
+            self.vista.error.setText("")
 
         self.vista.btn_torna.clicked.connect(self.logout)
 
@@ -55,6 +57,8 @@ class VistaHome(QWidget):
 
     def logout(self):
         self.widget.setCurrentIndex(self.widget.currentIndex() - 1)
+        # cancella le credenziali dell'utente loggato in precedenza
+        self.widget.currentWidget().Codice.setText("")
         self.widget.removeWidget(self.vista)
 
     # Funzioni per accedere a schermate

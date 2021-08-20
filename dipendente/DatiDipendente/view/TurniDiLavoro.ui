@@ -266,7 +266,7 @@ background-color: rgb(48, 80, 91);
         </size>
        </property>
        <property name="text">
-        <string>In questa finestra è possibile aggiornare i dati di un dipendente già presente nel sistema</string>
+        <string>In questa sono elencati i turni di lavoro dei dipendenti</string>
        </property>
        <property name="wordWrap">
         <bool>true</bool>

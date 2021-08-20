@@ -9,8 +9,6 @@ if __name__ == '__main__':
 
     widget = QStackedWidget()
 
-    # impedisce il ridimensionamento
-    widget.setFixedSize(1075, 640)
 
     Vista_login = ViewLogin(widget)
 
@@ -26,6 +24,9 @@ if __name__ == '__main__':
     fg = widget.frameGeometry()
     fg.moveCenter(centerPoint)
     widget.move(fg.topLeft())
+
+    # impedisce di andare full screen per avere visuale ottimale
+    widget.setMaximumWidth(1075)
 
     sys.exit(app.exec())
 

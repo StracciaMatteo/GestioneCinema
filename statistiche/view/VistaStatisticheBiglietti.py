@@ -42,8 +42,8 @@ class VistaStatisticheBiglietti(QWidget):
             plt.ylabel("Biglietti venduti")
             plt.title("Statistiche sui biglietti venduti "+today)
             plt.tight_layout()
-            plt.savefig("statistiche/Statistiche/SatisticheBigietti"+today)
-            self.vista.label_stat.setPixmap(QPixmap("statistiche/Statistiche/SatisticheBigietti"+today))
+            plt.savefig("statistiche/Statistiche/StatisticheBiglietti"+today)
+            self.vista.label_stat.setPixmap(QPixmap("statistiche/Statistiche/StatisticheBiglietti"+today))
 
 
 
