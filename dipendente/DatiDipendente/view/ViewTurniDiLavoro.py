@@ -54,20 +54,6 @@ class ViewTurniDiLavoro(QWidget):
 
         self.tool_tip()
 
-    '''def edit_box_enable(self):
-        #dip_selec=self.vista_turni_lavoro.tabella.currentItem()
-
-        if  self.vista_turni_lavoro.tabella.currentColumn()==1:
-            self.vista_turni_lavoro.edit_box.setDisabled(False)
-
-    def edit_session_assenza(self):
-        if self.vista_turni_lavoro.tabella.currentColumn() == 1:
-            self.vista_turni_lavoro.tabella.setItem(self.vista_turni_lavoro.tabella.currentRow(),1, QTableWidgetItem(self.vista_turni_lavoro.edit_box.currentText()))
-        self.tool_tip()
-    def popola_edit_box(self):
-        self.vista_turni_lavoro.edit_box.insertItem(0,"Assente")
-        self.vista_turni_lavoro.edit_box.insertItem(1,"Assenza Verificata")'''
-
     #metodo che retitusce il giorno della settimana in italiano e prende come parametro:
     #day: il giorno seclto dal'utente nel calendario in inglese
 
