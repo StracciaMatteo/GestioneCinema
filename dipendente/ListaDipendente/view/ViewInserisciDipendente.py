@@ -1,7 +1,6 @@
 
 from PyQt5 import uic
 from PyQt5.QtWidgets import QWidget
-
 from dipendente.DatiDipendente.model.DipendenteModel import DipendenteModel
 from dipendente.ListaDipendente.controller.ControllerListaDipendenti import ControllerListaDipendenti
 import time
