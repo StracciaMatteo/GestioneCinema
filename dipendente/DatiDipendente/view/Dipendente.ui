@@ -95,6 +95,9 @@
          <height>28</height>
         </size>
        </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="styleSheet">
         <string notr="true">QPushButton{
  border-radius: 14px;
@@ -144,6 +147,9 @@ background-color: rgb(48, 80, 91);
          <width>28</width>
          <height>28</height>
         </size>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton{
@@ -1137,6 +1143,9 @@ background-color: rgb(48, 80, 91);
          <pointsize>8</pointsize>
         </font>
        </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="styleSheet">
         <string notr="true">QPushButton{
  border-radius: 12px;
@@ -1246,6 +1255,9 @@ background-color: rgb(48, 80, 91);
         <font>
          <pointsize>8</pointsize>
         </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton{

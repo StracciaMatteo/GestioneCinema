@@ -113,6 +113,9 @@ border-color: rgb(55, 92, 108);
          <height>28</height>
         </size>
        </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="styleSheet">
         <string notr="true">QPushButton{
  border-radius: 14px;
@@ -386,7 +389,7 @@ background-color: rgb(48, 80, 91);
             <locale language="Italian" country="Italy"/>
            </property>
            <property name="text">
-            <string>In questa sezione è possibile inserire le spese e i ricavi per poter tenere traccia dei movimenti contabili dell'attivià. E' inoltre possibile visualizzare statistiche sull'andamento delle vendite e gli incassi per poter ottimizzare i profitti. Solo l'amministratore può accedervi</string>
+            <string>In questa sezione è possibile inserire le spese e i ricavi per poter tenere traccia dei movimenti contabili dell'attività. E' inoltre possibile visualizzare statistiche sull'andamento delle vendite e gli incassi per poter ottimizzare i profitti. Solo l'amministratore può accedervi</string>
            </property>
            <property name="textFormat">
             <enum>Qt::AutoText</enum>

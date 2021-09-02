@@ -425,6 +425,9 @@ padding: 5px;
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
      <property name="styleSheet">
       <string notr="true">background-color: rgb(55, 92, 108);
 color: rgb(255, 255, 255);</string>

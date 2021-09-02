@@ -85,6 +85,9 @@
          <height>28</height>
         </size>
        </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="styleSheet">
         <string notr="true">QPushButton{
  border-radius: 14px;
@@ -136,7 +139,7 @@ background-color: rgb(48, 80, 91);
         </size>
        </property>
        <property name="text">
-        <string>In questra finestra si inseriscono tutti i movimenti finanziari dell'attività</string>
+        <string>In questa finestra si inseriscono tutti i movimenti finanziari dell'attività</string>
        </property>
        <property name="wordWrap">
         <bool>true</bool>
@@ -236,6 +239,9 @@ padding: 3px;</string>
          </item>
          <item>
           <widget class="QComboBox" name="comboBox_Segno">
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
            <property name="styleSheet">
             <string notr="true">QComboBox{
 background-color: rgb(255, 255, 255);
