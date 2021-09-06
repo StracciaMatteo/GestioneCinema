@@ -27,7 +27,6 @@ class controllerListaFilm():
         self.model.aggiorna_programmazione(data, testo, item)
 
     # funzioni per vendita e rimborso biglietti
-
     def vendi_biglietto(self, data, item, quantita):
         return self.model.vendi_biglietto(data, item, quantita)
 

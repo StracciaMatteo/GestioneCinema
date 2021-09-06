@@ -3,7 +3,7 @@ from PyQt5.QtWidgets import QWidget
 from listaFilm.controller.controllerListaFilm import controllerListaFilm
 
 
-from biglietteria.controller.controllerTicket import controllerTicket
+# from biglietteria.controller.controllerTicket import controllerTicket
 
 
 class viewRimborso(QWidget):
@@ -19,19 +19,14 @@ class viewRimborso(QWidget):
 
         self.vista.procedi.clicked.connect(self.rimborsa_biglietto)
 
+    # la funzione permette di rimborsare uno spettacolo tramite il codice se tutte le condizioni sono rispettate
     def rimborsa_biglietto(self):
         codice = self.vista.codice.text()
         self.controller.rimborsa_biglietto(codice)
 
-
+    # Funzione che permette di tornare indietro con il tasto "<-" all'interno della vista
     def go_back(self):
         self.widget.setCurrentIndex(self.widget.currentIndex() - 1)
         self.widget.removeWidget(self.vista)
         self.controller.save()
 
-    '''
-    per rimborsare, dopo la pressione del bottone 'procedi' passare alla funzione rimborso_biglietto del controller 
-    listaFilm il codice univoco letto dalla LineEdit e il rimborso verrà fatto automaticamente se lo spettacolo esiste 
-    e il codice è corretto. Chiamare la funzione save del controller per salvare la nuova situazione di disponibilità
-    dei posti
-    '''

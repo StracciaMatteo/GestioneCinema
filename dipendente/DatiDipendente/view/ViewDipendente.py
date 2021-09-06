@@ -23,7 +23,7 @@ class ViewDipendente(QWidget):
         self.btn_elimina_dip.clicked.connect(self.remove_dipendente)
         self.btn_aggiorna_dip.clicked.connect(self.go_aggiorna_dipendente)
 
-    # metodo per tornare in dietro
+    # Funzione che permette di tornare indietro con il tasto "<-" all'interno della vista
     def go_back(self):
         self.widget.setCurrentIndex(self.widget.currentIndex() - 1)
         self.widget.removeWidget(self.vista_dipendente)

@@ -40,7 +40,7 @@ class viewProgrammazione(QWidget):
         data = self.vista.calendar.selectedDate()
         self.vista.label_data.setText(data.toString('dddd, d MMMM yyyy'))
 
-        # NEW legge la programmazione del json della data attuale
+        # legge la programmazione del json della data attuale
         self.controller.leggi(data.toString('d MMMM yyyy'), self.vista)
 
         self.vista.table_programmazione.doubleClicked.connect(self.assegna_data)
@@ -52,12 +52,12 @@ class viewProgrammazione(QWidget):
         if self.vista.radioButton_aggiungi.isChecked():
             self.vista.table_programmazione.setItem(item.row(), item.column(),
                                                     QTableWidgetItem(str(self.vista.box_elenco_film.currentText())))
-            # NEW sostituisce il film selezionato nella variabile ma non nel json
+            # sostituisce il film selezionato nella variabile ma non nel json
             self.controller.aggiorna_programmazione(data.toString('d MMMM yyyy'),
                                                     str(self.vista.box_elenco_film.currentText()), item)
         else:
             self.vista.table_programmazione.setItem(item.row(), item.column(), QTableWidgetItem(''))
-            # NEW sostituisce il film selezionato nella variabile ma non nel json
+            # sostituisce il film selezionato nella variabile ma non nel json
             self.controller.aggiorna_programmazione(data.toString('d MMMM yyyy'), '', item)
 
     # funzione che apre la vista dettagli di un film sela lista_film non è vuota
@@ -70,12 +70,13 @@ class viewProgrammazione(QWidget):
                                       self.controller, self.rimuovi_film_dal_box)
             vista_dettagli.show()
 
+    # Funzione che permette di tornare indietro con il tasto "<-" o "cancel" all'interno della vista
     def go_back(self):
         self.widget.setCurrentIndex(self.widget.currentIndex() - 1)
         self.widget.removeWidget(self.vista)
 
     def save(self):
-        #NEW salva la variabile della programmazione nel json
+        #salva la variabile della programmazione nel json
         self.controller.save()
 
         self.widget.setCurrentIndex(self.widget.currentIndex() - 1)

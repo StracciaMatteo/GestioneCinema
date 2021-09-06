@@ -32,7 +32,7 @@ class ViewAggiornaDipendente(QWidget):
         self.vista_aggiorna_dipendente.salva_modifica.clicked.connect(self.verifica_dati_aggiorna)
 
 
-# metodo per tornare in dietro
+# Funzione che permette di tornare indietro con il tasto "<-" all'interno della vista
 
     def go_back(self):
         self.verifica_modifica(True)

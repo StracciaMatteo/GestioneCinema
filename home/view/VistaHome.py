@@ -55,6 +55,7 @@ class VistaHome(QWidget):
         self.vista.btn_vendita_biglietti.clicked.connect(self.vendita_biglietti)
         self.vista.btn_rimborso_biglietti.clicked.connect(self.rimborso_biglietti)
 
+    # Funzione che permette di tornare indietro con il tasto "<-" all'interno della vista
     def logout(self):
         self.widget.setCurrentIndex(self.widget.currentIndex() - 1)
         # cancella le credenziali dell'utente loggato in precedenza
@@ -123,15 +124,3 @@ class VistaHome(QWidget):
         self.widget.addWidget(vista_Rimborso)
         self.widget.setCurrentIndex(self.widget.currentIndex() + 1)
 
-    '''def hideEvent(self, event):
-        confirm = Error("Chiusura programma", "Sei sicuro di voler chiudere il programma ?",
-                        "tutte le modifiche non salvate verranno perse")
-        if confirm.confirm_messagge() == QMessageBox.Yes:
-            event.accept()
-        else:
-            event.ignore()
-
-    def event(self, e):
-        # if isinstance(e, QCloseEvent):
-        print(e)
-        return super().event(e)'''

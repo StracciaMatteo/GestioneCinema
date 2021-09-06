@@ -31,7 +31,7 @@ class viewInserimentoFilm(QWidget):
     def get_data(self):
         data = self.vista.calendar.selectedDate()
         self.vista.label_data.setText(data.toString('dddd, d MMMM yyyy'))
-        # NEW legge la programmazione del json della data attuale
+        #legge la programmazione del json della data attuale
         self.controller.leggi(data.toString('d MMMM yyyy'), self.vista)
         self.vista.table_programmazione.doubleClicked.connect(self.assegna_data)
 
@@ -43,10 +43,11 @@ class viewInserimentoFilm(QWidget):
         if self.vista.filmName.text() != '' and durata.hour() < 3 and durata.hour() or durata.minute():
             self.vista.table_programmazione.setItem(item.row(), item.column(),
                                                     QTableWidgetItem(str(self.vista.filmName.text())))
-            # NEW sostituisce il film selezionato nella variabile ma non nel json
+            # sostituisce il film selezionato nella variabile ma non nel json
             self.controller.aggiorna_programmazione(data.toString('d MMMM yyyy'),
                                                     str(self.vista.filmName.text()), item)
 
+    # funzione che salva il film nella lista ed eventualmente la sua programmazione se i dati inseriti sono corretti
     def save(self):
         durata = self.vista.timeEdit_durata.time()
         if self.vista.filmName.text() != '' and durata.hour() < 3 and durata.hour() or durata.minute():
@@ -61,6 +62,7 @@ class viewInserimentoFilm(QWidget):
                           "La durata deve essere compresa fra 1 minuto e 2 ore e 59 minuti")
             error.error_messagge()
 
+    # Funzione che permette di tornare indietro con il tasto "cancel" all'interno della vista
     def go_back(self):
         self.widget.setCurrentIndex(self.widget.currentIndex() - 1)
         self.widget.removeWidget(self.vista)

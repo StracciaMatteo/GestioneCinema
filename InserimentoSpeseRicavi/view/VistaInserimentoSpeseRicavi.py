@@ -19,13 +19,13 @@ class VistaInserimentoSpeseRicavi(QWidget):
         self.vista.btn_InserisciMov.clicked.connect(self.save)
         self.vista.btn_InserisciMov.setShortcut("Return")
 
-    # Funizone che permette di tornare indietro con il tasto "<-" all'interno della vista
+    # Funzione che permette di tornare indietro con il tasto "<-" all'interno della vista
     def go_back(self):
         self.widget.setCurrentIndex(self.widget.currentIndex() - 1)
         self.widget.removeWidget(self.vista)
 
 
-    # Questa funzione prende dall'interfaccia
+    # Questa funzione prende dall'interfaccia i dati presenti nelle LineEdit
     def add_voce(self):
             descrizione = self.vista.lineEdit_DescrizionVoce.text()
             importo = self.vista.lineEdit_Importo.text()
@@ -34,6 +34,7 @@ class VistaInserimentoSpeseRicavi(QWidget):
             return model
 
     # Questa funzione permette il salvataggio dei dati della voce all'interno del file pickle,se i dati sono corretti
+    # e ne ricalcola il totale
     def save(self):
         if self.vista.lineEdit_DescrizionVoce.text():
             try:
@@ -63,6 +64,7 @@ class VistaInserimentoSpeseRicavi(QWidget):
         msg.setStandardButtons(QMessageBox.Ok)
         result = msg.exec()
 
+    # # Questa funzione crea un MessageBox di errore per il mancato inserimento della descrizione
     def box_dialog_descrizione(self):
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Critical)

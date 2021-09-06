@@ -69,7 +69,7 @@ class VistaListaMovimenti(QWidget):
         msg.setStandardButtons(QMessageBox.Ok)
         result = msg.exec()
 
-    # Funzione che chiama la funzione di eliminazione della voce se selezionata oppure manda a schermo un Message box di Errore
+    # Funzione che genera il box di conferma eliminazione della voce selezionata oppure manda a schermo un Message box di Errore
     def elimina_voce(self):
         if self.vista.lista_voci.currentRow()==-1:
             error = Error("Attenzione", "Voce non selezionata", "")

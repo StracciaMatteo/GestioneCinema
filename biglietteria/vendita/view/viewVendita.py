@@ -1,17 +1,13 @@
 from PyQt5 import uic
 from PyQt5.QtCore import QDate
-from PyQt5.QtWidgets import QWidget, QTableWidgetItem
-
-from biglietteria.controller.controllerTicket import controllerTicket
+from PyQt5.QtWidgets import QWidget
 from listaFilm.controller.controllerListaFilm import controllerListaFilm
-from messaggeError.Error import Error
 
 
 class viewVendita(QWidget):
     def __init__(self, widget):
         super(viewVendita, self).__init__()
         self.widget = widget
-        #self.controller = controllerTicket()
         self.controller = controllerListaFilm()
         self.vista = uic.loadUi("biglietteria/vendita/view/venditabiglietti.ui",self)
 
@@ -35,6 +31,7 @@ class viewVendita(QWidget):
 
         self.vista.btn_inserisci.clicked.connect(self.vendi)
 
+    # se tutti i parametri sono corretti la funzione permette la vendita di 1 o più biglietti e restituisce il codice
     def vendi(self):
         row = self.vista.table_programmazione.currentRow()
         column = self.vista.table_programmazione.currentColumn()
@@ -43,6 +40,7 @@ class viewVendita(QWidget):
         self.controller.vendi_biglietto(self.vista.calendar.selectedDate(), item, quantita)
         self.controller.save()
 
+    # Funzione che permette di tornare indietro con il tasto "<-" all'interno della vista
     def go_back(self):
         self.widget.setCurrentIndex(self.widget.currentIndex() - 1)
         self.widget.removeWidget(self.vista)

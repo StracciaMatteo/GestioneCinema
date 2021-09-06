@@ -21,7 +21,7 @@ class VistaStatisticheBiglietti(QWidget):
 
 
 
-    # Funizone che permette di tornare indietro con il tasto "<-" all'interno della vista
+    # Funzione che permette di tornare indietro con il tasto "<-" all'interno della vista
     def go_back(self):
         self.widget.setCurrentIndex(self.widget.currentIndex() - 1)
         self.widget.removeWidget(self.vista)

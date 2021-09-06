@@ -16,9 +16,11 @@ class ViewLogin(QWidget):
         self.btn_visibilita_password.toggled.connect(self.password_visibility)
         self.btn_Accedi.clicked.connect(self.login)
 
+    # rende visibile o meno la password tramite il bottone apposito
     def password_visibility(self):
         self.controller.hide_or_show_pw(self.vista)
 
+    # se il codice inserito è presente nel sistema si può accedere alla home
     def login(self):
         utente_loggato = self.controller.login(self.Codice.text())
         if utente_loggato:

@@ -26,7 +26,7 @@ class ViewInserisciDipendente(QWidget):
         self.btn_Home.clicked.connect(self.go_home)
         self.btn_inserisci_dip.clicked.connect(self.verifica_dati)
 
-    # metodo per tornare in dietro
+    # Funzione che permette di tornare indietro con il tasto "<-" all'interno della vista
 
     def go_back(self):
         self.widget.setCurrentIndex(self.widget.currentIndex() - 1)

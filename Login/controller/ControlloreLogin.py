@@ -1,5 +1,3 @@
-from PyQt5.QtWidgets import QLineEdit, QMessageBox, QWidget
-
 from Login.model.loginModel import loginModel
 
 

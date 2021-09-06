@@ -19,7 +19,7 @@ class ViewTurniDiLavoro(QWidget):
         self.calendarWidget.clicked.connect(self.popola_tabella)
         self.tabella.setEditTriggers(QAbstractItemView.NoEditTriggers)
 
-    # metodo per tornare in dietro
+    # Funzione che permette di tornare indietro con il tasto "<-" all'interno della vista
 
     def go_back(self):
         self.widget.setCurrentIndex(self.widget.currentIndex() - 1)

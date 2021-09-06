@@ -28,7 +28,7 @@ class ViewListaDipendente(QWidget):
         self.popola_lista_dipententi()
         self.list_dipendenti.itemDoubleClicked.connect(self.go_view_dipendente)
 
-    # metodo per tornare in dietro
+    # Funzione che permette di tornare indietro con il tasto "<-" all'interno della vista
 
     def go_back(self):
         self.widget.setCurrentIndex(self.widget.currentIndex() - 1)

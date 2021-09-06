@@ -37,6 +37,7 @@ class listaFilm():
         for item in toRemove:
             del self.spettacoli[item]
 
+
     # funzioni riguardanti i film
 
     def aggiungi_film(self, film):
@@ -56,8 +57,10 @@ class listaFilm():
             if name == film.titolo:
                 return film
 
+
     # funzioni riguardanti gli spettacoli
 
+    # legge la programmazione della data scelta all'interno del calendario e popola la tabella con gli spettacoli
     def leggi(self, data, vista):
 
         if data not in self.spettacoli:
@@ -97,6 +100,7 @@ class listaFilm():
             # gestisce eccezione interna in fase di testing
             pass
 
+    # aggiorna la programmazione dopo un inserimento o la rimozione di uno spettacolo
     def aggiorna_programmazione(self, data, testo, item):
         if item.column() == 0:
             orario = "15:00"
@@ -116,6 +120,7 @@ class listaFilm():
                 for orario in ["15:00", "18:00", "21:00", "00:00"]:
                     if self.spettacoli[data][sala][orario]["titolo"] == film.titolo:
                         self.spettacoli[data][sala][orario] = {"titolo": '', "posti": 0}
+
 
     # funzioni per vendita e rimborso biglietti
 
@@ -186,7 +191,7 @@ class listaFilm():
                               "procedere manualmente")
                 error.error_messagge()
 
-    # funzione che restituisce array con incassi giornalieri
+    # funzione che restituisce array con numero di biglietti venduti
     def get_vendite_giornaliere(self):
         today = QDate.currentDate()
 

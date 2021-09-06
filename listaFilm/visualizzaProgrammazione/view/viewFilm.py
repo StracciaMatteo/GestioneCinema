@@ -16,6 +16,7 @@ class viewFilm(QWidget):
 
         self.vista.btn_elimina_film.clicked.connect(self.box_dialog)
 
+    # box che visualizza la conferma di eliminazione
     def box_dialog(self):
         error = Error("Elimina film", "Eliminare definitivamente ?", "L'operazione è irreversibile")
         if error.confirm_messagge() == QMessageBox.Yes:
