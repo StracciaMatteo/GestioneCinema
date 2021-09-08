@@ -24,8 +24,8 @@ class loginModel():
 
     def login(self, pw):
         # rimuovere
-        if pw == "":
-            return "prova"
+        if pw == "admin1234":
+            return "Amministratore"
         self.read()
         for item in self.listadipendenti:
             if pw == item.id:

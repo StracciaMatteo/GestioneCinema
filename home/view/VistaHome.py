@@ -26,8 +26,8 @@ class VistaHome(QWidget):
         # imposta titolo labr in base a utente loggato
         self.vista.label_login_session.setText("Login effettuato da: " + utente_loggato)
 
-        # comando per mostrare o nascondere box gestione dipendenti
-        if self.utente_loggato != "prova":
+        # comando per mostrare o nascondere box gestione dipendenti e box gestione economica
+        if self.utente_loggato != "Amministratore":
             self.vista.box_dipendenti.setDisabled(True)
             self.vista.box_economica.setDisabled(True)
             self.vista.error.setText("Non si dispone dell'autorizzazione per le operazioni sottostanti")
