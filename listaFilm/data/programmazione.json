@@ -1,1 +1,681 @@
-{}
+{
+    "9 settembre 2021": [
+        {
+            "nome": "sala1",
+            "15:00": {
+                "titolo": "The suicide squad- Missione suicida",
+                "posti": 0
+            },
+            "18:00": {
+                "titolo": "The suicide squad- Missione suicida",
+                "posti": 0
+            },
+            "21:00": {
+                "titolo": "The suicide squad- Missione suicida",
+                "posti": 0
+            },
+            "00:00": {
+                "titolo": "The suicide squad- Missione suicida",
+                "posti": 0
+            }
+        },
+        {
+            "nome": "sala2",
+            "15:00": {
+                "titolo": "Il giro del mondo in 80 giorni ",
+                "posti": 0
+            },
+            "18:00": {
+                "titolo": "Shang-chi e la leggenda dei dieci anelli",
+                "posti": 0
+            },
+            "21:00": {
+                "titolo": "Il giro del mondo in 80 giorni ",
+                "posti": 0
+            },
+            "00:00": {
+                "titolo": "Il giro del mondo in 80 giorni ",
+                "posti": 0
+            }
+        },
+        {
+            "nome": "sala3",
+            "15:00": {
+                "titolo": "Fast & furious 9",
+                "posti": 0
+            },
+            "18:00": {
+                "titolo": "Fast & furious 9",
+                "posti": 0
+            },
+            "21:00": {
+                "titolo": "Shang-chi e la leggenda dei dieci anelli",
+                "posti": 0
+            },
+            "00:00": {
+                "titolo": "Fast & furious 9",
+                "posti": 0
+            }
+        },
+        {
+            "nome": "sala4",
+            "15:00": {
+                "titolo": "Shang-chi e la leggenda dei dieci anelli",
+                "posti": 0
+            },
+            "18:00": {
+                "titolo": "Shang-chi e la leggenda dei dieci anelli",
+                "posti": 0
+            },
+            "21:00": {
+                "titolo": "Shang-chi e la leggenda dei dieci anelli",
+                "posti": 0
+            },
+            "00:00": {
+                "titolo": "Shang-chi e la leggenda dei dieci anelli",
+                "posti": 0
+            }
+        },
+        {
+            "nome": "sala5",
+            "15:00": {
+                "titolo": "Qui rido io",
+                "posti": 0
+            },
+            "18:00": {
+                "titolo": "Qui rido io",
+                "posti": 0
+            },
+            "21:00": {
+                "titolo": "Qui rido io",
+                "posti": 0
+            },
+            "00:00": {
+                "titolo": "Qui rido io",
+                "posti": 0
+            }
+        }
+    ],
+    "10 settembre 2021": [
+        {
+            "nome": "sala1",
+            "15:00": {
+                "titolo": "The suicide squad- Missione suicida",
+                "posti": 0
+            },
+            "18:00": {
+                "titolo": "The suicide squad- Missione suicida",
+                "posti": 0
+            },
+            "21:00": {
+                "titolo": "The suicide squad- Missione suicida",
+                "posti": 0
+            },
+            "00:00": {
+                "titolo": "The suicide squad- Missione suicida",
+                "posti": 0
+            }
+        },
+        {
+            "nome": "sala2",
+            "15:00": {
+                "titolo": "Il giro del mondo in 80 giorni ",
+                "posti": 0
+            },
+            "18:00": {
+                "titolo": "Il giro del mondo in 80 giorni ",
+                "posti": 0
+            },
+            "21:00": {
+                "titolo": "Il giro del mondo in 80 giorni ",
+                "posti": 0
+            },
+            "00:00": {
+                "titolo": "Il giro del mondo in 80 giorni ",
+                "posti": 0
+            }
+        },
+        {
+            "nome": "sala3",
+            "15:00": {
+                "titolo": "Fast & furious 9",
+                "posti": 0
+            },
+            "18:00": {
+                "titolo": "Fast & furious 9",
+                "posti": 0
+            },
+            "21:00": {
+                "titolo": "Fast & furious 9",
+                "posti": 0
+            },
+            "00:00": {
+                "titolo": "Fast & furious 9",
+                "posti": 0
+            }
+        },
+        {
+            "nome": "sala4",
+            "15:00": {
+                "titolo": "Qui rido io",
+                "posti": 0
+            },
+            "18:00": {
+                "titolo": "Qui rido io",
+                "posti": 0
+            },
+            "21:00": {
+                "titolo": "Qui rido io",
+                "posti": 0
+            },
+            "00:00": {
+                "titolo": "Qui rido io",
+                "posti": 0
+            }
+        },
+        {
+            "nome": "sala5",
+            "15:00": {
+                "titolo": "Shang-chi e la leggenda dei dieci anelli",
+                "posti": 0
+            },
+            "18:00": {
+                "titolo": "Shang-chi e la leggenda dei dieci anelli",
+                "posti": 0
+            },
+            "21:00": {
+                "titolo": "Shang-chi e la leggenda dei dieci anelli",
+                "posti": 0
+            },
+            "00:00": {
+                "titolo": "Shang-chi e la leggenda dei dieci anelli",
+                "posti": 0
+            }
+        }
+    ],
+    "11 settembre 2021": [
+        {
+            "nome": "sala1",
+            "15:00": {
+                "titolo": "The suicide squad- Missione suicida",
+                "posti": 0
+            },
+            "18:00": {
+                "titolo": "The suicide squad- Missione suicida",
+                "posti": 0
+            },
+            "21:00": {
+                "titolo": "The suicide squad- Missione suicida",
+                "posti": 0
+            },
+            "00:00": {
+                "titolo": "The suicide squad- Missione suicida",
+                "posti": 0
+            }
+        },
+        {
+            "nome": "sala2",
+            "15:00": {
+                "titolo": "Il giro del mondo in 80 giorni ",
+                "posti": 0
+            },
+            "18:00": {
+                "titolo": "Il giro del mondo in 80 giorni ",
+                "posti": 0
+            },
+            "21:00": {
+                "titolo": "Il giro del mondo in 80 giorni ",
+                "posti": 0
+            },
+            "00:00": {
+                "titolo": "Il giro del mondo in 80 giorni ",
+                "posti": 0
+            }
+        },
+        {
+            "nome": "sala3",
+            "15:00": {
+                "titolo": "Fast & furious 9",
+                "posti": 0
+            },
+            "18:00": {
+                "titolo": "Fast & furious 9",
+                "posti": 0
+            },
+            "21:00": {
+                "titolo": "Fast & furious 9",
+                "posti": 0
+            },
+            "00:00": {
+                "titolo": "Fast & furious 9",
+                "posti": 0
+            }
+        },
+        {
+            "nome": "sala4",
+            "15:00": {
+                "titolo": "Qui rido io",
+                "posti": 0
+            },
+            "18:00": {
+                "titolo": "Qui rido io",
+                "posti": 0
+            },
+            "21:00": {
+                "titolo": "Qui rido io",
+                "posti": 0
+            },
+            "00:00": {
+                "titolo": "Qui rido io",
+                "posti": 0
+            }
+        },
+        {
+            "nome": "sala5",
+            "15:00": {
+                "titolo": "Shang-chi e la leggenda dei dieci anelli",
+                "posti": 0
+            },
+            "18:00": {
+                "titolo": "Shang-chi e la leggenda dei dieci anelli",
+                "posti": 0
+            },
+            "21:00": {
+                "titolo": "Shang-chi e la leggenda dei dieci anelli",
+                "posti": 0
+            },
+            "00:00": {
+                "titolo": "Shang-chi e la leggenda dei dieci anelli",
+                "posti": 0
+            }
+        }
+    ],
+    "12 settembre 2021": [
+        {
+            "nome": "sala1",
+            "15:00": {
+                "titolo": "Shang-chi e la leggenda dei dieci anelli",
+                "posti": 0
+            },
+            "18:00": {
+                "titolo": "Shang-chi e la leggenda dei dieci anelli",
+                "posti": 0
+            },
+            "21:00": {
+                "titolo": "Shang-chi e la leggenda dei dieci anelli",
+                "posti": 0
+            },
+            "00:00": {
+                "titolo": "Shang-chi e la leggenda dei dieci anelli",
+                "posti": 0
+            }
+        },
+        {
+            "nome": "sala2",
+            "15:00": {
+                "titolo": "Il giro del mondo in 80 giorni ",
+                "posti": 0
+            },
+            "18:00": {
+                "titolo": "Il giro del mondo in 80 giorni ",
+                "posti": 0
+            },
+            "21:00": {
+                "titolo": "Il giro del mondo in 80 giorni ",
+                "posti": 0
+            },
+            "00:00": {
+                "titolo": "Il giro del mondo in 80 giorni ",
+                "posti": 0
+            }
+        },
+        {
+            "nome": "sala3",
+            "15:00": {
+                "titolo": "Fast & furious 9",
+                "posti": 0
+            },
+            "18:00": {
+                "titolo": "Fast & furious 9",
+                "posti": 0
+            },
+            "21:00": {
+                "titolo": "Fast & furious 9",
+                "posti": 0
+            },
+            "00:00": {
+                "titolo": "Fast & furious 9",
+                "posti": 0
+            }
+        },
+        {
+            "nome": "sala4",
+            "15:00": {
+                "titolo": "The suicide squad- Missione suicida",
+                "posti": 0
+            },
+            "18:00": {
+                "titolo": "The suicide squad- Missione suicida",
+                "posti": 0
+            },
+            "21:00": {
+                "titolo": "The suicide squad- Missione suicida",
+                "posti": 0
+            },
+            "00:00": {
+                "titolo": "The suicide squad- Missione suicida",
+                "posti": 0
+            }
+        },
+        {
+            "nome": "sala5",
+            "15:00": {
+                "titolo": "Qui rido io",
+                "posti": 0
+            },
+            "18:00": {
+                "titolo": "Qui rido io",
+                "posti": 0
+            },
+            "21:00": {
+                "titolo": "Qui rido io",
+                "posti": 0
+            },
+            "00:00": {
+                "titolo": "Qui rido io",
+                "posti": 0
+            }
+        }
+    ],
+    "13 settembre 2021": [
+        {
+            "nome": "sala1",
+            "15:00": {
+                "titolo": "Shang-chi e la leggenda dei dieci anelli",
+                "posti": 0
+            },
+            "18:00": {
+                "titolo": "Shang-chi e la leggenda dei dieci anelli",
+                "posti": 0
+            },
+            "21:00": {
+                "titolo": "Shang-chi e la leggenda dei dieci anelli",
+                "posti": 0
+            },
+            "00:00": {
+                "titolo": "Shang-chi e la leggenda dei dieci anelli",
+                "posti": 0
+            }
+        },
+        {
+            "nome": "sala2",
+            "15:00": {
+                "titolo": "Il giro del mondo in 80 giorni ",
+                "posti": 0
+            },
+            "18:00": {
+                "titolo": "Il giro del mondo in 80 giorni ",
+                "posti": 0
+            },
+            "21:00": {
+                "titolo": "Il giro del mondo in 80 giorni ",
+                "posti": 0
+            },
+            "00:00": {
+                "titolo": "Il giro del mondo in 80 giorni ",
+                "posti": 0
+            }
+        },
+        {
+            "nome": "sala3",
+            "15:00": {
+                "titolo": "Fast & furious 9",
+                "posti": 0
+            },
+            "18:00": {
+                "titolo": "Fast & furious 9",
+                "posti": 0
+            },
+            "21:00": {
+                "titolo": "Fast & furious 9",
+                "posti": 0
+            },
+            "00:00": {
+                "titolo": "Fast & furious 9",
+                "posti": 0
+            }
+        },
+        {
+            "nome": "sala4",
+            "15:00": {
+                "titolo": "The suicide squad- Missione suicida",
+                "posti": 0
+            },
+            "18:00": {
+                "titolo": "The suicide squad- Missione suicida",
+                "posti": 0
+            },
+            "21:00": {
+                "titolo": "The suicide squad- Missione suicida",
+                "posti": 0
+            },
+            "00:00": {
+                "titolo": "The suicide squad- Missione suicida",
+                "posti": 0
+            }
+        },
+        {
+            "nome": "sala5",
+            "15:00": {
+                "titolo": "Qui rido io",
+                "posti": 0
+            },
+            "18:00": {
+                "titolo": "Qui rido io",
+                "posti": 0
+            },
+            "21:00": {
+                "titolo": "Qui rido io",
+                "posti": 0
+            },
+            "00:00": {
+                "titolo": "Qui rido io",
+                "posti": 0
+            }
+        }
+    ],
+    "14 settembre 2021": [
+        {
+            "nome": "sala1",
+            "15:00": {
+                "titolo": "Shang-chi e la leggenda dei dieci anelli",
+                "posti": 0
+            },
+            "18:00": {
+                "titolo": "Shang-chi e la leggenda dei dieci anelli",
+                "posti": 0
+            },
+            "21:00": {
+                "titolo": "Shang-chi e la leggenda dei dieci anelli",
+                "posti": 0
+            },
+            "00:00": {
+                "titolo": "Shang-chi e la leggenda dei dieci anelli",
+                "posti": 0
+            }
+        },
+        {
+            "nome": "sala2",
+            "15:00": {
+                "titolo": "Il giro del mondo in 80 giorni ",
+                "posti": 0
+            },
+            "18:00": {
+                "titolo": "Il giro del mondo in 80 giorni ",
+                "posti": 0
+            },
+            "21:00": {
+                "titolo": "Il giro del mondo in 80 giorni ",
+                "posti": 0
+            },
+            "00:00": {
+                "titolo": "Il giro del mondo in 80 giorni ",
+                "posti": 0
+            }
+        },
+        {
+            "nome": "sala3",
+            "15:00": {
+                "titolo": "Fast & furious 9",
+                "posti": 0
+            },
+            "18:00": {
+                "titolo": "Fast & furious 9",
+                "posti": 0
+            },
+            "21:00": {
+                "titolo": "Fast & furious 9",
+                "posti": 0
+            },
+            "00:00": {
+                "titolo": "Fast & furious 9",
+                "posti": 0
+            }
+        },
+        {
+            "nome": "sala4",
+            "15:00": {
+                "titolo": "The suicide squad- Missione suicida",
+                "posti": 0
+            },
+            "18:00": {
+                "titolo": "The suicide squad- Missione suicida",
+                "posti": 0
+            },
+            "21:00": {
+                "titolo": "The suicide squad- Missione suicida",
+                "posti": 0
+            },
+            "00:00": {
+                "titolo": "The suicide squad- Missione suicida",
+                "posti": 0
+            }
+        },
+        {
+            "nome": "sala5",
+            "15:00": {
+                "titolo": "Qui rido io",
+                "posti": 0
+            },
+            "18:00": {
+                "titolo": "Qui rido io",
+                "posti": 0
+            },
+            "21:00": {
+                "titolo": "Qui rido io",
+                "posti": 0
+            },
+            "00:00": {
+                "titolo": "Qui rido io",
+                "posti": 0
+            }
+        }
+    ],
+    "15 settembre 2021": [
+        {
+            "nome": "sala1",
+            "15:00": {
+                "titolo": "Shang-chi e la leggenda dei dieci anelli",
+                "posti": 0
+            },
+            "18:00": {
+                "titolo": "Shang-chi e la leggenda dei dieci anelli",
+                "posti": 0
+            },
+            "21:00": {
+                "titolo": "Shang-chi e la leggenda dei dieci anelli",
+                "posti": 0
+            },
+            "00:00": {
+                "titolo": "Shang-chi e la leggenda dei dieci anelli",
+                "posti": 0
+            }
+        },
+        {
+            "nome": "sala2",
+            "15:00": {
+                "titolo": "Il giro del mondo in 80 giorni ",
+                "posti": 0
+            },
+            "18:00": {
+                "titolo": "Il giro del mondo in 80 giorni ",
+                "posti": 0
+            },
+            "21:00": {
+                "titolo": "Il giro del mondo in 80 giorni ",
+                "posti": 0
+            },
+            "00:00": {
+                "titolo": "Il giro del mondo in 80 giorni ",
+                "posti": 0
+            }
+        },
+        {
+            "nome": "sala3",
+            "15:00": {
+                "titolo": "Fast & furious 9",
+                "posti": 0
+            },
+            "18:00": {
+                "titolo": "Fast & furious 9",
+                "posti": 0
+            },
+            "21:00": {
+                "titolo": "Fast & furious 9",
+                "posti": 0
+            },
+            "00:00": {
+                "titolo": "Fast & furious 9",
+                "posti": 0
+            }
+        },
+        {
+            "nome": "sala4",
+            "15:00": {
+                "titolo": "The suicide squad- Missione suicida",
+                "posti": 0
+            },
+            "18:00": {
+                "titolo": "The suicide squad- Missione suicida",
+                "posti": 0
+            },
+            "21:00": {
+                "titolo": "The suicide squad- Missione suicida",
+                "posti": 0
+            },
+            "00:00": {
+                "titolo": "The suicide squad- Missione suicida",
+                "posti": 0
+            }
+        },
+        {
+            "nome": "sala5",
+            "15:00": {
+                "titolo": "Qui rido io",
+                "posti": 0
+            },
+            "18:00": {
+                "titolo": "Qui rido io",
+                "posti": 0
+            },
+            "21:00": {
+                "titolo": "Qui rido io",
+                "posti": 0
+            },
+            "00:00": {
+                "titolo": "Qui rido io",
+                "posti": 0
+            }
+        }
+    ]
+}
